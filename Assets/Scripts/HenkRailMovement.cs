@@ -17,14 +17,11 @@ public class HenkRailMovement: MonoBehaviour
 
     void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        print("X: " + _transform.rotation.eulerAngles.x + ", Y:" + _transform.rotation.eulerAngles.y + ", Z:" + _transform.rotation.eulerAngles.z);
 
         _allowRotationReset = new bool[] { true, true };
         Move();
         ResetTilt();
-        ClampPlayer();
-        
     }
 
     /// <summary>
@@ -70,7 +67,7 @@ public class HenkRailMovement: MonoBehaviour
         if (_allowRotationReset[0]) //Reset X rotation
         {
             _transform.eulerAngles = new Vector3(
-            _transform.rotation.eulerAngles.x + CalcAxisReset(rotation.x, Speed),
+            CalcAxisReset(rotation.x, Speed),
             _transform.rotation.eulerAngles.y,
             _transform.rotation.eulerAngles.z);
         }
@@ -78,8 +75,8 @@ public class HenkRailMovement: MonoBehaviour
         {
             _transform.eulerAngles = new Vector3(
             _transform.rotation.eulerAngles.x,
-            _transform.rotation.eulerAngles.y + CalcAxisReset(rotation.y, Speed),
-            _transform.rotation.eulerAngles.z + CalcAxisReset(rotation.z, Speed));
+            CalcAxisReset(rotation.y, Speed),
+            CalcAxisReset(rotation.z, Speed));
         }
     }
 
@@ -108,26 +105,26 @@ public class HenkRailMovement: MonoBehaviour
     }
 
     /// <summary>
-    /// Calculate the amount that should be added or removed from the rotation to make it closer to 0
+    /// Change the rotation to make it closer to 0
     /// </summary>
     /// <param name="axis"></param> Axis that will be modified
     /// <param name="amount"></param> Amount that will be added/removed
-    /// <returns></returns> Amount that will be added or removed from the rotation to make it closer to 0
+    /// <returns></returns> Modified rotation
     private float CalcAxisReset(float axis, float amount)
     {
         axis = AdjustAxis(axis);
 
-        if (Mathf.Approximately(amount, 0))
+        if (Mathf.RoundToInt(axis) == 0)
         {
             return 0;
         }
         else if (axis > 0)
         {
-            return amount * -1;
+            return axis - amount;
         }
         else
         {
-            return amount;
+            return axis + amount;
         }
     }
 
