@@ -29,15 +29,15 @@ public class Messager : MonoBehaviour
     /// <summary>
     /// Show portrait and play message audio
     /// </summary>
-    /// <param name="portraitPath"></param> Path to portrait
-    /// <param name="audioPath"></param> Path to audio clip
-    public void PlayMessage(string portraitPath, string audioPath)
+    /// <param name="portraitFileName"></param> Path to portrait
+    /// <param name="audioFileName"></param> Path to audio clip
+    public void PlayMessage(string portraitFileName, string audioFileName)
     {
         _active = true;
         _frame.enabled = true;
         _portrait.enabled = true;
-        _portrait.sprite = Resources.Load<Sprite>(portraitPath);
-        _audioSource.clip = Resources.Load<AudioClip>(audioPath);
+        _portrait.sprite = Resources.Load<Sprite>(portraitFileName);
+        _audioSource.clip = Resources.Load<AudioClip>(audioFileName);
         _audioSource.Play();
     }
 }

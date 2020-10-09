@@ -14,8 +14,8 @@ public class HenkController : MonoBehaviour
     void Start()
     {
         _transform = GetComponent<Transform>();
-        HP = 25;
-        SP = 450;
+        HP = 100;
+        SP = 0;
     }
 
     void Update()
@@ -25,13 +25,6 @@ public class HenkController : MonoBehaviour
         _allowRotationReset = new bool[] { true, true };
         Move();
         ResetTilt();
-
-        if(Input.GetKey("x"))
-        {
-            Messager messager;
-            messager = GameObject.Find("Message").GetComponent<Messager>();
-            messager.PlayMessage("SCIENTISTPORTRAIT", "testsound");
-        }
     }
 
     /// <summary>
