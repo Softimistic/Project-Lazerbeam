@@ -25,6 +25,13 @@ public class HenkController : MonoBehaviour
         _allowRotationReset = new bool[] { true, true };
         Move();
         ResetTilt();
+
+        if(Input.GetKey("x"))
+        {
+            Messager messager;
+            messager = GameObject.Find("Message").GetComponent<Messager>();
+            messager.PlayMessage("SCIENTISTPORTRAIT", "testsound");
+        }
     }
 
     /// <summary>

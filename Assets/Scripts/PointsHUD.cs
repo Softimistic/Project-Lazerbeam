@@ -8,16 +8,14 @@ public class PointsHUD : MonoBehaviour
     public HenkController Target_Player;
     private Text[] _text;
 
-    // Start is ca lled before the first frame update
     void Start()
     {
         _text = GetComponentsInChildren<Text>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        _text[0].text = Target_Player.SP.ToString();
-        _text[1].text = Target_Player.HP.ToString();
+        _text[0].text = Target_Player.SP.ToString(); //Update score text
+        _text[1].text = Target_Player.HP.ToString(); //Update health (structural integrity) text
     }
 }
