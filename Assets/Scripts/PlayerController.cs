@@ -21,6 +21,16 @@ public class PlayerController : MonoBehaviour
     float xThrow, yThrow;
     bool isControlEnabled = true;
 
+    //FOR DEMO
+    public int SP;
+    public int HP;
+    public Messager BobTheMessager;
+
+    void Start()
+    {
+        SP = 420;
+        HP = 69;
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -31,6 +41,11 @@ public class PlayerController : MonoBehaviour
             ProcessRotation();
         }
 
+        //FOR DEMO
+        if (Input.GetKey("x"))
+        {
+            BobTheMessager.PlayMessage("SCIENTISTPORTRAIT", "testsound");
+        }
     }
 
     void OnPlayerDeath() // Uit CollisionHandler. String

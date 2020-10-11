@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PointsHUD : MonoBehaviour
 {
-    public HenkController Target_Player;
+    public PlayerController Target_Player;
     private Text[] _text;
 
     void Start()
