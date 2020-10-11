@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Player : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
     [Tooltip("in ms^-1")] [SerializeField] float speed = 20f;
     [Tooltip("in ms")] [SerializeField] float xRange = 5f;
@@ -17,23 +19,24 @@ public class Player : MonoBehaviour {
 
 
     float xThrow, yThrow;
-
-    // Use this for initialization
-    void Start () {
-		
-	}
+    bool isControlEnabled = true;
 
 
-    void OnTriggerEnter(Collider other)
+    // Update is called once per frame
+    void FixedUpdate()
     {
-        print("Player triggered something!");
+        if (isControlEnabled)
+        {
+            ProcessTranslation();
+            ProcessRotation();
+        }
+
     }
-	
-	// Update is called once per frame
-	void FixedUpdate ()
+
+    void OnPlayerDeath() // Uit CollisionHandler. String
     {
-        ProcessTranslation();
-        ProcessRotation();
+        print("Controls are frozen");
+        isControlEnabled = false;
     }
 
     private void ProcessRotation()
