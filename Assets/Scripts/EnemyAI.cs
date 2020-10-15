@@ -55,7 +55,7 @@ public class EnemyAI : MonoBehaviour
             newPosition.y = aroundRadius * Mathf.Cos(angled * Mathf.Deg2Rad);//y position
             newPosition.z = plane.transform.position.z + targetDistance;
             transform.position = newPosition ;
-             transform.Rotate(rotAxis, degPerSec * Time.deltaTime);
+             //transform.Rotate(rotAxis, degPerSec * Time.deltaTime);
         }
         else
         {
