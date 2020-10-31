@@ -33,8 +33,9 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void OnPlayerDeath() // Uit CollisionHandler. Zorgt ervoor dat de controls niet meer bewegen. 
+    void OnPlayerDeath() // Uit CollisionHandler. String
     {
+        print("Controls are frozen");
         isControlEnabled = false;
     }
 

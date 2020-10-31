@@ -1,32 +1,19 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CollsionHandler : MonoBehaviour
 {
-
-    [Tooltip("In seconds")] [SerializeField] float levelLoadDelay = 1f;
-    [Tooltip("FX Prefab")] [SerializeField] GameObject deathFX;
-
     void OnTriggerEnter(Collider other)
     {
-        StartDeathSequence(); /// Start de doodsequence
-        deathFX.SetActive(true);
-        Invoke("ReloadScene",levelLoadDelay);
+        print("Player triggered something!");
     }
 
-    public void StartDeathSequence() /// Zorgt ervoor dat de controls bevroren worden. Dit gebeurt bij de PlayerController
+    private void StartDeathSequence()
     {
-        GetComponent<PlayerController>().enabled = false;
-        print("Controls are frozen");
+        print("Player is losing health");
+        SendMessage("OnPlayerDeath");
 
-    }
-
-    private void ReloadScene() /// string in OnTriggerEnter
-    {
-        SceneManager.LoadScene(1);
     }
 }
