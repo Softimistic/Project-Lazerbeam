@@ -127,6 +127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d0360c6c18759418ce68100a1c525f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  terrainExplosion: {fileID: 180128, guid: 6586ff0f14125534cae2f5d8f04b7871, type: 3}
+  obstacleExplosion: {fileID: 191186, guid: 079954accd64b32419ec069129c81273, type: 3}
+  enemyShipExplosion: {fileID: 120410, guid: 6636b3078b0905e489f698a11b7a6b6b, type: 3}
   speed: 75
 --- !u!1 &8833686929532096899
 GameObject:
