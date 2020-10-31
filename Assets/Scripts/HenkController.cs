@@ -8,10 +8,14 @@ public class HenkController : MonoBehaviour
     private bool[] _allowRotationReset; //Wether or not resetting the rotation is allowed ([0] is for X axis, [1] for Y and Z)
     public float Speed; //Speed at which Henk moves horizontally and vertically
     public float ForwardSpeed; //Speed at which Henk automatically moves forward
+    public int HP; //Hit points
+    public int SP; //Score points
     
     void Start()
     {
         _transform = GetComponent<Transform>();
+        HP = 100;
+        SP = 0;
     }
 
     void Update()
