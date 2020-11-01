@@ -1,8 +1,14 @@
 fileFormatVersion: 2
-guid: 8990fcbec27e6f84a9d528fe50d40ecc
+guid: d4ef4579629abf144bbeaadce9f04670
 ModelImporter:
   serializedVersion: 20101
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 6564253511010156824
+    second: Empty|EmptyAction.002
+  - first:
+      74: -8982934540179166347
+    second: Icosphere.001|EmptyAction.002
   externalObjects: {}
   materials:
     materialImportMode: 1
