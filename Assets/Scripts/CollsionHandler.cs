@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -27,6 +27,6 @@ public class CollsionHandler : MonoBehaviour
 
     private void ReloadScene() /// string in OnTriggerEnter
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }
