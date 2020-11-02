@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6459059237533814062}
   - component: {fileID: 3149447881767114006}
   - component: {fileID: 6297608920203450029}
-  - component: {fileID: -304116304829635235}
+  - component: {fileID: -5112907885608174900}
   m_Layer: 0
   m_Name: Meteorite_3
   m_TagString: Untagged
@@ -82,14 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!154 &-304116304829635235
-TerrainCollider:
+--- !u!135 &-5112907885608174900
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3733011386789087933}
   m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_TerrainData: {fileID: 0}
-  m_EnableTreeColliders: 1
+  serializedVersion: 2
+  m_Radius: 0.038
+  m_Center: {x: -0.001, y: 0.012471981, z: -0.0015445107}
