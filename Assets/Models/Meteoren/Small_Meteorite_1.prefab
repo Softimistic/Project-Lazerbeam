@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9183082916733013691}
   - component: {fileID: 965735477743785603}
   - component: {fileID: 8193864767319971128}
-  - component: {fileID: -4073370582144579900}
+  - component: {fileID: 1407815039325943748}
   m_Layer: 0
   m_Name: Small_Meteorite_1
   m_TagString: Untagged
@@ -82,14 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!154 &-4073370582144579900
-TerrainCollider:
+--- !u!135 &1407815039325943748
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521582764303943976}
   m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_TerrainData: {fileID: 0}
-  m_EnableTreeColliders: 1
+  serializedVersion: 2
+  m_Radius: 0.009791803
+  m_Center: {x: 0.000036200043, y: -0.0008064521, z: -0.00036893686}

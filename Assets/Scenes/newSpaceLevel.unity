@@ -1244,17 +1244,17 @@ PrefabInstance:
     - target: {fileID: 5702255972365495522, guid: 8becc1c0fe93288429a21d3676179910,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5702255972365495522, guid: 8becc1c0fe93288429a21d3676179910,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5702255972365495522, guid: 8becc1c0fe93288429a21d3676179910,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -222.6
+      value: -1.0499992
       objectReference: {fileID: 0}
     - target: {fileID: 5702255972365495522, guid: 8becc1c0fe93288429a21d3676179910,
         type: 3}
@@ -1299,19 +1299,20 @@ PrefabInstance:
     - target: {fileID: 5702255972365495522, guid: 8becc1c0fe93288429a21d3676179910,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 345.47833
+      value: 345.47836
       objectReference: {fileID: 0}
     - target: {fileID: 5702255972365495522, guid: 8becc1c0fe93288429a21d3676179910,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 345.47833
+      value: 345.47836
       objectReference: {fileID: 0}
     - target: {fileID: 8022546052559331685, guid: 8becc1c0fe93288429a21d3676179910,
         type: 3}
       propertyPath: m_Name
       value: Meteorite_1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 8becc1c0fe93288429a21d3676179910, type: 3}
 --- !u!1 &534669902
 GameObject:
@@ -1916,6 +1917,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b24331eac81d63944a50f8bb7586f4be, type: 3}
+--- !u!1 &704406772 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8022546052559331685, guid: 8becc1c0fe93288429a21d3676179910,
+    type: 3}
+  m_PrefabInstance: {fileID: 496949015}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &704406773
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704406772}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.009385674
+  m_Center: {x: -0.00026276006, y: -0.00040356064, z: 0.00050635065}
 --- !u!1001 &725235732
 PrefabInstance:
   m_ObjectHideFlags: 0
