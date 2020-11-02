@@ -33,6 +33,6 @@ public class CollsionHandler : MonoBehaviour
 
     private void ReloadScene() /// string in OnTriggerEnter
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }
