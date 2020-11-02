@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6459059237533814062}
   - component: {fileID: 3149447881767114006}
   - component: {fileID: 6297608920203450029}
-  - component: {fileID: 4203809676596772563}
+  - component: {fileID: -5112907885608174900}
   m_Layer: 0
   m_Name: Meteorite_3
   m_TagString: Untagged
@@ -82,7 +82,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &4203809676596772563
+--- !u!135 &-5112907885608174900
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,5 +93,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.05521289
-  m_Center: {x: 0.0008046124, y: 0.012471981, z: -0.0015445107}
+  m_Radius: 0.038
+  m_Center: {x: -0.001, y: 0.012471981, z: -0.0015445107}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 381686543651376986}
   - component: {fileID: 8600225941292996450}
   - component: {fileID: 831666430515959001}
-  - component: {fileID: -1404024431815260708}
+  - component: {fileID: -3499485278285716978}
   m_Layer: 0
   m_Name: Meteorite_4
   m_TagString: Untagged
@@ -82,7 +82,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &-1404024431815260708
+--- !u!135 &-3499485278285716978
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

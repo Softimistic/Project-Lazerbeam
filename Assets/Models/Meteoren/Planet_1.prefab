@@ -90,7 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6302303266796871818}
-  - component: {fileID: -7944552152506893003}
+  - component: {fileID: 1630243539298969455}
   m_Layer: 0
   m_Name: Planet_1
   m_TagString: Untagged
@@ -114,7 +114,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &-7944552152506893003
+--- !u!135 &1630243539298969455
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
