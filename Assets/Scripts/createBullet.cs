@@ -22,9 +22,8 @@ public class createBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") && ship.GetComponent<PlayerController>().isActiveAndEnabled)
         {
-
             shootBullet();
         }
        

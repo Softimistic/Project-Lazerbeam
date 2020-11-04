@@ -4,35 +4,39 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class CollsionHandler : MonoBehaviour
 {
+    [Header("GameStateController")] [SerializeField]
+    public GameObject controller;
 
-    [Tooltip("In seconds")] [SerializeField] float levelLoadDelay = 1f;
+    [Tooltip("In seconds")] [SerializeField] float loadDelay = 1f;
     [Tooltip("FX Prefab")] [SerializeField] GameObject deathFX;
+    
 
     void OnTriggerEnter(Collider collision)
     {
        // check if it's player's bullet, if it's not then collision happen, ship destroyed 
         if (!collision.gameObject.CompareTag("bullet"))
         {
-             StartDeathSequence(); /// Start de doodsequence
+             controller.GetComponent<GameStateController>().DisablePlayerControl(); /// Start de doodsequence
              deathFX.SetActive(true);
-             Invoke("ReloadScene", levelLoadDelay);
+             Invoke("ShowGameOverMenu", loadDelay);
         }
 
        
     }
 
-    public void StartDeathSequence() /// Zorgt ervoor dat de controls bevroren worden. Dit gebeurt bij de PlayerController
-    {
-        GetComponent<PlayerController>().enabled = false;
-        print("Controls are frozen");
+    // public void StartDeathSequence() /// Zorgt ervoor dat de controls bevroren worden. Dit gebeurt bij de PlayerController
+    // {
+    //     controller.GetComponent<GameStateController>().DisablePlayerControl();
+    //     print("Controls are frozen");
+    //
+    // }
 
-    }
-
-    private void ReloadScene() /// string in OnTriggerEnter
+    private void ShowGameOverMenu()
     {
-        SceneManager.LoadScene(2);
+        controller.GetComponent<GameStateController>().ActiveGameOverMenu();
     }
 }
