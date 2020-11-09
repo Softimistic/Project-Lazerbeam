@@ -12,7 +12,8 @@ public class bullet : MonoBehaviour
     [SerializeField] public GameObject enemyShipExplosion;
     private Rigidbody rb;
     public float speed;
-    
+    ScoreBoard scoreBoard;
+
     // Start is called before the first frame update  
     void Start()
     {
@@ -30,6 +31,7 @@ public class bullet : MonoBehaviour
             Destroy(gameObject);
             GameObject nwFx = Instantiate(terrainExplosion,transform.position,Quaternion.identity);
             FxSelfDestroy(nwFx);
+            
 
         }
         //hit on Obstacle

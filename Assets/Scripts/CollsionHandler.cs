@@ -11,14 +11,17 @@ public class CollsionHandler : MonoBehaviour
     [Tooltip("In seconds")] [SerializeField] float levelLoadDelay = 1f;
     [Tooltip("FX Prefab")] [SerializeField] GameObject deathFX;
 
+    
     void OnTriggerEnter(Collider collision)
     {
        // check if it's player's bullet, if it's not then collision happen, ship destroyed 
         if (!collision.gameObject.CompareTag("bullet"))
         {
+            
              StartDeathSequence(); /// Start de doodsequence
              deathFX.SetActive(true);
              Invoke("ReloadScene", levelLoadDelay);
+             
         }
 
        
