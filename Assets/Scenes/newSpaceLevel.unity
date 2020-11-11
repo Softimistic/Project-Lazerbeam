@@ -1432,7 +1432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   circuitObject: {fileID: 2113211780}
   circuit: {fileID: 2113211780}
-  routeSpeed: 50
+  routeSpeed: 30
   lookAheadDistance: 100
   varyingSpeed: 0
   initialSpeed: 0
@@ -3589,6 +3589,16 @@ PrefabInstance:
         type: 3}
       propertyPath: speed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752890566399180171, guid: 1121b8b4d83cc8f49b14db24e24b741d,
+        type: 3}
+      propertyPath: speedfactor
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752890567201459502, guid: 1121b8b4d83cc8f49b14db24e24b741d,
+        type: 3}
+      propertyPath: speedfactor
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1121b8b4d83cc8f49b14db24e24b741d, type: 3}

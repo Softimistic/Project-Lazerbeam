@@ -28,6 +28,7 @@ public class EnemyAI : MonoBehaviour
     private MeshRenderer _meshRenderer;
 
     private bool[] detect_array = {false, false, false, false, false};
+    private bool isClockWise = true;
     //      0      
     //1     2      3
     //      4       
@@ -60,8 +61,15 @@ public class EnemyAI : MonoBehaviour
         {
             Vector3 newPosition = transform.position;
             Vector3 checkedPosition = transform.position;
-
-            angled += (angularSpeed * Time.deltaTime) % 360;
+            if (isClockWise)
+            {
+                angled += (angularSpeed * Time.deltaTime) % 360;
+            }
+            else
+            {
+                angled -= (angularSpeed * Time.deltaTime) % 360;
+            }
+     
             newPosition.x = aroundRadius * Mathf.Sin(angled * Mathf.Deg2Rad);//x position, Als deze hoger word gaat hij naar Rechts, lager = naar links                      
             newPosition.y = aroundRadius * Mathf.Cos(angled * Mathf.Deg2Rad);//y position, Als deze hoger word gaat hij naar Omhoog, lager = omlaag    
 
@@ -81,7 +89,15 @@ public class EnemyAI : MonoBehaviour
                (newPosition.x < transform.position.x && detect_array[4])//Naar links(dus naar 1)
            ))
             {
-                angled -= (angularSpeed * Time.deltaTime) % 360;
+                if (isClockWise)
+                    //moet omgekeerd
+                {
+                    angled -= (angularSpeed * Time.deltaTime) % 360;
+                }
+                else
+                {
+                    angled += (angularSpeed * Time.deltaTime) % 360;
+                }
             }
 
 
