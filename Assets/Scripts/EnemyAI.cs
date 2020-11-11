@@ -29,6 +29,7 @@ public class EnemyAI : MonoBehaviour
 
     private bool[] detect_array = {false, false, false, false, false};
     private bool isClockWise = true;
+    private bool directionChanged = false;
     //      0      
     //1     2      3
     //      4       
@@ -57,6 +58,8 @@ public class EnemyAI : MonoBehaviour
 
     void LateUpdate()
     {
+        
+
         if (transform.position.z - plane.transform.position.z <= targetDistance)
         {
             Vector3 newPosition = transform.position;
@@ -81,22 +84,41 @@ public class EnemyAI : MonoBehaviour
 
             //aids = stilstaan
 
-            if (!detect_array[2] && (
+            if ((
                (newPosition.y > transform.position.y && detect_array[0]) ||//als omhoog gaat (dus naar 0)
                (newPosition.y < transform.position.y && detect_array[4]) ||//als omglaag gaat && Naar links(dus naar 4)
 
                (newPosition.x > transform.position.x && detect_array[3])||//Naar rechts(dus naar 3)
-               (newPosition.x < transform.position.x && detect_array[4])//Naar links(dus naar 1)
+               (newPosition.x < transform.position.x && detect_array[1])//Naar links(dus naar 1)
            ))
             {
-                if (isClockWise)
-                    //moet omgekeerd
+
+              
+
+                //If direct danger -> change direction(once) and just continue
+                if (!detect_array[2] )
                 {
-                    angled -= (angularSpeed * Time.deltaTime) % 360;
+                    directionChanged = false;
+                    //Calculate Angled back for when standstill
+                    if (isClockWise)
+                    {
+                        angled -= (angularSpeed * Time.deltaTime) % 360;
+                    }
+                    else
+                    {
+                        angled += (angularSpeed * Time.deltaTime) % 360;
+                    }
+
                 }
+                //Direct + indirect danger = change direction once and just continue
                 else
-                {
-                    angled += (angularSpeed * Time.deltaTime) % 360;
+                {             
+                    if (!directionChanged)
+                    {
+                        isClockWise = !isClockWise;
+                        directionChanged = true;
+                    }
+                    checkedPosition = newPosition;
                 }
             }
 
