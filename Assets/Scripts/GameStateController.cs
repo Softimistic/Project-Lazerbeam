@@ -61,7 +61,7 @@ public class GameStateController : MonoBehaviour
     public void Replay()
     {
         CloseGameOverMenu();
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     /// <summary>
@@ -104,6 +104,7 @@ public class GameStateController : MonoBehaviour
 
     public void BackToMainMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 
@@ -115,5 +116,11 @@ public class GameStateController : MonoBehaviour
     public void ResumePlayerControl()
     {
         player.GetComponent<PlayerController>().enabled = true;
+    }
+
+    public void Exit()
+    {
+        Debug.Log("quit game!");
+        Application.Quit();
     }
 }
