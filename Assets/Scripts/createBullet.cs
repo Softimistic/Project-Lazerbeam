@@ -10,30 +10,28 @@ public class createBullet : MonoBehaviour
     
     public GameObject bulletPrefab;
     public GameObject ship;
-    [SerializeField] [Range(2, 10)] private int speedfactor;
+    public GameObject camera;
+    [SerializeField] [Range(2, 100)] private int speedfactor;
 
     // Start is called before the first frame update
     void Start()
     {
         //set speed to bullet
-        bulletPrefab.GetComponent<bullet>().Speed = ship.GetComponent<PlayerController>().Speed * speedfactor;
+        bulletPrefab.GetComponent<bullet>().Speed = camera.GetComponent<BetterWaypointFollower>().routeSpeed * speedfactor;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") && ship.GetComponent<PlayerController>().isActiveAndEnabled)
         {
-
             shootBullet();
         }
-       
     }
     public void shootBullet()
     {
         //Bullet gets called with position/rotation of gun object
          GameObject b = Instantiate(bulletPrefab, transform.position, transform.rotation) as GameObject;
-         
-    
+         Debug.Log("Bullet Speed : " + bulletPrefab.GetComponent<bullet>().Speed);
     }
 }
