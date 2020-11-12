@@ -6,12 +6,11 @@ public class EnemyBullet : MonoBehaviour
 {
 
     private Rigidbody rb;
-    private float speed;
+    public float speed = 100.0f;
 
     // Start is called before the first frame update  
     void Start()
     {
-        speed = 100.0f;
         StartCoroutine(SelfDestruct());
         rb = this.GetComponent<Rigidbody>();
         rb.velocity = transform.up * speed;

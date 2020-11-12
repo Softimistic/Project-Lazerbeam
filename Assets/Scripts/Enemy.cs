@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityStandardAssets.Utility;
 
 public class Enemy : MonoBehaviour
 {
@@ -67,13 +68,14 @@ public class Enemy : MonoBehaviour
 
     private void Movement()
     {
-        Vector3 direction = player.position - transform.position;
+        Vector3 direction = (player.position) - transform.position;
         Quaternion rotation = Quaternion.LookRotation(direction);
         transform.rotation = rotation;
         // checks if the enemy is too close to the player and turns it on inactive when it is
         if(transform.position.z < player.position.z + 3.0f)
         {
             thisGameState = gameState.inactive;
+            despawnTimer = 0;
         }
         switch (movement)
         {
@@ -121,7 +123,7 @@ public class Enemy : MonoBehaviour
         }
         else if (Vector3.Distance(transform.position, player.position) <= maxDistance)
         {
-            transform.position = Vector3.MoveTowards(transform.position, transform.forward, -speed * time);
+            transform.position = Vector3.MoveTowards(transform.position, transform.forward, -player.GetComponent<PlayerController>().Speed * time);
         }
     }
 
@@ -130,12 +132,15 @@ public class Enemy : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, player.position) > maxDistance)
         {
-            pos += Vector3.back * time * (speed*0.5f);
+            print("zig front");
+            pos += transform.forward * time * -player.GetComponent<PlayerController>().Speed;
             transform.position = pos + axis * Mathf.Sin(Time.time * frequency) * magnitude;
         }
         else if (Vector3.Distance(transform.position, player.position) <= maxDistance)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.position, -speed * time);
+            print("zig back");
+            pos += Vector3.MoveTowards(transform.position, transform.forward, player.GetComponent<PlayerController>().Speed * time) * time * -player.GetComponent<PlayerController>().Speed;
+            transform.position = pos + axis * Mathf.Sin(Time.time * frequency) * magnitude;
         }
     }
 }
