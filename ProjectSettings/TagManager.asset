@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - bullet
+  - Terrain
+  - EnemyShips
+  - ParryObject
+  - EnemyShipDetect1
   layers:
   - Default
   - TransparentFX
@@ -14,7 +18,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - PostProcessing
   - 
   - 
   - 
