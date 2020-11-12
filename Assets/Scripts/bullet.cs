@@ -26,7 +26,7 @@ public class bullet : MonoBehaviour
      void OnTriggerEnter(Collider collision)
     {
         // hit on terrain
-        if (collision.gameObject.CompareTag("Terrain"))
+        if (collision.gameObject.CompareTag("Terrain") || collision.gameObject.CompareTag("ParryObject"))
         {
             Destroy(gameObject);
             GameObject nwFx = Instantiate(terrainExplosion,transform.position,Quaternion.identity);
