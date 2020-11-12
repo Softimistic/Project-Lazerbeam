@@ -77,11 +77,7 @@ public class EnemyAI : MonoBehaviour
             newPosition.y = aroundRadius * Mathf.Cos(angled * Mathf.Deg2Rad);//y position, Als deze hoger word gaat hij naar Omhoog, lager = omlaag    
 
 
-
-
-
             //check aids 
-
             //aids = stilstaan
 
             if ((
