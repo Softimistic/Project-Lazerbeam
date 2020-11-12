@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
 
     float xThrow, yThrow;
     bool isControlEnabled = true;
-
+    
 
     // Update is called once per frame
     void FixedUpdate()
