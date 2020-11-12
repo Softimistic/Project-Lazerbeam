@@ -23,10 +23,10 @@ public class Enemy : MonoBehaviour
     public float movement;
     private float time;
     private gameState thisGameState;
-    public float frequency; // speed of zigzag
-    public float magnitude; // size of the zigzag
+    public float frequency;
+    public float magnitude;
+    private Vector3 axis;
     private Vector3 pos;
-    private Vector3 axis; // the axis of the zigzag
 
     public GameObject projectile;
     private CreateEnemyBullet gun;
