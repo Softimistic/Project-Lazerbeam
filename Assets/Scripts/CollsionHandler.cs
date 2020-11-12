@@ -19,6 +19,8 @@ public class CollsionHandler : MonoBehaviour
     Health health;
     bool isAlGehit = false;
 
+    private GameObject controller;
+    
     private void Start()
     {
         health = FindObjectOfType<Health>();

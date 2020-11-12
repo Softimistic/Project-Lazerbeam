@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Splash.unity
     guid: d3271ced0400827469f98197d4891d23
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level 1.unity
     guid: 2a6226242a563184f93aeccbe6a4cc02
   - enabled: 0
@@ -18,7 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/newSpaceLevel.unity
     guid: e32c913ba47694b488019e4194fd1ab7
   - enabled: 0
-    path: Assets/Scenes/PauseScene.unity
-    guid: 6dcf2628d31cf0a45a6de0caf23ac325
-
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: eb6fdc47ea524ae4994de9c3a0b2f464
   m_configObjects: {}
