@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.044349514, g: 0.03931563, b: 0.047046646, a: 1}
+  m_IndirectSpecularColor: {r: 0.04518666, g: 0.039375115, b: 0.047922775, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3289,7 +3289,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &962105226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5519,13 +5519,23 @@ PrefabInstance:
     - target: {fileID: 7752890566399180171, guid: 1121b8b4d83cc8f49b14db24e24b741d,
         type: 3}
       propertyPath: speedfactor
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7752890566399180171, guid: 1121b8b4d83cc8f49b14db24e24b741d,
+        type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 534669902}
     - target: {fileID: 7752890567201459502, guid: 1121b8b4d83cc8f49b14db24e24b741d,
         type: 3}
       propertyPath: speedfactor
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7752890567201459502, guid: 1121b8b4d83cc8f49b14db24e24b741d,
+        type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 534669902}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1121b8b4d83cc8f49b14db24e24b741d, type: 3}
 --- !u!1001 &1565937070
