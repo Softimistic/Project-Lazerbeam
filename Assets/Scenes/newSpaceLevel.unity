@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.04518666, g: 0.039375115, b: 0.047922775, a: 1}
+  m_IndirectSpecularColor: {r: 0.044349514, g: 0.03931563, b: 0.047046646, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5697,6 +5697,10 @@ PrefabInstance:
       propertyPath: loadDelay
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 478113659, guid: 1121b8b4d83cc8f49b14db24e24b741d, type: 3}
+      propertyPath: hitFX
+      value: 
+      objectReference: {fileID: 1914148005}
     - target: {fileID: 1346654642257726, guid: 1121b8b4d83cc8f49b14db24e24b741d, type: 3}
       propertyPath: m_Name
       value: Player Ship
@@ -6909,6 +6913,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1732050001}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1758563654
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2028806008}
+    m_Modifications:
+    - target: {fileID: 8487999639081361868, guid: 65b44a65eae524c4f80f661c099e8ee2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487999639081361868, guid: 65b44a65eae524c4f80f661c099e8ee2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487999639081361868, guid: 65b44a65eae524c4f80f661c099e8ee2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487999639081361868, guid: 65b44a65eae524c4f80f661c099e8ee2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487999639081361868, guid: 65b44a65eae524c4f80f661c099e8ee2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487999639081361868, guid: 65b44a65eae524c4f80f661c099e8ee2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487999639081361868, guid: 65b44a65eae524c4f80f661c099e8ee2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487999639081361868, guid: 65b44a65eae524c4f80f661c099e8ee2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487999639081361868, guid: 65b44a65eae524c4f80f661c099e8ee2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487999639081361868, guid: 65b44a65eae524c4f80f661c099e8ee2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487999639081361868, guid: 65b44a65eae524c4f80f661c099e8ee2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487999639081361869, guid: 65b44a65eae524c4f80f661c099e8ee2,
+        type: 3}
+      propertyPath: m_Name
+      value: FireAndSmoke
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 65b44a65eae524c4f80f661c099e8ee2, type: 3}
 --- !u!1001 &1769322996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7514,6 +7587,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6459059237533814062, guid: cc34d960d05fc8e4095b54312d7355c6,
     type: 3}
   m_PrefabInstance: {fileID: 1906509721}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1914148005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8487999639081361869, guid: 65b44a65eae524c4f80f661c099e8ee2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1758563654}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1960372382
 PrefabInstance:
