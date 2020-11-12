@@ -4,37 +4,75 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
+
 
 public class CollsionHandler : MonoBehaviour
 {
-    
 
-    [Tooltip("In seconds")] [SerializeField] float loadDelay = 1f;
+    [Tooltip("In seconds")] [SerializeField] float levelLoadDelay = 1f;
     [Tooltip("FX Prefab")] [SerializeField] GameObject deathFX;
+    [Tooltip("FX Prefab")] [SerializeField] GameObject hitFX;
 
-    private GameObject controller;
-     void Start()
+
+    [SerializeField] int healthDecreasePerHit = 50;
+
+    Health health;
+    bool isAlGehit = false;
+
+    private void Start()
     {
-        controller = GameObject.FindWithTag("StateMenuUI");
+        health = FindObjectOfType<Health>();
     }
 
+    /// <summary>
+    /// Check if there is no collision with the bullet and checking if the player is already hit. Descreasing health when hit once in the level. If the health is zero you die.
+    /// </summary>
+    /// <param name="collision"></param>
     void OnTriggerEnter(Collider collision)
     {
        // check if it's player's bullet, if it's not then collision happen, ship destroyed 
-        if (!collision.gameObject.CompareTag("bullet"))
+        if (!collision.gameObject.CompareTag("bullet") && !isAlGehit)
         {
-             controller.GetComponent<GameStateController>().DisablePlayerControl(); /// Start de doodsequence
-             deathFX.SetActive(true);
-             //call Game over
-             Invoke("ShowGameOverMenu", loadDelay);
+            isAlGehit = true;
+            if (Int32.Parse(health.getHealth()) >= 0)
+            {
+                health.HealthHit(healthDecreasePerHit);
+                //print(health.getHealth());
+                hitFX.SetActive(true);
+            }
+            if(Int32.Parse(health.getHealth()) <= 0)
+            {
+                PlayerDies();
+            }
         }
-
-       
     }
-    
-    private void ShowGameOverMenu()
+
+    //When the player dies
+    public void PlayerDies()
     {
-        controller.GetComponent<GameStateController>().ActiveGameOverMenu();
+        health.setHealthToZero(0);
+        StartDeathSequence(); /// Start de doodsequence
+        deathFX.SetActive(true);
+        Invoke("ReloadScene", levelLoadDelay);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!other.gameObject.CompareTag("bullet")){
+            isAlGehit = false;
+        }
+        
+    }
+
+    public void StartDeathSequence() /// Zorgt ervoor dat de controls bevroren worden. Dit gebeurt bij de PlayerController
+    {
+        GetComponent<PlayerController>().enabled = false;
+        print("Controls are frozen");
+
+    }
+
+    private void ReloadScene() /// string in OnTriggerEnter
+    {
+        SceneManager.LoadScene(2);
     }
 }

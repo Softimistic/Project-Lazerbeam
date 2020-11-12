@@ -19,6 +19,7 @@ public class BulletHit : MonoBehaviour
 
     private MeshRenderer _meshRenderer;
     private Color _originalColor;
+    
 
     private int _currentHitTimes = 0;
 
@@ -51,6 +52,8 @@ public class BulletHit : MonoBehaviour
             StartCoroutine(RestoreColor(_originalColor));
             //Destory bullets
             Destroy(collision.gameObject);
+            
+            
         }
     }
 
