@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PointsHUD : MonoBehaviour
 {
-    public HenkController Target_Player;
+    public Health health;
     private Text[] _text;
 
     void Start()
@@ -15,7 +15,7 @@ public class PointsHUD : MonoBehaviour
 
     void FixedUpdate()
     {
-        _text[0].text = Target_Player.SP.ToString(); //Update score text
-        _text[1].text = Target_Player.HP.ToString(); //Update health (structural integrity) text
+        _text[0].text = "0";//Target_Player.SP.ToString(); //Update score text
+        _text[1].text = health.getHealth().ToString(); //Update health (structural integrity) text
     }
 }

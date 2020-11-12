@@ -28,8 +28,6 @@ public class Health : MonoBehaviour
     public void HealthHit(int healthDescrease)
     {
         health = health - healthDescrease;
-        healthText.text = health.ToString();
-
     }
 
     public void setHealthToZero(int setHealth)
