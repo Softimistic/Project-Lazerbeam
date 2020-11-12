@@ -1,9 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+
+    public enum gameState
+    {
+        active,
+        inactive
+    }
+
+    public float spawningRange;
     public float speed;
     public float despawnTime;
     private float despawnTimer;
@@ -11,6 +20,13 @@ public class Enemy : MonoBehaviour
     public float shootingRange;
     public float shootingSpeed;
     private float shootingTimer;
+    public float movement;
+    private float time;
+    private gameState thisGameState;
+    public float frequency; // speed of zigzag
+    public float magnitude; // size of the zigzag
+    private Vector3 pos;
+    private Vector3 axis; // the axis of the zigzag
 
     public GameObject projectile;
     private CreateEnemyBullet gun;
@@ -18,41 +34,61 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
 
         shootingTimer = shootingSpeed;
         despawnTimer = despawnTime;
+        pos = transform.position;
+        axis = transform.right;
 
         gun = transform.Find("EnemyGun").GetComponent<CreateEnemyBullet>();
     }
 
     void Update()
     {
-        MoveToPlayer();
-
-        Shooting();
-
+        // Checks if the enemy is active. If the enemy is not active the timer will still continue but the enemy won't do anything
+        time = Time.deltaTime;
         DespawnEnemy();
-
+        if(thisGameState == gameState.active)
+        {
+        Movement();
+        Shooting();
+        }
     }
 
-    private void MoveToPlayer()
+    private void CheckPlayerInRange()
+    {
+        if(Vector3.Distance(transform.position, player.position) <= spawningRange)
+        {
+            gameObject.SetActive(true);
+            thisGameState = gameState.active;
+        }
+    }
+
+    private void Movement()
     {
         Vector3 direction = player.position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(direction);
         transform.rotation = rotation;
-        if (Vector3.Distance(transform.position, player.position) > maxDistance)
+        // checks if the enemy is too close to the player and turns it on inactive when it is
+        if(transform.position.z < player.position.z + 3.0f)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            thisGameState = gameState.inactive;
         }
-        else if (Vector3.Distance(transform.position, player.position) <= maxDistance)
+        switch (movement)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
+            case 1: MoveToPlayer();
+                break;
+            case 2: ZigZag();
+                break;
+            default: MoveToPlayer();
+                break;
         }
     }
 
     private void Shooting()
     {
+        // Checks if the player is in range for the enemy. If it is then the enemy will shoot at it
         if (shootingTimer <= 0 && Vector3.Distance(transform.position, player.position) < shootingRange)
         {
             gun.Shoot(projectile);
@@ -60,7 +96,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            shootingTimer -= Time.deltaTime;
+            shootingTimer -= time;
         }
     }
 
@@ -69,12 +105,37 @@ public class Enemy : MonoBehaviour
         if (despawnTimer <= 0)
         {
             Destroy(gameObject);
-            //transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y + 10), speed * Time.deltaTime);
         }
         else
         {
-            despawnTimer -= Time.deltaTime;
+            despawnTimer -= time;
         }
+    }
 
+    // Moves the enemy straight to the player
+    private void MoveToPlayer()
+    {
+        if (Vector3.Distance(transform.position, player.position) > maxDistance)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, player.position, speed * time);
+        }
+        else if (Vector3.Distance(transform.position, player.position) <= maxDistance)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, transform.forward, -speed * time);
+        }
+    }
+
+    // Moves the enemy towards the player with a zigzag movement
+    private void ZigZag()
+    {
+        if (Vector3.Distance(transform.position, player.position) > maxDistance)
+        {
+            pos += Vector3.back * time * (speed*0.5f);
+            transform.position = pos + axis * Mathf.Sin(Time.time * frequency) * magnitude;
+        }
+        else if (Vector3.Distance(transform.position, player.position) <= maxDistance)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, player.position, -speed * time);
+        }
     }
 }

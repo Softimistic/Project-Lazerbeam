@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 6899754836985454752}
   - component: {fileID: 8522837847013079134}
   m_Layer: 0
-  m_Name: EnemyOne
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -231,7 +231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6899754836985454767}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 820.608, y: 1.8830118, z: 101.171425}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6899754836001546349}
@@ -251,11 +251,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3107463bd180ff84b99bd1fbb2c1733b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawningRange: 150
   speed: 10
   despawnTime: 20
-  maxDistance: 10
-  shootingRange: 15
-  shootingSpeed: 5
+  maxDistance: 0
+  shootingRange: 75
+  shootingSpeed: 2
+  movement: 2
+  frequency: 2
+  magnitude: 5
   projectile: {fileID: 2485618898901908897, guid: 8c7c85223d6a5e448962d47d0a4fd4ff, type: 3}
 --- !u!65 &6899754836985454752
 BoxCollider:
