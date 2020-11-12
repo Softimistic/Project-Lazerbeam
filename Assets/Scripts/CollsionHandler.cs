@@ -14,7 +14,8 @@ public class CollsionHandler : MonoBehaviour
     [Tooltip("FX Prefab")] [SerializeField] GameObject deathFX;
 
     private GameObject controller;
-     void Start()
+    
+    void Start()
     {
         controller = GameObject.FindWithTag("StateMenuUI");
     }

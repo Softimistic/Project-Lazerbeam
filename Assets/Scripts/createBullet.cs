@@ -27,7 +27,6 @@ public class createBullet : MonoBehaviour
         {
             shootBullet();
         }
-       
     }
     public void shootBullet()
     {

@@ -105,7 +105,7 @@ public class GameStateController : MonoBehaviour
     public void BackToMainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
 
     public void DisablePlayerControl()
