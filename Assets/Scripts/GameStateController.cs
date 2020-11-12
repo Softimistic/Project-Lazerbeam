@@ -10,6 +10,9 @@ public class GameStateController : MonoBehaviour
 
     [Header("Game Over Menu")] [SerializeField]
     public GameObject gameOverMenu;
+    
+    [Header("Score Menu")] [SerializeField]
+    public GameObject ScoreGameObject;
 
     [Header("Player")] [SerializeField] public GameObject player;
 
@@ -89,6 +92,7 @@ public class GameStateController : MonoBehaviour
     /// </summary>
     public void CloseGameOverMenu()
     {
+        ActiveScoreMenu();
         gameOverMenu.SetActive(false);
         Resume();
     }
@@ -98,6 +102,7 @@ public class GameStateController : MonoBehaviour
     /// </summary>
     public void ActiveGameOverMenu()
     {
+        CloseScoreMenu();
         Pause();
         gameOverMenu.SetActive(true);
     }
@@ -122,5 +127,15 @@ public class GameStateController : MonoBehaviour
     {
         Debug.Log("quit game!");
         Application.Quit();
+    }
+
+    public void ActiveScoreMenu()
+    {
+        ScoreGameObject.SetActive(true);
+    }
+
+    public void CloseScoreMenu()
+    {
+        ScoreGameObject.SetActive(false);
     }
 }

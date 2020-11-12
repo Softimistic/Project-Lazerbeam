@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.044349514, g: 0.03931563, b: 0.047046646, a: 1}
+  m_IndirectSpecularColor: {r: 0.04518666, g: 0.039375115, b: 0.047922775, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -332,6 +332,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1607868602412490989, guid: b24331eac81d63944a50f8bb7586f4be,
     type: 3}
   m_PrefabInstance: {fileID: 8054435}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &18361001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8525791025782519241, guid: 4c1e80969c1695d40a2fca9fbe41285a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1140056585}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &21196009
 GameObject:
@@ -4213,6 +4219,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8525791025410347373, guid: 4c1e80969c1695d40a2fca9fbe41285a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525791025410347379, guid: 4c1e80969c1695d40a2fca9fbe41285a,
+        type: 3}
+      propertyPath: Health
+      value: 
+      objectReference: {fileID: 31653630}
+    - target: {fileID: 8525791025782519241, guid: 4c1e80969c1695d40a2fca9fbe41285a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8525791026036978378, guid: 4c1e80969c1695d40a2fca9fbe41285a,
         type: 3}
       propertyPath: m_IsActive
@@ -4222,6 +4243,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525791026773721960, guid: 4c1e80969c1695d40a2fca9fbe41285a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8525791026773721967, guid: 4c1e80969c1695d40a2fca9fbe41285a,
         type: 3}
@@ -4395,6 +4421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1310313303}
   gameOverMenu: {fileID: 1275514095}
+  ScoreGameObject: {fileID: 18361001}
   player: {fileID: 2028806007}
 --- !u!4 &1153957004 stripped
 Transform:

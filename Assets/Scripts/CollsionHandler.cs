@@ -75,6 +75,6 @@ public class CollsionHandler : MonoBehaviour
 
     private void ReloadScene() /// string in OnTriggerEnter
     {
-        SceneManager.LoadScene(2);
+        GameObject.FindWithTag("StateMenuUI").GetComponent<GameStateController>().ActiveGameOverMenu();
     }
 }
