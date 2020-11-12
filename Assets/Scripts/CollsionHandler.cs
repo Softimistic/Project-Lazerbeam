@@ -37,7 +37,7 @@ public class CollsionHandler : MonoBehaviour
             if (Int32.Parse(health.getHealth()) >= 0)
             {
                 health.HealthHit(healthDecreasePerHit);
-                print(health.getHealth());
+                //print(health.getHealth());
                 hitFX.SetActive(true);
             }
             if(Int32.Parse(health.getHealth()) <= 0)
