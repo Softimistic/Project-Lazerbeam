@@ -8,14 +8,20 @@ public class HenkController : MonoBehaviour
     private bool[] _allowRotationReset; //Wether or not resetting the rotation is allowed ([0] is for X axis, [1] for Y and Z)
     public float Speed; //Speed at which Henk moves horizontally and vertically
     public float ForwardSpeed; //Speed at which Henk automatically moves forward
+    public int HP; //Hit points
+    public int SP; //Score points
     
     void Start()
     {
         _transform = GetComponent<Transform>();
+        HP = 100;
+        SP = 0;
     }
 
     void Update()
     {
+        print("X: " + _transform.rotation.eulerAngles.x + ", Y:" + _transform.rotation.eulerAngles.y + ", Z:" + _transform.rotation.eulerAngles.z);
+
         _allowRotationReset = new bool[] { true, true };
         Move();
         ResetTilt();
@@ -64,7 +70,7 @@ public class HenkController : MonoBehaviour
         if (_allowRotationReset[0]) //Reset X rotation
         {
             _transform.eulerAngles = new Vector3(
-            _transform.rotation.eulerAngles.x + CalcAxisReset(rotation.x, Speed),
+            CalcAxisReset(rotation.x, Speed),
             _transform.rotation.eulerAngles.y,
             _transform.rotation.eulerAngles.z);
         }
@@ -72,8 +78,8 @@ public class HenkController : MonoBehaviour
         {
             _transform.eulerAngles = new Vector3(
             _transform.rotation.eulerAngles.x,
-            _transform.rotation.eulerAngles.y + CalcAxisReset(rotation.y, Speed),
-            _transform.rotation.eulerAngles.z + CalcAxisReset(rotation.z, Speed));
+            CalcAxisReset(rotation.y, Speed),
+            CalcAxisReset(rotation.z, Speed));
         }
     }
 
@@ -102,26 +108,26 @@ public class HenkController : MonoBehaviour
     }
 
     /// <summary>
-    /// Calculate the amount that should be added or removed from the rotation to make it closer to 0
+    /// Change the rotation to make it closer to 0
     /// </summary>
     /// <param name="axis"></param> Axis that will be modified
     /// <param name="amount"></param> Amount that will be added/removed
-    /// <returns></returns> Amount that will be added or removed from the rotation to make it closer to 0
+    /// <returns></returns> Modified rotation
     private float CalcAxisReset(float axis, float amount)
     {
         axis = AdjustAxis(axis);
 
-        if (Mathf.Approximately(amount, 0))
+        if (Mathf.RoundToInt(axis) == 0)
         {
             return 0;
         }
         else if (axis > 0)
         {
-            return amount * -1;
+            return axis - amount;
         }
         else
         {
-            return amount;
+            return axis + amount;
         }
     }
 
