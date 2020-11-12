@@ -5,17 +5,20 @@ using UnityEngine.UI;
 
 public class PointsHUD : MonoBehaviour
 {
-    public Health health;
+    private Health health;
     private Text[] _text;
+
+    public GameObject Ship;
 
     void Start()
     {
-        _text = GetComponentsInChildren<Text>();
+        _text = this.GetComponentsInChildren<Text>();
+        health = GameObject.Find("Health").GetComponent<Health>();
     }
 
     void FixedUpdate()
     {
         _text[0].text = "0";//Target_Player.SP.ToString(); //Update score text
-        _text[1].text = health.getHealth().ToString(); //Update health (structural integrity) text
+        _text[1].text = health.getHealth(); //Update health (structural integrity) text
     }
 }
