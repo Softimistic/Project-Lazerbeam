@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
         // Calling the Text in Canvas.text
         healthText = GetComponent<Text>();
         // Converting the text from int to string
-        healthText.text = health.ToString();
+        //healthText.text = health.ToString();
 
     }
 
