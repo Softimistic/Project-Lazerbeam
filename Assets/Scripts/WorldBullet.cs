@@ -6,19 +6,29 @@ public class WorldBullet : MonoBehaviour
 {
     private Rigidbody _rb;
     private Vector3 _originalPosition;
+    private int _counter;
+    private AudioSource _boom;
     public int Speed;
     
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _boom = GetComponent<AudioSource>();
         _originalPosition = transform.position;
         _rb.AddRelativeForce(new Vector3(0, Speed, 0));
+        _counter = 0;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        _counter++;
+        if (_counter > 300)
+        {
+            transform.position = _originalPosition;
+            _boom.Play();
+            _counter = 0;
+        }
     }
 }
