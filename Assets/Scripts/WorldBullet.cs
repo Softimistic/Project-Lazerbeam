@@ -7,6 +7,7 @@ public class WorldBullet : MonoBehaviour
     private Rigidbody _rb;
     private Vector3 _originalPosition;
     private int _counter;
+    public int Duration;
     private AudioSource _boom;
     public int Speed;
     
@@ -24,7 +25,7 @@ public class WorldBullet : MonoBehaviour
     void FixedUpdate()
     {
         _counter++;
-        if (_counter > 300)
+        if (_counter > Duration)
         {
             transform.position = _originalPosition;
             _boom.Play();
