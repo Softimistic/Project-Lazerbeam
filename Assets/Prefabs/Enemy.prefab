@@ -253,14 +253,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawningRange: 150
   speed: 10
-  despawnTime: 20
-  maxDistance: 0
+  despawnTime: 90
+  maxDistance: 50
   shootingRange: 75
   shootingSpeed: 2
-  movement: 2
+  movement: 1
   frequency: 2
   magnitude: 5
-  projectile: {fileID: 2485618898901908897, guid: 8c7c85223d6a5e448962d47d0a4fd4ff, type: 3}
+  projectile: {fileID: 2485618898901908897, guid: 8c7c85223d6a5e448962d47d0a4fd4ff,
+    type: 3}
 --- !u!65 &6899754836985454752
 BoxCollider:
   m_ObjectHideFlags: 0

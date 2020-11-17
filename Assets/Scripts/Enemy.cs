@@ -10,7 +10,8 @@ public class Enemy : MonoBehaviour
     public enum gameState
     {
         active,
-        inactive
+        inactive,
+        attached
     }
 
     public float spawningRange;
@@ -50,16 +51,16 @@ public class Enemy : MonoBehaviour
         // Checks if the enemy is active. If the enemy is not active the timer will still continue but the enemy won't do anything
         time = Time.deltaTime;
         DespawnEnemy();
-        if(thisGameState == gameState.active)
+        if (thisGameState == gameState.active || thisGameState == gameState.attached)
         {
-        Movement();
-        Shooting();
+            Movement();
+            Shooting();
         }
     }
 
     private void CheckPlayerInRange()
     {
-        if(Vector3.Distance(transform.position, player.position) <= spawningRange)
+        if (Vector3.Distance(transform.position, player.position) <= spawningRange)
         {
             gameObject.SetActive(true);
             thisGameState = gameState.active;
@@ -72,18 +73,26 @@ public class Enemy : MonoBehaviour
         Quaternion rotation = Quaternion.LookRotation(direction);
         transform.rotation = rotation;
         // checks if the enemy is too close to the player and turns it on inactive when it is
-        if(transform.position.z < player.position.z + 3.0f)
+        if (transform.position.z < player.position.z + 3.0f)
         {
             thisGameState = gameState.inactive;
             despawnTimer = 0;
         }
+        else if (thisGameState != gameState.attached && Vector3.Distance(transform.position, player.position) <= maxDistance)
+        {
+            transform.parent = GameObject.FindGameObjectWithTag("MainCamera").transform;
+            thisGameState = gameState.attached;
+        }
         switch (movement)
         {
-            case 1: MoveToPlayer();
+            case 1:
+                MoveToPlayer();
                 break;
-            case 2: ZigZag();
+            case 2:
+                ZigZag();
                 break;
-            default: MoveToPlayer();
+            default:
+                MoveToPlayer();
                 break;
         }
     }
@@ -104,7 +113,12 @@ public class Enemy : MonoBehaviour
 
     private void DespawnEnemy()
     {
-        if (despawnTimer <= 0)
+        if (despawnTimer <= 10 && despawnTimer >= 0)
+        {
+            thisGameState = gameState.inactive;
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y + 150), speed * time);
+        }
+        else if (despawnTimer <= 0)
         {
             Destroy(gameObject);
         }
@@ -123,7 +137,7 @@ public class Enemy : MonoBehaviour
         }
         else if (Vector3.Distance(transform.position, player.position) <= maxDistance)
         {
-            transform.position = Vector3.MoveTowards(transform.position, transform.forward, -player.GetComponent<PlayerController>().Speed * time);
+
         }
     }
 
@@ -132,14 +146,12 @@ public class Enemy : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, player.position) > maxDistance)
         {
-            print("zig front");
             pos += transform.forward * time * -player.GetComponent<PlayerController>().Speed;
             transform.position = pos + axis * Mathf.Sin(Time.time * frequency) * magnitude;
         }
         else if (Vector3.Distance(transform.position, player.position) <= maxDistance)
         {
-            print("zig back");
-            pos += Vector3.MoveTowards(transform.position, transform.forward, player.GetComponent<PlayerController>().Speed * time) * time * -player.GetComponent<PlayerController>().Speed;
+            pos += transform.position * time * 1;
             transform.position = pos + axis * Mathf.Sin(Time.time * frequency) * magnitude;
         }
     }
