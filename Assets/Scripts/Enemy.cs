@@ -20,8 +20,9 @@ public class Enemy : MonoBehaviour
     private float despawnTimer;
     public float maxDistance;
     public float shootingRange;
-    public float shootingSpeed;
+    public float shootingSpeed; // in seconds
     private float shootingTimer;
+    public int accuracy; // the lower the better
     public float movement;
     private float time;
     private gameState thisGameState;
