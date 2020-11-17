@@ -116,7 +116,7 @@ public class Enemy : MonoBehaviour
         if (despawnTimer <= 10 && despawnTimer >= 0)
         {
             thisGameState = gameState.inactive;
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y + 150), speed * time);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y + 150, transform.position.z), speed * time);
         }
         else if (despawnTimer <= 0)
         {
