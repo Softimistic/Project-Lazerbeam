@@ -667,7 +667,7 @@ PrefabInstance:
     - target: {fileID: -3140771110399815386, guid: 0d9e7695e090b7b4b95a76ca691eff25,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6899754836985454753, guid: 0d9e7695e090b7b4b95a76ca691eff25,
         type: 3}
@@ -697,7 +697,7 @@ PrefabInstance:
     - target: {fileID: 6899754836985454753, guid: 0d9e7695e090b7b4b95a76ca691eff25,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6899754836985454754, guid: 0d9e7695e090b7b4b95a76ca691eff25,
         type: 3}
@@ -4256,17 +4256,17 @@ PrefabInstance:
     - target: {fileID: 8889243017987135424, guid: 184b43c0fb69163488de7a65143c8981,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7128439
+      value: 0.62479
       objectReference: {fileID: 0}
     - target: {fileID: 8889243017987135424, guid: 184b43c0fb69163488de7a65143c8981,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 35
+      value: 35.012
       objectReference: {fileID: 0}
     - target: {fileID: 8889243017987135424, guid: 184b43c0fb69163488de7a65143c8981,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -251.29968
+      value: -251.24
       objectReference: {fileID: 0}
     - target: {fileID: 8889243017987135424, guid: 184b43c0fb69163488de7a65143c8981,
         type: 3}
@@ -4308,6 +4308,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8889243017987135424, guid: 184b43c0fb69163488de7a65143c8981,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889243017987135424, guid: 184b43c0fb69163488de7a65143c8981,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889243017987135424, guid: 184b43c0fb69163488de7a65143c8981,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8889243017987135428, guid: 184b43c0fb69163488de7a65143c8981,
         type: 3}
       propertyPath: camera
@@ -4327,6 +4342,11 @@ PrefabInstance:
         type: 3}
       propertyPath: lerpTime
       value: 0.588
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889243017987135428, guid: 184b43c0fb69163488de7a65143c8981,
+        type: 3}
+      propertyPath: lazerAttackPeriod
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8889243017987135429, guid: 184b43c0fb69163488de7a65143c8981,
         type: 3}
