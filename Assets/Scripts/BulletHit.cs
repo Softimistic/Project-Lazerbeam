@@ -16,19 +16,20 @@ public class BulletHit : MonoBehaviour
     /// after being hit by bullets for hitTimes, will trigger some thing
     /// </summary>
     [SerializeField][Range(0,100)] private int hitTimes;
-
-    private MeshRenderer _meshRenderer;
+    //public GameObject ScoreBoard;
+    //private MeshRenderer _meshRenderer;
     private Color _originalColor;
-    
+    private ScoreBoard scoreBoard;
 
     private int _currentHitTimes = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        scoreBoard = FindObjectOfType<ScoreBoard>();
         //init Renderer & originColor
-        _meshRenderer = GetComponent<MeshRenderer>();
-        _originalColor = _meshRenderer.material.color;
+      //  _meshRenderer = GetComponent<MeshRenderer>();
+      //  _originalColor = _meshRenderer.material.color;
     }
 
     // Update is called once per frame
@@ -48,12 +49,14 @@ public class BulletHit : MonoBehaviour
         {
             _currentHitTimes++;
             //do sth here(eg: AUDIO)
-            _meshRenderer.material.color = hitColor;
-            StartCoroutine(RestoreColor(_originalColor));
+        //    _meshRenderer.material.color = hitColor;
+        //    StartCoroutine(RestoreColor(_originalColor));
             //Destory bullets
             Destroy(collision.gameObject);
-            
-            
+
+            scoreBoard.ScoreHit(10);
+
+
         }
     }
 
@@ -64,12 +67,12 @@ public class BulletHit : MonoBehaviour
         Destroy(gameObject);
     }
 
-    IEnumerator RestoreColor(Color originColor)
-    {
-        while (_meshRenderer.material.color != originColor)
-        {
-            _meshRenderer.material.color = Color.Lerp(_meshRenderer.material.color, originColor, Time.deltaTime);
-            yield return 0;
-        }
-    }
+  ///  IEnumerator RestoreColor(Color originColor)
+    //{
+      //  while (_meshRenderer.material.color != originColor)
+        //{
+          //  _meshRenderer.material.color = Color.Lerp(_meshRenderer.material.color, originColor, Time.deltaTime);
+            //yield return 0;
+        //}
+   // }
 }
