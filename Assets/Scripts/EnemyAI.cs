@@ -10,7 +10,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] Color[] finalColors;
     public float targetDistance = 10.0f;
     public float enemySpeed = 0.0f;
-    public GameObject plane; //The object that AI around 
+    public Transform camera; //The object that AI around 
     public float angularSpeed;//sp
     public float aroundRadius;//Radius
     [Tooltip("Angular velocity in degrees per seconds")]
@@ -55,13 +55,12 @@ public class EnemyAI : MonoBehaviour
             colotIndex = (colotIndex >= len) ? 0 : colotIndex;
         }
     }
-
+    
     void LateUpdate()
     {
-        
-
-        if (transform.position.z - plane.transform.position.z <= targetDistance)
+        if (transform.position.z - camera.position.z <= targetDistance)
         {
+            transform.parent = camera;
             Vector3 newPosition = transform.position;
             Vector3 checkedPosition = transform.position;
             if (isClockWise)
@@ -72,25 +71,27 @@ public class EnemyAI : MonoBehaviour
             {
                 angled -= (angularSpeed * Time.deltaTime) % 360;
             }
-     
+            // Vector3 _screenCenter = camera.gameObject.GetComponent<Camera>()
+            //     .ScreenToViewportPoint(camera.position);
+            // transform.RotateAround(camera.position,_screenCenter,50*Time.deltaTime);
             newPosition.x = aroundRadius * Mathf.Sin(angled * Mathf.Deg2Rad);//x position, Als deze hoger word gaat hij naar Rechts, lager = naar links                      
             newPosition.y = aroundRadius * Mathf.Cos(angled * Mathf.Deg2Rad);//y position, Als deze hoger word gaat hij naar Omhoog, lager = omlaag    
-
-
+    
+    
             //check aids 
             //aids = stilstaan
-
+    
             if ((
                (newPosition.y > transform.position.y && detect_array[0]) ||//als omhoog gaat (dus naar 0)
                (newPosition.y < transform.position.y && detect_array[4]) ||//als omglaag gaat && Naar links(dus naar 4)
-
+    
                (newPosition.x > transform.position.x && detect_array[3])||//Naar rechts(dus naar 3)
                (newPosition.x < transform.position.x && detect_array[1])//Naar links(dus naar 1)
            ))
             {
-
+    
               
-
+    
                 //If direct danger -> change direction(once) and just continue
                 if (!detect_array[2] )
                 {
@@ -104,7 +105,7 @@ public class EnemyAI : MonoBehaviour
                     {
                         angled += (angularSpeed * Time.deltaTime) % 360;
                     }
-
+    
                 }
                 //Direct + indirect danger = change direction once and just continue
                 else
@@ -117,23 +118,23 @@ public class EnemyAI : MonoBehaviour
                     checkedPosition = newPosition;
                 }
             }
-
-
+    
+    
             //Geen aids
             else
             {
                 checkedPosition = newPosition;
                 
             }
-            checkedPosition.z = plane.transform.position.z + targetDistance;
+            checkedPosition.z = camera.transform.position.z + targetDistance;
             transform.position = checkedPosition;
         }
         else
         {
             transform.position += transform.forward * enemySpeed * Time.deltaTime;
         }
-
-
+    
+    
        
     }
     public void setDetectArray(int detectPosition, bool isEnter)
