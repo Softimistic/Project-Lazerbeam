@@ -11,6 +11,8 @@ TagManager:
   - EnemyShipDetect1
   - StateMenuUI
   - EnemyBullet
+  - EnemyRocket
+  - Meteorite
   layers:
   - Default
   - TransparentFX

@@ -18,6 +18,8 @@ public class CreateEnemyBullet : MonoBehaviour
 
     public void Shoot(GameObject projectile)
     {
-        Instantiate(projectile, transform.position, transform.rotation);
+        int randomNumber = GetComponentInParent<Enemy>().accuracy;
+        Quaternion randomShootingField = Quaternion.Euler(Random.Range(transform.rotation.eulerAngles.x - randomNumber, transform.rotation.eulerAngles.x + randomNumber), Random.Range(transform.rotation.eulerAngles.y - randomNumber, transform.rotation.eulerAngles.y + randomNumber), Random.Range(transform.rotation.eulerAngles.z - randomNumber, transform.rotation.eulerAngles.z + randomNumber));
+        Instantiate(projectile, transform.position, randomShootingField);
     }
 }

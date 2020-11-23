@@ -14,7 +14,9 @@ public class CollsionHandler : MonoBehaviour
     [Tooltip("FX Prefab")] [SerializeField] GameObject hitFX;
 
 
-    [SerializeField] int healthDecreasePerHit = 50;
+    [SerializeField] int healthDecreaseOnMeteoriteHit = 50;
+    [SerializeField] int healthDecreaseOnEnemyBulletHit = 5;
+    [SerializeField] int healthDecreaseOnEnemyRocketHit = 30;
 
     Health health;
     bool isAlGehit = false;
@@ -38,9 +40,13 @@ public class CollsionHandler : MonoBehaviour
             isAlGehit = true;
             if (Int32.Parse(health.getHealth()) >= 0)
             {
-                health.HealthHit(healthDecreasePerHit);
-                //print(health.getHealth());
                 hitFX.SetActive(true);
+                if (collision.gameObject.CompareTag("ParryObject"))
+                    health.HealthHit(healthDecreaseOnMeteoriteHit);
+                if (collision.gameObject.CompareTag("EnemyBullet"))
+                    health.HealthHit(healthDecreaseOnEnemyBulletHit);
+                if (collision.gameObject.CompareTag("EnemyRocket"))
+                    health.HealthHit(healthDecreaseOnEnemyRocketHit);
             }
             if(Int32.Parse(health.getHealth()) <= 0)
             {
