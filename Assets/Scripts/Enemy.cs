@@ -140,7 +140,7 @@ public class Enemy : MonoBehaviour
     // Moves the enemy straight to the player
     private void MoveToPlayer()
     {
-        if (Vector3.Distance(transform.position, player.position) > maxDistance && thisGameState != gameState.attached)
+        if (thisGameState != gameState.attached)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.position, speed * time);
         }
@@ -153,7 +153,7 @@ public class Enemy : MonoBehaviour
     // Moves the enemy towards the player with a zigzag movement
     private void ZigZag()
     {
-        if (Vector3.Distance(transform.position, player.position) > maxDistance && thisGameState != gameState.attached)
+        if (thisGameState != gameState.attached)
         {
             pos += transform.forward * time * -speed;
             transform.position = pos + transform.right * Mathf.Sin(Time.time * frequency) * magnitude;
@@ -184,7 +184,7 @@ public class Enemy : MonoBehaviour
 
     private void UpDown()
     {
-        if (Vector3.Distance(transform.position, player.position) > maxDistance && thisGameState != gameState.attached)
+        if (thisGameState != gameState.attached)
         {
             pos += transform.forward * time * -speed;
             transform.position = pos + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
