@@ -8,6 +8,7 @@ public class MissleTower : MonoBehaviour
     public Transform[] spawnPoints;
     public GameObject missle;
     int index = 0;
+    int delayMissleTime = 5;
 
     void Start()
     {
@@ -16,8 +17,8 @@ public class MissleTower : MonoBehaviour
 
     void SpawnMissle()
     {
+        
         GameObject newMissle = Instantiate(missle, spawnPoints[index].position, spawnPoints[index].rotation) as GameObject;
-
         if(index < spawnPoints.Length)
         {
             index++;
@@ -26,7 +27,8 @@ public class MissleTower : MonoBehaviour
         {
             index = 0;
         }
-        Invoke("SpawnMissle", 3f);
+        Invoke("SpawnMissle", 5f);
+        
     }
 
     // Update is called once per frame

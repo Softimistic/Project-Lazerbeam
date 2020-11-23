@@ -18,6 +18,7 @@ public class CollsionHandler : MonoBehaviour
 
     Health health;
     bool isAlGehit = false;
+    
 
     private GameObject controller;
     
@@ -33,13 +34,12 @@ public class CollsionHandler : MonoBehaviour
     void OnTriggerEnter(Collider collision)
     {
        // check if it's player's bullet, if it's not then collision happen, ship destroyed 
-        if (!collision.gameObject.CompareTag("bullet") && !isAlGehit)
+        if (!collision.gameObject.CompareTag("bullet") && !isAlGehit && !collision.gameObject.CompareTag("missle"))
         {
             isAlGehit = true;
             if (Int32.Parse(health.getHealth()) >= 0)
             {
                 health.HealthHit(healthDecreasePerHit);
-                //print(health.getHealth());
                 hitFX.SetActive(true);
             }
             if(Int32.Parse(health.getHealth()) <= 0)
@@ -47,6 +47,7 @@ public class CollsionHandler : MonoBehaviour
                 PlayerDies();
             }
         }
+
     }
 
     //When the player dies
