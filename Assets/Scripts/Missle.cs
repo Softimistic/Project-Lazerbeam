@@ -6,7 +6,7 @@ public class Missle : MonoBehaviour
 {
 
     public Transform target;
-    Vector3 direction;
+    public Vector3 direction;
 
     //float speed = 50;
     //float rotationSpeed = 5;
@@ -74,7 +74,7 @@ public class Missle : MonoBehaviour
             }
 
             direction = target.position - transform.position + Random.insideUnitSphere * randomOffset;
-            direction.Normalize();
+            direction = direction.normalized;
             transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(direction), rocketTurnSpeed * Time.deltaTime);
             transform.Translate(Vector3.forward * rocketSpeed * Time.deltaTime);
         }
