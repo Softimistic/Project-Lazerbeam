@@ -2049,7 +2049,7 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 1755194688}
   - {fileID: 268826830}
-  missle: {fileID: 0}
+  missle: {fileID: 3877758134711639661}
 --- !u!4 &612616433 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5702255972365495522, guid: 8becc1c0fe93288429a21d3676179910,
@@ -8379,6 +8379,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1630243539298969455, guid: b37398925e9b86f4e831ce160e2e105d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b37398925e9b86f4e831ce160e2e105d, type: 3}
+--- !u!1 &3877758134711639661 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 724345175001270576, guid: af23b3e9d2875af43b05c0893cb44c77,
+    type: 3}
+  m_PrefabInstance: {fileID: 4602103100866975581}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4602103100866975581
 PrefabInstance:
   m_ObjectHideFlags: 0

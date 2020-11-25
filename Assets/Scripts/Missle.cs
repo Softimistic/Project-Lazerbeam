@@ -58,7 +58,7 @@ public class Missle : MonoBehaviour
         {
             if(timerSinceLaunch_Contor > 1)
             {
-                if((target.position = transform.position).magnitude > 50)
+                if((target.position - transform.position).magnitude > 50)
                 {
                     randomOffset = 100.0f;
                     rocketTurnSpeed = 90.0f;
@@ -79,18 +79,24 @@ public class Missle : MonoBehaviour
             transform.Translate(Vector3.forward * rocketSpeed * Time.deltaTime);
         }
 
-        /*if (timerSinceLaunch_Contor > objectLifeTimerValue)
+        if (timerSinceLaunch_Contor > objectLifeTimerValue)
         {
-            Destroy(transform.gameObject, 1);
-        }*/
+            StartCoroutine(SelfDestruct());
+        }
     }
 
-    /*private void OnCollisionEnter(Collision collision)
+    IEnumerator SelfDestruct()
+    {
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
         }
-    }*/
+    }
 
 }
