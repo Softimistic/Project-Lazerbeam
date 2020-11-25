@@ -5,7 +5,7 @@ using UnityEngine;
 public class Missle : MonoBehaviour
 {
 
-    internal Transform target;
+    public Transform target;
     Vector3 direction;
 
     //float speed = 50;
