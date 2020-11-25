@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Missle : MonoBehaviour
 {
-
+    
     public Transform target;
     public Vector3 direction;
 
@@ -25,31 +25,6 @@ public class Missle : MonoBehaviour
         target = GameObject.Find("Player Ship").transform;
         
     }
-
-    // Update is called once per frame
-    /*void Update()
-    {
-        //Movement of the missle
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
-
-        //Rotation
-        if (target != null)
-        {
-            timerSinceLaunch_Contor += Time.deltaTime;
-
-            direction = target.position - transform.position;
-            direction = direction.normalized;
-            // kijken naar de player
-            var rot = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rot, rotationSpeed * Time.deltaTime);
-        }
-
-        if (timerSinceLaunch_Contor > objectLifeTimerValue)
-        {
-            Destroy(transform.gameObject,1);
-        }
-
-    }*/
 
     void Update()
     {
@@ -87,7 +62,7 @@ public class Missle : MonoBehaviour
 
     IEnumerator SelfDestruct()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         Destroy(gameObject);
     }
 

@@ -9,10 +9,17 @@ public class MissleTower : MonoBehaviour
     public GameObject missle;
     int index = 0;
     int delayMissleTime = 5;
+    bool lockOn = false;
+    public Transform target;
+    bool onetime = false;
+
 
     void Start()
     {
-        Invoke("SpawnMissle", 5f);
+        if (lockOn)
+        {
+            Invoke("SpawnMissle", 2f);
+        }
     }
 
     void SpawnMissle()
@@ -27,13 +34,31 @@ public class MissleTower : MonoBehaviour
         {
             index = 0;
         }
-        Invoke("SpawnMissle", 5f);
+        if (lockOn)
+        {
+            Invoke("SpawnMissle", 2f);
+        }
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Vector3.Distance(transform.position, target.position) < 200)
+        {
+            print("in area");
+            if (!onetime)
+            {
+                lockOn = true;
+                Start();
+                onetime = true;
+            }
+        }
+        else
+        {
+            lockOn = false;
+            onetime = false;
+        }
+      
     }
 }
