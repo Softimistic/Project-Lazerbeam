@@ -96,8 +96,11 @@ public class BossAI : MonoBehaviour
                     int i = lazerBeamNum;
                     while (i != 0)
                     {
-                        eachTurret.GetComponent<CreateBossLazer>().Shoot(lazer, player);
-                        i--;
+                        if (eachTurret.transform.GetChild(0))
+                        {
+                            eachTurret.transform.GetChild(0).GetComponent<CreateBossLazer>().Shoot(lazer, player);
+                            i--;
+                        }
                     }
                 }
             }

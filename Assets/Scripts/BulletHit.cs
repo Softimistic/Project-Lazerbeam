@@ -42,11 +42,11 @@ public class BulletHit : MonoBehaviour
             //if(Input.GetMouseButtonUp(0))
         {
             //do sth here
-            if (gameObject.name == "Boss")
+            if (gameObject.CompareTag("BossComponent"))
             {
-                if (transform.childCount == 0)
+                if (transform.parent.childCount == 3)
                 {
-                    StartCoroutine(SelfDestroy());
+                    Destroy(gameObject.transform.parent.gameObject);
                     if (deathFx)
                     {
                         GameObject nwFx = Instantiate(deathFx, transform.position, Quaternion.identity);
