@@ -52,13 +52,35 @@ public class CollsionHandler : MonoBehaviour
                     health.HealthHit(healthDecreaseOnEnemyRocketHit);
             }
 
+            if (Int32.Parse(health.getHealth()) <= 25)
+            {
+                hitFX.SetActive(true);
+            }
+
             if (Int32.Parse(health.getHealth()) <= 0)
             {
                 PlayerDies();
             }
         }
 
-        
+        if (collision.gameObject.CompareTag("missle") && !isAlGehit)
+        {
+            isAlGehit = true;
+            if (Int32.Parse(health.getHealth()) >= 0)
+            {
+                health.HealthHit(healthDecreasePerHitByMissle);
+
+            }
+            if (Int32.Parse(health.getHealth()) <= 25)
+            {
+                hitFX.SetActive(true);
+            }
+
+            if (Int32.Parse(health.getHealth()) <= 0)
+            {
+                PlayerDies();
+            }
+        }
 
 
     }
