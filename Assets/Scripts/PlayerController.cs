@@ -51,13 +51,6 @@ public class PlayerController : MonoBehaviour
                 {
                     Brake(false);
                 }*/
-
-        // Barrel Roll
-        /*       if (Input.GetButtonDown("TriggerL"))
-               {
-                   int dir = Input.GetButtonDown("TriggerL") ? -1 : 1;
-                   QuickSpin(dir);
-               }*/
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -113,19 +106,13 @@ public class PlayerController : MonoBehaviour
         {
             boostPop.SetActive(true);
             boostTrail.SetActive(true);
-            //boostTrail.Play();
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, boostFOV, 1f * Time.deltaTime);
             cameraSpeed = 75f;
-            //Debug.Log("speed" + cameraSpeed);
-            boostPop.GetComponent<TrailRenderer>().emitting = boosting;
-
         }
         else if(Camera.main.fieldOfView > 60f)
         {
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60f, 1f);
-            //Debug.Log("else" + Camera.main.fieldOfView);
             cameraSpeed = 30f;
-            //Debug.Log("speed else" + cameraSpeed);
             boostPop.SetActive(false);
             boostTrail.SetActive(false);
         }
@@ -137,14 +124,5 @@ public class PlayerController : MonoBehaviour
         //reduce speed
         //reduce FOV
     }*/
-
-    /*   public void QuickSpin(int dir)
-       {
-           if (!DOTween.IsTweening(playerModel))
-           {
-               playerModel.DOLocalRotate(new Vector3(playerModel.localEulerAngles.x, playerModel.localEulerAngles.y, 360 * -dir), .4f, RotateMode.LocalAxisAdd).SetEase(Ease.OutSine);
-               barrel.Play();
-           }
-       }*/
 
 }
