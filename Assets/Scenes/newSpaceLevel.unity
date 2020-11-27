@@ -4153,6 +4153,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 227430070, guid: 184b43c0fb69163488de7a65143c8981, type: 3}
+      propertyPath: deathFx
+      value: 
+      objectReference: {fileID: 1290715649332758, guid: 587eaecaa621be74486f351c78b4f0a8,
+        type: 3}
+    - target: {fileID: 469474090, guid: 184b43c0fb69163488de7a65143c8981, type: 3}
+      propertyPath: deathFx
+      value: 
+      objectReference: {fileID: 1290715649332758, guid: 587eaecaa621be74486f351c78b4f0a8,
+        type: 3}
+    - target: {fileID: 566627132, guid: 184b43c0fb69163488de7a65143c8981, type: 3}
+      propertyPath: deathFx
+      value: 
+      objectReference: {fileID: 1290715649332758, guid: 587eaecaa621be74486f351c78b4f0a8,
+        type: 3}
+    - target: {fileID: 897851514, guid: 184b43c0fb69163488de7a65143c8981, type: 3}
+      propertyPath: deathFx
+      value: 
+      objectReference: {fileID: 1290715649332758, guid: 587eaecaa621be74486f351c78b4f0a8,
+        type: 3}
+    - target: {fileID: 974253597, guid: 184b43c0fb69163488de7a65143c8981, type: 3}
+      propertyPath: deathFx
+      value: 
+      objectReference: {fileID: 191186, guid: 079954accd64b32419ec069129c81273, type: 3}
+    - target: {fileID: 974253597, guid: 184b43c0fb69163488de7a65143c8981, type: 3}
+      propertyPath: hitTimes
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8889243017987135424, guid: 184b43c0fb69163488de7a65143c8981,
         type: 3}
       propertyPath: m_LocalPosition.x
