@@ -114,29 +114,31 @@ public class BossAI : MonoBehaviour
 
     private void CircleMovement()
     {
-        switch (_bossStage)
-        {
-            case BossStage.Stage1:
-                if (turrets[0] == null)
-                {
-                    Debug.Log("stage 1 finish!");
-                    _bossStage = BossStage.Stage2;
-                }
-                else
-                {
-                    //make Boss face at Player
-                    FaceAtPlayer();
-                    LazerUlt();
-                }
-                break;
-            case BossStage.Stage2:
-                Debug.Log("enter stage 2");
-                FaceAtPlayer();
-                
-                break;
-            default:
-                break;
-        }
+        FaceAtPlayer();
+        LazerUlt();
+        // switch (_bossStage)
+        // {
+        //     case BossStage.Stage1:
+        //         if (turrets[0] == null)
+        //         {
+        //             Debug.Log("stage 1 finish!");
+        //             _bossStage = BossStage.Stage2;
+        //         }
+        //         else
+        //         {
+        //             //make Boss face at Player
+        //             FaceAtPlayer();
+        //             LazerUlt();
+        //         }
+        //         break;
+        //     case BossStage.Stage2:
+        //         Debug.Log("enter stage 2");
+        //         FaceAtPlayer();
+        //         
+        //         break;
+        //     default:
+        //         break;
+        // }
         // keep going circle movement
         transform.RotateAround(camera.position, circut.MoveDir(), degPerSec * Time.deltaTime);
     }

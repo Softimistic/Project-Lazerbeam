@@ -1319,6 +1319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4691d92278ffeb042bb9a07f58abbbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathFx: {fileID: 191186, guid: 079954accd64b32419ec069129c81273, type: 3}
   hitColor: {r: 1, g: 0, b: 0, a: 0}
   hitTimes: 1
 --- !u!1001 &233249201
@@ -1720,6 +1721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4691d92278ffeb042bb9a07f58abbbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathFx: {fileID: 191186, guid: 079954accd64b32419ec069129c81273, type: 3}
   hitColor: {r: 1, g: 0, b: 0, a: 0}
   hitTimes: 1
 --- !u!1001 &496949015
@@ -2026,6 +2028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4691d92278ffeb042bb9a07f58abbbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathFx: {fileID: 191186, guid: 079954accd64b32419ec069129c81273, type: 3}
   hitColor: {r: 1, g: 0, b: 0, a: 0}
   hitTimes: 1
 --- !u!1 &570538970
@@ -3321,6 +3324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4691d92278ffeb042bb9a07f58abbbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathFx: {fileID: 191186, guid: 079954accd64b32419ec069129c81273, type: 3}
   hitColor: {r: 1, g: 0, b: 0, a: 0}
   hitTimes: 1
 --- !u!1001 &916660896
@@ -3761,8 +3765,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4691d92278ffeb042bb9a07f58abbbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathFx: {fileID: 1290715649332758, guid: 587eaecaa621be74486f351c78b4f0a8, type: 3}
   hitColor: {r: 0, g: 0, b: 0, a: 0}
-  hitTimes: 100
+  hitTimes: 20
 --- !u!4 &985878862 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6459059237533814062, guid: cc34d960d05fc8e4095b54312d7355c6,
@@ -4253,6 +4258,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1206255512353102578, guid: 184b43c0fb69163488de7a65143c8981,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390982226847921033, guid: 184b43c0fb69163488de7a65143c8981,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681087673977770868, guid: 184b43c0fb69163488de7a65143c8981,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315495542854533919, guid: 184b43c0fb69163488de7a65143c8981,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2381319474654986478, guid: 184b43c0fb69163488de7a65143c8981,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959641647574661992, guid: 184b43c0fb69163488de7a65143c8981,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159348826411850359, guid: 184b43c0fb69163488de7a65143c8981,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088134363691378365, guid: 184b43c0fb69163488de7a65143c8981,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8889243017987135424, guid: 184b43c0fb69163488de7a65143c8981,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4327,6 +4372,16 @@ PrefabInstance:
         type: 3}
       propertyPath: lerpTime
       value: 0.588
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889243017987135428, guid: 184b43c0fb69163488de7a65143c8981,
+        type: 3}
+      propertyPath: targetDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889243017987135428, guid: 184b43c0fb69163488de7a65143c8981,
+        type: 3}
+      propertyPath: lazerBeamNum
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8889243017987135429, guid: 184b43c0fb69163488de7a65143c8981,
         type: 3}

@@ -8,18 +8,21 @@ using UnityEngine.Serialization;
 
 public class BulletHit : MonoBehaviour
 {
+    [SerializeField] private GameObject deathFx;
+
     /// <summary>
     /// the color while the object is hit by bullets
     /// </summary>
     [SerializeField] private Color hitColor;
+
     /// <summary>
     /// after being hit by bullets for hitTimes, will trigger some thing
     /// </summary>
-    [SerializeField][Range(0,100)] private int hitTimes;
+    [SerializeField] [Range(0, 100)] private int hitTimes;
 
     private MeshRenderer _meshRenderer;
     private Color _originalColor;
-    
+
 
     private int _currentHitTimes = 0;
 
@@ -32,13 +35,34 @@ public class BulletHit : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         //trigger
         if (_currentHitTimes >= hitTimes && hitTimes != 0)
+            //if(Input.GetMouseButtonUp(0))
         {
             //do sth here
-            StartCoroutine(SelfDestroy());
+            if (gameObject.name == "Boss")
+            {
+                if (transform.childCount == 0)
+                {
+                    StartCoroutine(SelfDestroy());
+                    if (deathFx)
+                    {
+                        GameObject nwFx = Instantiate(deathFx, transform.position, Quaternion.identity);
+                        FxSelfDestroy(nwFx);
+                    }
+                }
+            }
+            else
+            {
+                StartCoroutine(SelfDestroy());
+                if (deathFx)
+                {
+                    GameObject nwFx = Instantiate(deathFx, transform.position, Quaternion.identity);
+                    FxSelfDestroy(nwFx);
+                }
+            }
         }
     }
 
@@ -52,8 +76,6 @@ public class BulletHit : MonoBehaviour
             StartCoroutine(RestoreColor(_originalColor));
             //Destory bullets
             Destroy(collision.gameObject);
-            
-            
         }
     }
 
@@ -62,6 +84,15 @@ public class BulletHit : MonoBehaviour
         yield return new WaitForEndOfFrame();
         //do sth here(eg: explode effect/animation)
         Destroy(gameObject);
+    }
+
+    private void FxSelfDestroy(GameObject nwFx)
+    {
+        ParticleSystem parts = nwFx.GetComponent<ParticleSystem>();
+        //get the play time
+        float totalDuration = parts.duration + parts.startLifetime;
+        // delete 
+        Destroy(nwFx, totalDuration);
     }
 
     IEnumerator RestoreColor(Color originColor)
