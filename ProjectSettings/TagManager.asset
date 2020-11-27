@@ -13,6 +13,7 @@ TagManager:
   - EnemyBullet
   - EnemyRocket
   - Meteorite
+  - missle
   layers:
   - Default
   - TransparentFX
