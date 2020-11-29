@@ -14,10 +14,15 @@ public class CollsionHandler : MonoBehaviour
     [Tooltip("FX Prefab")] [SerializeField] GameObject hitFX;
 
 
-    [SerializeField] int healthDecreasePerHit = 50;
+    [SerializeField] int healthDecreaseOnMeteoriteHit = 50;
+    [SerializeField] int healthDecreaseOnEnemyBulletHit = 5;
+    [SerializeField] int healthDecreaseOnEnemyRocketHit = 30;
+    [SerializeField] int healthDecreasePerHit = 5;
+    [SerializeField] int healthDecreasePerHitByMissle = 25;
 
     Health health;
     bool isAlGehit = false;
+    
 
     private GameObject controller;
     
@@ -33,20 +38,51 @@ public class CollsionHandler : MonoBehaviour
     void OnTriggerEnter(Collider collision)
     {
        // check if it's player's bullet, if it's not then collision happen, ship destroyed 
-        if (!collision.gameObject.CompareTag("bullet") && !isAlGehit)
+        if (!collision.gameObject.CompareTag("bullet") && !isAlGehit && collision.gameObject.CompareTag("Terrain"))
         {
             isAlGehit = true;
             if (Int32.Parse(health.getHealth()) >= 0)
             {
-                health.HealthHit(healthDecreasePerHit);
-                //print(health.getHealth());
+                hitFX.SetActive(true);
+                if (collision.gameObject.CompareTag("ParryObject"))
+                    health.HealthHit(healthDecreaseOnMeteoriteHit);
+                if (collision.gameObject.CompareTag("EnemyBullet"))
+                    health.HealthHit(healthDecreaseOnEnemyBulletHit);
+                if (collision.gameObject.CompareTag("EnemyRocket"))
+                    health.HealthHit(healthDecreaseOnEnemyRocketHit);
+            }
+
+            if (Int32.Parse(health.getHealth()) <= 25)
+            {
                 hitFX.SetActive(true);
             }
-            if(Int32.Parse(health.getHealth()) <= 0)
+
+            if (Int32.Parse(health.getHealth()) <= 0)
             {
                 PlayerDies();
             }
         }
+
+        if (collision.gameObject.CompareTag("missle") && !isAlGehit)
+        {
+            isAlGehit = true;
+            if (Int32.Parse(health.getHealth()) >= 0)
+            {
+                health.HealthHit(healthDecreasePerHitByMissle);
+
+            }
+            if (Int32.Parse(health.getHealth()) <= 25)
+            {
+                hitFX.SetActive(true);
+            }
+
+            if (Int32.Parse(health.getHealth()) <= 0)
+            {
+                PlayerDies();
+            }
+        }
+
+
     }
 
     //When the player dies

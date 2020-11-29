@@ -40,6 +40,8 @@ public class BetterWaypointFollower : MonoBehaviour {
     private float currentSpeed;
     private int lastWaypoint;
 
+    private Vector3 _dir;
+
     // Pull Waypoint data from circuit to set up our varying speed variables.
     public void InitializeSpeeds() {
         if(waypointSpeedFactors == null || waypointSpeedFactors.Length != circuit.Waypoints.Length) {
@@ -120,6 +122,13 @@ public class BetterWaypointFollower : MonoBehaviour {
         nextDelta *= currentSpeed; // Scale it back up to exactly our specified speed.
         transform.position += nextDelta * Time.deltaTime;
         transform.LookAt(circuit.GetRoutePoint(progressDistance + lookAheadDistance).position);
+        _dir = circuit.GetRoutePoint(progressDistance + lookAheadDistance).direction;
+        Debug.DrawRay(transform.position,_dir,Color.red);
+    }
+
+    public Vector3 MoveDir()
+    {
+        return _dir;
     }
 
     private void OnDrawGizmos() {

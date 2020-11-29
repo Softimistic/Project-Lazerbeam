@@ -10,7 +10,8 @@ public class Enemy : MonoBehaviour
     public enum gameState
     {
         active,
-        inactive
+        inactive,
+        attached
     }
 
     public float spawningRange;
@@ -19,13 +20,18 @@ public class Enemy : MonoBehaviour
     private float despawnTimer;
     public float maxDistance;
     public float shootingRange;
-    public float shootingSpeed;
+    public float shootingSpeed; // in seconds
     private float shootingTimer;
+    public int accuracy; // the lower the better
     public float movement;
     private float time;
     private gameState thisGameState;
     public float frequency;
     public float magnitude;
+    private float right;
+    private bool moveRight;
+    private float up;
+    private bool moveUp;
     private Vector3 axis;
     private Vector3 pos;
 
@@ -40,7 +46,8 @@ public class Enemy : MonoBehaviour
         shootingTimer = shootingSpeed;
         despawnTimer = despawnTime;
         pos = transform.position;
-        axis = transform.right;
+        right = 0;
+        up = 0;
 
         gun = transform.Find("EnemyGun").GetComponent<CreateEnemyBullet>();
     }
@@ -50,16 +57,16 @@ public class Enemy : MonoBehaviour
         // Checks if the enemy is active. If the enemy is not active the timer will still continue but the enemy won't do anything
         time = Time.deltaTime;
         DespawnEnemy();
-        if(thisGameState == gameState.active)
+        if (thisGameState == gameState.active || thisGameState == gameState.attached)
         {
-        Movement();
-        Shooting();
+            Movement();
+            Shooting();
         }
     }
 
     private void CheckPlayerInRange()
     {
-        if(Vector3.Distance(transform.position, player.position) <= spawningRange)
+        if (Vector3.Distance(transform.position, player.position) <= spawningRange)
         {
             gameObject.SetActive(true);
             thisGameState = gameState.active;
@@ -72,18 +79,29 @@ public class Enemy : MonoBehaviour
         Quaternion rotation = Quaternion.LookRotation(direction);
         transform.rotation = rotation;
         // checks if the enemy is too close to the player and turns it on inactive when it is
-        if(transform.position.z < player.position.z + 3.0f)
+        if (transform.position.z < player.position.z + 3.0f)
         {
             thisGameState = gameState.inactive;
             despawnTimer = 0;
         }
+        else if (thisGameState != gameState.attached && Vector3.Distance(transform.position, player.position) <= maxDistance)
+        {
+            transform.parent = GameObject.FindGameObjectWithTag("MainCamera").transform;
+            thisGameState = gameState.attached;
+        }
         switch (movement)
         {
-            case 1: MoveToPlayer();
+            case 1:
+                MoveToPlayer();
                 break;
-            case 2: ZigZag();
+            case 2:
+                ZigZag();
                 break;
-            default: MoveToPlayer();
+            case 3:
+                UpDown();
+                break;
+            default:
+                MoveToPlayer();
                 break;
         }
     }
@@ -104,7 +122,12 @@ public class Enemy : MonoBehaviour
 
     private void DespawnEnemy()
     {
-        if (despawnTimer <= 0)
+        if (despawnTimer <= 10 && despawnTimer >= 0)
+        {
+            thisGameState = gameState.inactive;
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y + 150, transform.position.z), speed * time);
+        }
+        else if (despawnTimer <= 0)
         {
             Destroy(gameObject);
         }
@@ -117,30 +140,76 @@ public class Enemy : MonoBehaviour
     // Moves the enemy straight to the player
     private void MoveToPlayer()
     {
-        if (Vector3.Distance(transform.position, player.position) > maxDistance)
+        if (thisGameState != gameState.attached)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.position, speed * time);
         }
-        else if (Vector3.Distance(transform.position, player.position) <= maxDistance)
+        else if (thisGameState == gameState.attached)
         {
-            transform.position = Vector3.MoveTowards(transform.position, transform.forward, -player.GetComponent<PlayerController>().Speed * time);
+
         }
     }
 
     // Moves the enemy towards the player with a zigzag movement
     private void ZigZag()
     {
-        if (Vector3.Distance(transform.position, player.position) > maxDistance)
+        if (thisGameState != gameState.attached)
         {
-            print("zig front");
-            pos += transform.forward * time * -player.GetComponent<PlayerController>().Speed;
-            transform.position = pos + axis * Mathf.Sin(Time.time * frequency) * magnitude;
+            pos += transform.forward * time * -speed;
+            transform.position = pos + transform.right * Mathf.Sin(Time.time * frequency) * magnitude;
         }
-        else if (Vector3.Distance(transform.position, player.position) <= maxDistance)
+        else if (thisGameState == gameState.attached)
         {
-            print("zig back");
-            pos += Vector3.MoveTowards(transform.position, transform.forward, player.GetComponent<PlayerController>().Speed * time) * time * -player.GetComponent<PlayerController>().Speed;
-            transform.position = pos + axis * Mathf.Sin(Time.time * frequency) * magnitude;
+            pos = transform.position;
+            if (right <= 0)
+            {
+                moveRight = false;
+            }
+            else if (right >= magnitude * frequency)
+            {
+                moveRight = true;
+            }
+            if (moveRight)
+            {
+                transform.position = pos + transform.right * -speed * time;
+                right += -speed * time;
+            }
+            else if (!moveRight)
+            {
+                transform.position = pos + transform.right * speed * time;
+                right += speed * time;
+            }
+        }
+    }
+
+    private void UpDown()
+    {
+        if (thisGameState != gameState.attached)
+        {
+            pos += transform.forward * time * -speed;
+            transform.position = pos + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
+        }
+        else if (thisGameState == gameState.attached)
+        {
+            pos = transform.position;
+            if (up <= 0)
+            {
+                moveUp = false;
+            }
+            else if (up >= magnitude * frequency)
+            {
+                moveUp = true;
+            }
+            if (moveUp)
+            {
+                transform.position = pos + transform.up * -speed * time;
+                up += -speed * time;
+            }
+            else if (!moveUp)
+            {
+                transform.position = pos + transform.up * speed * time;
+                up += speed * time;
+            }
         }
     }
 }

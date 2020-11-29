@@ -9,6 +9,11 @@ TagManager:
   - EnemyShips
   - ParryObject
   - EnemyShipDetect1
+  - StateMenuUI
+  - EnemyBullet
+  - EnemyRocket
+  - Meteorite
+  - missle
   layers:
   - Default
   - TransparentFX
