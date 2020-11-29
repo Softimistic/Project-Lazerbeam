@@ -13,6 +13,7 @@ TagManager:
   - EnemyBullet
   - EnemyRocket
   - Meteorite
+  - BossComponent
   - missle
   layers:
   - Default

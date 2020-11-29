@@ -8,19 +8,21 @@ using UnityEngine.Serialization;
 
 public class BulletHit : MonoBehaviour
 {
+    [SerializeField] private GameObject deathFx;
+
     /// <summary>
     /// the color while the object is hit by bullets
     /// </summary>
     [SerializeField] private Color hitColor;
+
     /// <summary>
     /// after being hit by bullets for hitTimes, will trigger some thing
     /// </summary>
-    [SerializeField][Range(0,100)] private int hitTimes;
-    //public GameObject ScoreBoard;
-    //private MeshRenderer _meshRenderer;
+    [SerializeField] [Range(0, 100)] private int hitTimes;
+
+    private MeshRenderer _meshRenderer;
     private Color _originalColor;
     private ScoreBoard scoreBoard;
-
     private int _currentHitTimes = 0;
 
     // Start is called before the first frame update
@@ -33,13 +35,34 @@ public class BulletHit : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         //trigger
         if (_currentHitTimes >= hitTimes && hitTimes != 0)
+            //if(Input.GetMouseButtonUp(0))
         {
             //do sth here
-            StartCoroutine(SelfDestroy());
+            if (gameObject.CompareTag("BossComponent"))
+            {
+                if (transform.parent.childCount == 3)
+                {
+                    Destroy(gameObject.transform.parent.gameObject);
+                    if (deathFx)
+                    {
+                        GameObject nwFx = Instantiate(deathFx, transform.position, Quaternion.identity);
+                        FxSelfDestroy(nwFx);
+                    }
+                }
+            }
+            else
+            {
+                StartCoroutine(SelfDestroy());
+                if (deathFx)
+                {
+                    GameObject nwFx = Instantiate(deathFx, transform.position, Quaternion.identity);
+                    FxSelfDestroy(nwFx);
+                }
+            }
         }
     }
 
@@ -53,10 +76,7 @@ public class BulletHit : MonoBehaviour
         //    StartCoroutine(RestoreColor(_originalColor));
             //Destory bullets
             Destroy(collision.gameObject);
-
             scoreBoard.ScoreHit(10);
-
-
         }
     }
 
@@ -67,12 +87,22 @@ public class BulletHit : MonoBehaviour
         Destroy(gameObject);
     }
 
-  ///  IEnumerator RestoreColor(Color originColor)
-    //{
-      //  while (_meshRenderer.material.color != originColor)
-        //{
-          //  _meshRenderer.material.color = Color.Lerp(_meshRenderer.material.color, originColor, Time.deltaTime);
-            //yield return 0;
-        //}
-   // }
+
+    private void FxSelfDestroy(GameObject nwFx)
+    {
+        ParticleSystem parts = nwFx.GetComponent<ParticleSystem>();
+        //get the play time
+        float totalDuration = parts.duration + parts.startLifetime;
+        // delete 
+        Destroy(nwFx, totalDuration);
+    }
+
+    IEnumerator RestoreColor(Color originColor)
+    {
+        while (_meshRenderer.material.color != originColor)
+        {
+            _meshRenderer.material.color = Color.Lerp(_meshRenderer.material.color, originColor, Time.deltaTime);
+            yield return 0;
+        }
+    }
 }
