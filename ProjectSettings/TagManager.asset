@@ -14,6 +14,7 @@ TagManager:
   - EnemyRocket
   - Meteorite
   - BossComponent
+  - missle
   layers:
   - Default
   - TransparentFX

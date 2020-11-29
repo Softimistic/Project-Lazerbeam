@@ -22,6 +22,7 @@ public class BulletHit : MonoBehaviour
 
     private MeshRenderer _meshRenderer;
     private Color _originalColor;
+    private ScoreBoard scoreBoard;
 
 
     private int _currentHitTimes = 0;
@@ -72,10 +73,11 @@ public class BulletHit : MonoBehaviour
         {
             _currentHitTimes++;
             //do sth here(eg: AUDIO)
-            _meshRenderer.material.color = hitColor;
-            StartCoroutine(RestoreColor(_originalColor));
+            // _meshRenderer.material.color = hitColor;
+            // StartCoroutine(RestoreColor(_originalColor));
             //Destory bullets
             Destroy(collision.gameObject);
+            scoreBoard.ScoreHit(10);
         }
     }
 
@@ -95,12 +97,12 @@ public class BulletHit : MonoBehaviour
         Destroy(nwFx, totalDuration);
     }
 
-    IEnumerator RestoreColor(Color originColor)
-    {
-        while (_meshRenderer.material.color != originColor)
-        {
-            _meshRenderer.material.color = Color.Lerp(_meshRenderer.material.color, originColor, Time.deltaTime);
-            yield return 0;
-        }
-    }
+    // IEnumerator RestoreColor(Color originColor)
+    // {
+    //     while (_meshRenderer.material.color != originColor)
+    //     {
+    //         _meshRenderer.material.color = Color.Lerp(_meshRenderer.material.color, originColor, Time.deltaTime);
+    //         yield return 0;
+    //     }
+    // }
 }
