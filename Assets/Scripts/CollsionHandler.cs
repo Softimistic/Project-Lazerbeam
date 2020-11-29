@@ -40,6 +40,7 @@ public class CollsionHandler : MonoBehaviour
        // check if it's player's bullet, if it's not then collision happen, ship destroyed 
         if (!collision.gameObject.CompareTag("bullet") && !isAlGehit && collision.gameObject.CompareTag("Terrain"))
         {
+           
             isAlGehit = true;
             if (Int32.Parse(health.getHealth()) >= 0)
             {
@@ -82,7 +83,11 @@ public class CollsionHandler : MonoBehaviour
             }
         }
 
-
+        if (collision.gameObject.CompareTag("EnemyBullet"))
+        {
+            Debug.Log(collision.name + " ");
+            health.HealthHit(healthDecreaseOnEnemyBulletHit);
+        }
     }
 
     //When the player dies
