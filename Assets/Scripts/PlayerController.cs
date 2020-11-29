@@ -26,18 +26,19 @@ public class PlayerController : MonoBehaviour
 
     float xThrow, yThrow;
     bool isControlEnabled = true;
+    private bool _boosting;
 
     void Update()
     {
         // Boost
         if (Input.GetButton("Fire3"))
         {
-            Boost(true);
+            _boosting = true; ;
         }
 
         if (Input.GetButtonUp("Fire3"))
         {
-            Boost(false);
+            _boosting = false;
         }
 
         // Brake
@@ -58,6 +59,7 @@ public class PlayerController : MonoBehaviour
         {
             ProcessTranslation();
             ProcessRotation();
+            Boost();
         }
     }
 
@@ -98,9 +100,9 @@ public class PlayerController : MonoBehaviour
         transform.localPosition = new Vector3(clampedXPos, clampedYPos, transform.localPosition.z);
     }
 
-    void Boost(bool boosting)
+    void Boost()
     {
-        if (boosting)
+        if (_boosting)
         {
             boostPop.SetActive(true);
             boostTrail.SetActive(true);
@@ -110,7 +112,7 @@ public class PlayerController : MonoBehaviour
         }
         else if(Camera.main.fieldOfView > 60f)
         {
-            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60f, 1f);
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60f, 1f * Time.deltaTime);
             transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 30f;
             boostPop.SetActive(false);
             boostTrail.SetActive(false);
