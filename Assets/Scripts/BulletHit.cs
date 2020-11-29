@@ -97,12 +97,12 @@ public class BulletHit : MonoBehaviour
         Destroy(nwFx, totalDuration);
     }
 
-    // IEnumerator RestoreColor(Color originColor)
-    // {
-    //     while (_meshRenderer.material.color != originColor)
-    //     {
-    //         _meshRenderer.material.color = Color.Lerp(_meshRenderer.material.color, originColor, Time.deltaTime);
-    //         yield return 0;
-    //     }
-    // }
+    IEnumerator RestoreColor(Color originColor)
+    {
+        while (_meshRenderer.material.color != originColor)
+        {
+            _meshRenderer.material.color = Color.Lerp(_meshRenderer.material.color, originColor, Time.deltaTime);
+            yield return 0;
+        }
+    }
 }
