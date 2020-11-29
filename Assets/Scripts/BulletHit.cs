@@ -30,8 +30,8 @@ public class BulletHit : MonoBehaviour
     {
         scoreBoard = FindObjectOfType<ScoreBoard>();
         //init Renderer & originColor
-      //  _meshRenderer = GetComponent<MeshRenderer>();
-      //  _originalColor = _meshRenderer.material.color;
+      _meshRenderer = GetComponent<MeshRenderer>();
+      _originalColor = _meshRenderer.material.color;
     }
 
     // Update is called once per frame
@@ -72,8 +72,8 @@ public class BulletHit : MonoBehaviour
         {
             _currentHitTimes++;
             //do sth here(eg: AUDIO)
-        //    _meshRenderer.material.color = hitColor;
-        //    StartCoroutine(RestoreColor(_originalColor));
+            _meshRenderer.material.color = hitColor;
+            StartCoroutine(RestoreColor(_originalColor));
             //Destory bullets
             Destroy(collision.gameObject);
             scoreBoard.ScoreHit(10);
