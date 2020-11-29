@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     [Header("Henk's abilities")]
     [Tooltip("FOV when braking")] public float brakeFOV = 50f;
     [Tooltip("FOV when boosting")] public float boostFOV = 90f;
-
     [Header("Effects")]
     public GameObject boostTrail;
     public GameObject boostPop;
@@ -42,15 +41,15 @@ public class PlayerController : MonoBehaviour
         }
 
         // Brake
-        /*        if (Input.GetButtonDown("Fire1"))
-                {
-                    Brake(true);
-                }
+        if (Input.GetButton("Fire1"))
+        {
+            Brake(true);
+        }
 
-                if (Input.GetButtonUp("Fire1"))
-                {
-                    Brake(false);
-                }*/
+        if (Input.GetButtonUp("Fire1"))
+        {
+            Brake(false);
+        }
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -101,28 +100,38 @@ public class PlayerController : MonoBehaviour
 
     void Boost(bool boosting)
     {
-        float cameraSpeed = this.transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed;
         if (boosting)
         {
             boostPop.SetActive(true);
             boostTrail.SetActive(true);
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, boostFOV, 1f * Time.deltaTime);
-            cameraSpeed = 75f;
+            transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 75f;
+
         }
         else if(Camera.main.fieldOfView > 60f)
         {
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60f, 1f);
-            cameraSpeed = 30f;
+            transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 30f;
             boostPop.SetActive(false);
             boostTrail.SetActive(false);
         }
     }
-  
-/*
+
     void Brake(bool braking)
     {
-        //reduce speed
-        //reduce FOV
-    }*/
-
+        if (braking)
+        {
+            //boostPop.SetActive(true);
+            //boostTrail.SetActive(true);
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, brakeFOV, 1f * Time.deltaTime);
+            transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 10f; 
+        }
+        else if (Camera.main.fieldOfView < 60f)
+        {
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60f, 1f);
+            transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 30f;
+            //boostPop.SetActive(false);
+            //boostTrail.SetActive(false);
+        }
+    }
 }
