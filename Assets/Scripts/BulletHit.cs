@@ -28,9 +28,10 @@ public class BulletHit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scoreBoard = FindObjectOfType<ScoreBoard>();
         //init Renderer & originColor
-        _meshRenderer = GetComponent<MeshRenderer>();
-        _originalColor = _meshRenderer.material.color;
+      //  _meshRenderer = GetComponent<MeshRenderer>();
+      //  _originalColor = _meshRenderer.material.color;
     }
 
     // Update is called once per frame
@@ -71,8 +72,8 @@ public class BulletHit : MonoBehaviour
         {
             _currentHitTimes++;
             //do sth here(eg: AUDIO)
-            _meshRenderer.material.color = hitColor;
-            StartCoroutine(RestoreColor(_originalColor));
+        //    _meshRenderer.material.color = hitColor;
+        //    StartCoroutine(RestoreColor(_originalColor));
             //Destory bullets
             Destroy(collision.gameObject);
             scoreBoard.ScoreHit(10);
@@ -85,6 +86,7 @@ public class BulletHit : MonoBehaviour
         //do sth here(eg: explode effect/animation)
         Destroy(gameObject);
     }
+
 
     private void FxSelfDestroy(GameObject nwFx)
     {

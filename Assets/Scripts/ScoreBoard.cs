@@ -20,7 +20,11 @@ public class ScoreBoard : MonoBehaviour
         scoreText = GetComponent<Text>();
         // Converting the text from int to string
         scoreText.text = score.ToString();
-
+        
+    }
+    void Update()
+    {
+        scoreText.text = score.ToString();
     }
 
     /// <summary>
@@ -28,6 +32,7 @@ public class ScoreBoard : MonoBehaviour
     /// </summary>
     public void ScoreHit(int scoreIncrease)
     {
+        UnityEngine.Debug.Log("Scorehit function called");
         score = score + scoreIncrease;
         scoreText.text = score.ToString();
 
