@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 074a36f82061a9d41b8dfdcdec780c18
+guid: 5a84142a3f1da1442803984e6cdc84e3
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
@@ -65,7 +65,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 32
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
