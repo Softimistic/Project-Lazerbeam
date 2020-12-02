@@ -19,14 +19,16 @@ public class PlayerController : MonoBehaviour
    
     [Header("Henk's abilities")]
     [Tooltip("FOV when braking")] public float brakeFOV = 50f;
+    private bool _braking;
     [Tooltip("FOV when boosting")] public float boostFOV = 90f;
+    private bool _boosting;
     [Header("Effects")]
     public GameObject boostTrail;
     public GameObject boostPop;
 
     float xThrow, yThrow;
     bool isControlEnabled = true;
-    private bool _boosting;
+    
 
     void Update()
     {
@@ -44,12 +46,12 @@ public class PlayerController : MonoBehaviour
         // Brake
         if (Input.GetButton("Fire1"))
         {
-            Brake(true);
+            _braking = true;
         }
 
         if (Input.GetButtonUp("Fire1"))
         {
-            Brake(false);
+            _braking = false;
         }
     }
     // Update is called once per frame
@@ -60,6 +62,7 @@ public class PlayerController : MonoBehaviour
             ProcessTranslation();
             ProcessRotation();
             Boost();
+            Brake();
         }
     }
 
@@ -119,21 +122,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Brake(bool braking)
+    void Brake()
     {
-        if (braking)
+        if (_braking)
         {
-            //boostPop.SetActive(true);
-            //boostTrail.SetActive(true);
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, brakeFOV, 1f * Time.deltaTime);
             transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 10f; 
         }
         else if (Camera.main.fieldOfView < 60f)
         {
-            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60f, 1f);
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60f, 1f * Time.deltaTime);
             transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 30f;
-            //boostPop.SetActive(false);
-            //boostTrail.SetActive(false);
         }
     }
 }

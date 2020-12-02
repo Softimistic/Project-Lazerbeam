@@ -7515,6 +7515,41 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 8939432808399573575, guid: 1121b8b4d83cc8f49b14db24e24b741d,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939432808399573575, guid: 1121b8b4d83cc8f49b14db24e24b741d,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939432808399573575, guid: 1121b8b4d83cc8f49b14db24e24b741d,
+        type: 3}
+      propertyPath: autoRandomSeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939432808399573575, guid: 1121b8b4d83cc8f49b14db24e24b741d,
+        type: 3}
+      propertyPath: randomSeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939432808399573575, guid: 1121b8b4d83cc8f49b14db24e24b741d,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939432808399573575, guid: 1121b8b4d83cc8f49b14db24e24b741d,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939432808399573575, guid: 1121b8b4d83cc8f49b14db24e24b741d,
+        type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1121b8b4d83cc8f49b14db24e24b741d, type: 3}
 --- !u!1001 &1960372382
