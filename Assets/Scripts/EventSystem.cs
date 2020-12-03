@@ -1,35 +1,42 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Collections;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
 
-public class EventSystem : MonoBehaviour //Joke of a class I know, we can expand on it later
+#endif
+
+namespace UnityStandardAssets.Utility
 {
-    private Messager _messager;
-    private int _counter;
-
-    private string[] currentPortrait_Message = { "", "" };
-
-    void Start()
+    public class EventSystem : MonoBehaviour //Joke of a class I know, we can expand on it later
     {
-        _messager = GameObject.Find("Message").GetComponent<Messager>();
-        _counter = 0;
-    }
+        private Messager _messager;
+        private int _counter;
 
-    void FixedUpdate()
-    {
-        if (Input.GetKeyDown("x"))
+        private string[] currentPortrait_Message = { "", "" };
+
+        void Start()
         {
-            _messager.StopMessage(currentPortrait_Message[0], currentPortrait_Message[1]);
+            _messager = GameObject.Find("Message").GetComponent<Messager>();
+            _counter = 0;
         }
 
-
-        _counter++;
-        if (_counter == 100)
+        void FixedUpdate()
         {
-            _messager.StopMessage(currentPortrait_Message[0], currentPortrait_Message[1]);
-            currentPortrait_Message[0] = "Joe Portrait";
-            currentPortrait_Message[1] = "Joe Biden Speech";
-            _messager.PlayMessage(currentPortrait_Message[0], currentPortrait_Message[1]);
+            if (Input.GetKeyDown("x"))
+            {
+                _messager.StopMessage(currentPortrait_Message[0], currentPortrait_Message[1]);
+            }
+
+
+            _counter++;
+            if (_counter == 100)
+            {
+                _messager.StopMessage(currentPortrait_Message[0], currentPortrait_Message[1]);
+                currentPortrait_Message[0] = "Joe Portrait";
+                currentPortrait_Message[1] = "Joe Biden Speech";
+                _messager.PlayMessage(currentPortrait_Message[0], currentPortrait_Message[1]);
+            }
         }
     }
 }
