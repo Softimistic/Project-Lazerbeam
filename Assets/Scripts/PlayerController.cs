@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -25,6 +26,8 @@ public class PlayerController : MonoBehaviour
     [Header("Effects")]
     public GameObject boostTrail;
     public GameObject boostPop;
+    private bool _barrelRoll;
+    //public GameObject barrelRoll;
 
     float xThrow, yThrow;
     bool isControlEnabled = true;
@@ -52,6 +55,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonUp("Fire1"))
         {
             _braking = false;
+        }
+
+        // Barrel Roll
+        if (Input.GetButtonDown("Fire2"))
+        {
+            int rollSpeed = Input.GetButtonDown("Fire2") ? -1 : 1;
+            BarrelRoll(rollSpeed);
         }
     }
     // Update is called once per frame
@@ -133,6 +143,15 @@ public class PlayerController : MonoBehaviour
         {
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60f, 1f * Time.deltaTime);
             transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 30f;
+        }
+    }
+
+    void BarrelRoll(int rollSpeed)
+    {
+        if (!DOTween.IsTweening(transform))
+        {
+            //barrelRoll.SetActive(true);
+            transform.DOLocalRotate(new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, 360 * -rollSpeed), 1f, RotateMode.LocalAxisAdd).SetEase(Ease.OutSine);
         }
     }
 }
