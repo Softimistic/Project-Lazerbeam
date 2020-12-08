@@ -236,7 +236,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1d56295e84e5748bf4bcd209ed9784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target_Player: {fileID: 0}
+  Health: {fileID: 0}
+  Ship: {fileID: 0}
 --- !u!1 &8525791025619624601
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8525791026036978379
 RectTransform:
   m_ObjectHideFlags: 0
@@ -773,6 +774,7 @@ GameObject:
   - component: {fileID: 8525791026913405733}
   - component: {fileID: 8525791026913405739}
   - component: {fileID: 8525791026913405738}
+  - component: {fileID: 652289428}
   m_Layer: 5
   m_Name: ScoreText
   m_TagString: Untagged
@@ -840,4 +842,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: null
+  m_Text: 0
+--- !u!114 &652289428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8525791026913405732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c5f7a04f623704fbdb60be9bac442a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorePerHit: 100

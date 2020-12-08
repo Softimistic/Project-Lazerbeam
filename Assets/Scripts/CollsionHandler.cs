@@ -38,7 +38,7 @@ public class CollsionHandler : MonoBehaviour
     void OnTriggerEnter(Collider collision)
     {
        // check if it's player's bullet, if it's not then collision happen, ship destroyed 
-        if (!collision.gameObject.CompareTag("bullet") && !isAlGehit)
+        if (!collision.gameObject.CompareTag("EventTrigger") && !collision.gameObject.CompareTag("bullet") && !isAlGehit)
         {
            
             isAlGehit = true;
