@@ -44,7 +44,7 @@ public class CollsionHandler : MonoBehaviour
             isAlGehit = true;
             if (Int32.Parse(health.getHealth()) >= 0)
             {
-                hitFX.SetActive(true);
+                
                 if (collision.gameObject.CompareTag("ParryObject"))
                     health.HealthHit(healthDecreaseOnMeteoriteHit);
                 if (collision.gameObject.CompareTag("EnemyBullet"))

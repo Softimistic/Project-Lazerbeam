@@ -17,10 +17,13 @@ public class Missle : MonoBehaviour
     private float timerSinceLaunch_Contor = 0;
 	private float objectLifeTimerValue = 5;
 
+    public GameObject boostTrail;
+    public GameObject explosion;
+
     private void Start()
     {
         rocketTurnSpeed = 50.0f;
-        rocketSpeed = 45f;
+        rocketSpeed = 100f;
         randomOffset = 0.0f;
         target = GameObject.Find("Player Ship").transform;
         
@@ -58,6 +61,11 @@ public class Missle : MonoBehaviour
         {
             StartCoroutine(SelfDestruct());
         }
+
+        if (!GetComponent<Renderer>().isVisible)
+        {
+            Destroy(gameObject);
+        }
     }
 
     IEnumerator SelfDestruct()
@@ -71,7 +79,21 @@ public class Missle : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
+            GameObject nwFx = Instantiate(explosion, transform.position, Quaternion.identity);
+            FxSelfDestroy(nwFx);
+
         }
     }
+
+    private void FxSelfDestroy(GameObject nwFx)
+    {
+        ParticleSystem parts = nwFx.GetComponent<ParticleSystem>();
+        //get the play time
+        float totalDuration = parts.duration + parts.startLifetime;
+        //delete 
+        Destroy(nwFx, totalDuration);
+    }
+
+   
 
 }
