@@ -135,4 +135,13 @@ public class PlayerController : MonoBehaviour
             transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 30f;
         }
     }
+
+    public bool IsBoosting()
+    {
+        return _boosting;
+    }
+    public bool IsBraking()
+    {
+        return _braking;
+    }
 }
