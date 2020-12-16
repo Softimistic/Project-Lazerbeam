@@ -36,6 +36,7 @@ public abstract class Enemy : MonoBehaviour
 
         shootingTimer = shootingSpeed;
         despawnTimer = despawnTime;
+        thisGameState = gameState.inactive;
 
         gun = transform.Find("EnemyGun").GetComponent<CreateEnemyBullet>();
     }
@@ -45,9 +46,9 @@ public abstract class Enemy : MonoBehaviour
         // Checks if the enemy is active. If the enemy is not active the timer will still continue but the enemy won't do anything
         time = Time.deltaTime;
         DespawnEnemy();
+        CheckPlayerInRange();
         if (thisGameState == gameState.active || thisGameState == gameState.attached)
         {
-            CheckPlayerInRange();
             Movement();
             Shooting();
         }
@@ -61,13 +62,16 @@ public abstract class Enemy : MonoBehaviour
         // checks if the enemy is too close to the player and turns it on inactive when it is
         if (transform.position.z < player.transform.position.z + 3.0f)
         {
-            thisGameState = gameState.inactive;
             despawnTimer = 0;
         }
         else if (thisGameState != gameState.attached && Vector3.Distance(transform.position, player.transform.position) <= maxDistance)
         {
             transform.parent = GameObject.FindGameObjectWithTag("MainCamera").transform;
             thisGameState = gameState.attached;
+        }
+        else if (thisGameState != gameState.attached && thisGameState != gameState.active && Vector3.Distance(transform.position, player.transform.position) <= spawningRange)
+        {
+            thisGameState = gameState.active;
         }
     }
 

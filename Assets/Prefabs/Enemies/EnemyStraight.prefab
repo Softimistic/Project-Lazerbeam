@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cae045552c99ddf488c68fa8ee0dcfb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawningRange: 150
+  spawningRange: 80
   speed: 10
   despawnTime: 30
   maxDistance: 40
