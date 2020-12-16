@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerController : MonoBehaviour
@@ -26,9 +27,21 @@ public class PlayerController : MonoBehaviour
     public GameObject boostTrail;
     public GameObject boostPop;
 
+    public Slider BoostBar;
+    public float Boost1;
+    public float boostOverTime;
+    public bool boostIsLeeg = false;
+
     float xThrow, yThrow;
     bool isControlEnabled = true;
+
     
+
+    private void Start()
+    {
+        BoostBar.maxValue = Boost1;
+        updateUI();
+    }
 
     void Update()
     {
@@ -63,6 +76,11 @@ public class PlayerController : MonoBehaviour
             ProcessRotation();
             Boost();
             Brake();
+            updateUI();
+            if(Boost1 <= 0)
+            {
+                boostIsLeeg = true;
+            }
         }
     }
 
@@ -105,13 +123,14 @@ public class PlayerController : MonoBehaviour
 
     void Boost()
     {
-        if (_boosting)
+        if (_boosting && boostIsLeeg.Equals(false))
         {
+            Boost1 -= boostOverTime * Time.deltaTime;
             boostPop.SetActive(true);
             boostTrail.SetActive(true);
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, boostFOV, 1f * Time.deltaTime);
             transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 75f;
-
+            
         }
         else if(Camera.main.fieldOfView > 60f)
         {
@@ -134,6 +153,12 @@ public class PlayerController : MonoBehaviour
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60f, 1f * Time.deltaTime);
             transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 30f;
         }
+    }
+
+    void updateUI()
+    {
+        Boost1 = Mathf.Clamp(Boost1, 0, 100);
+        BoostBar.value = Boost1;
     }
 
     public bool IsBoosting()
