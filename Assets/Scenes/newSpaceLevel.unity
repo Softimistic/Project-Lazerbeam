@@ -6887,6 +6887,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 65466764625826978, guid: 1121b8b4d83cc8f49b14db24e24b741d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 65466764625826978, guid: 1121b8b4d83cc8f49b14db24e24b741d,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 65466764625826978, guid: 1121b8b4d83cc8f49b14db24e24b741d,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 5.89
+      objectReference: {fileID: 0}
     - target: {fileID: 114815740342028196, guid: 1121b8b4d83cc8f49b14db24e24b741d,
         type: 3}
       propertyPath: BoostBar
@@ -6900,7 +6915,7 @@ PrefabInstance:
     - target: {fileID: 114815740342028196, guid: 1121b8b4d83cc8f49b14db24e24b741d,
         type: 3}
       propertyPath: boostOverTime
-      value: 50
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7752890566399180171, guid: 1121b8b4d83cc8f49b14db24e24b741d,
         type: 3}
