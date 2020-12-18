@@ -15,12 +15,14 @@ public class GameStateController : MonoBehaviour
     public GameObject ScoreGameObject;
 
     [Header("Player")] [SerializeField] public GameObject player;
+    
 
     private bool _isPause;
 
     // Start is called before the first frame update
     void Start()
     {
+       
     }
 
     // Update is called once per frame
@@ -73,6 +75,8 @@ public class GameStateController : MonoBehaviour
     public void ActivePauseMenu()
     {
         pauseMenu.SetActive(true);
+       // audioManager.PauseTheme("Theme");
+        FindObjectOfType<AudioManager>().PauseTheme("Theme");
         Pause();
         _isPause = true;
     }
@@ -83,6 +87,7 @@ public class GameStateController : MonoBehaviour
     public void ClosePauseMenu()
     {
         pauseMenu.SetActive(false);
+        FindObjectOfType<AudioManager>().ResumeTheme("Theme");
         Resume();
         _isPause = false;
     }
