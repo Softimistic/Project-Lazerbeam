@@ -16,7 +16,6 @@ public class GameStateController : MonoBehaviour
 
     [Header("Player")] [SerializeField] public GameObject player;
     
-
     private bool _isPause;
 
     // Update is called once per frame
