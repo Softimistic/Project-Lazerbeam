@@ -27,7 +27,8 @@ public abstract class Enemy : MonoBehaviour
     protected gameState thisGameState;
 
     public GameObject projectile;
-    protected CreateEnemyBullet gun;
+    protected List<GameObject> guns = new List<GameObject>();
+    protected int currentGun;
     protected GameObject player;
 
     public virtual void Start()
@@ -38,7 +39,11 @@ public abstract class Enemy : MonoBehaviour
         despawnTimer = despawnTime;
         thisGameState = gameState.inactive;
 
-        gun = transform.Find("EnemyGun").GetComponent<CreateEnemyBullet>();
+        currentGun = 0;
+        foreach (Transform child in transform) if (child.CompareTag("EnemyGun"))
+            {
+                guns.Add(child.gameObject);
+            }
     }
 
     public virtual void Update()
@@ -82,7 +87,8 @@ public abstract class Enemy : MonoBehaviour
         // Checks if the player is in range for the enemy. If it is then the enemy will shoot at it
         if (shootingTimer <= 0 && Vector3.Distance(transform.position, player.transform.position) < shootingRange)
         {
-            gun.Shoot(projectile);
+            guns[currentGun].GetComponent<CreateEnemyBullet>().Shoot(projectile);
+            currentGun = (currentGun == guns.Count - 1) ? 0 : currentGun + 1;
             shootingTimer = shootingSpeed;
         }
         else
