@@ -46,7 +46,7 @@ public class MissleTower : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, target.position) < 200)
         {
-            print("in area");
+            
             if (!onetime)
             {
                 lockOn = true;

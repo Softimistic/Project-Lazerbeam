@@ -31,6 +31,11 @@ public class CollsionHandler : MonoBehaviour
         health = FindObjectOfType<Health>();
     }
 
+    private void Update()
+    {
+        print(isAlGehit);
+    }
+
     /// <summary>
     /// Check if there is no collision with the bullet and checking if the player is already hit. Descreasing health when hit once in the level. If the health is zero you die.
     /// </summary>
@@ -38,19 +43,14 @@ public class CollsionHandler : MonoBehaviour
     void OnTriggerEnter(Collider collision)
     {
        // check if it's player's bullet, if it's not then collision happen, ship destroyed 
-        if (!collision.gameObject.CompareTag("EventTrigger") && !collision.gameObject.CompareTag("bullet") && !isAlGehit)
+        if (collision.gameObject.CompareTag("ParryObject") && !isAlGehit)
         {
-           
-            isAlGehit = true;
+            Debug.LogError("poepie");
             if (Int32.Parse(health.getHealth()) >= 0)
             {
-                
-                if (collision.gameObject.CompareTag("ParryObject"))
-                    health.HealthHit(healthDecreaseOnMeteoriteHit);
-                if (collision.gameObject.CompareTag("EnemyBullet"))
-                    health.HealthHit(healthDecreaseOnEnemyBulletHit);
-                if (collision.gameObject.CompareTag("EnemyRocket"))
-                    health.HealthHit(healthDecreaseOnEnemyRocketHit);
+                isAlGehit = true;
+                print("meteoriet hit");
+                health.HealthHit(healthDecreaseOnMeteoriteHit);
             }
 
             if (Int32.Parse(health.getHealth()) <= 25)
@@ -62,6 +62,7 @@ public class CollsionHandler : MonoBehaviour
             {
                 PlayerDies();
             }
+            
         }
 
         if (collision.gameObject.CompareTag("missle") && !isAlGehit)
@@ -88,6 +89,13 @@ public class CollsionHandler : MonoBehaviour
             Debug.Log(collision.name + " ");
             health.HealthHit(healthDecreaseOnEnemyBulletHit);
         }
+
+        if (collision.gameObject.CompareTag("EnemyRocket"))
+        {
+            health.HealthHit(healthDecreaseOnEnemyRocketHit);
+        }
+            
+
     }
 
     //When the player dies
