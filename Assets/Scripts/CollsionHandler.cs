@@ -14,7 +14,7 @@ public class CollsionHandler : MonoBehaviour
     [Tooltip("FX Prefab")] [SerializeField] GameObject hitFX;
 
 
-    int healthDecreaseOnMeteoriteHit = 25;
+    int healthDecreaseOnMeteoriteHit = 10;
     int healthDecreaseOnEnemyBulletHit = 5;
     int healthDecreaseOnEnemyRocketHit = 30;
     int healthDecreasePerHit = 5;
