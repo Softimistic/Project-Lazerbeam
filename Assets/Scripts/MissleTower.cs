@@ -12,7 +12,7 @@ public class MissleTower : MonoBehaviour
     bool lockOn = false;
     public Transform target;
     bool onetime = false;
-
+    public float health = 100;
 
     void Start()
     {
@@ -60,5 +60,13 @@ public class MissleTower : MonoBehaviour
             onetime = false;
         }
       
+    }
+
+    void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("bullet"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
