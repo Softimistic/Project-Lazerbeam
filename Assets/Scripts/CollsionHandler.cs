@@ -33,7 +33,7 @@ public class CollsionHandler : MonoBehaviour
 
     private void Update()
     {
-        print(isAlGehit);
+        //print(isAlGehit);
     }
 
     /// <summary>
@@ -46,9 +46,9 @@ public class CollsionHandler : MonoBehaviour
         if (collision.gameObject.CompareTag("ParryObject") && !isAlGehit)
         {
             Debug.LogError("poepie");
+            isAlGehit = true;
             if (Int32.Parse(health.getHealth()) >= 0)
             {
-                isAlGehit = true;
                 print("meteoriet hit");
                 health.HealthHit(healthDecreaseOnMeteoriteHit);
             }
@@ -109,6 +109,7 @@ public class CollsionHandler : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        print(other.gameObject.name);
         if (!other.gameObject.CompareTag("bullet")){
             isAlGehit = false;
         }
