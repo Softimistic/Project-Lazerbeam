@@ -7,6 +7,7 @@ public class EnemyBullet : MonoBehaviour
 
     private Rigidbody rb;
     public float speed = 100.0f;
+    public int Lifetime;
 
     // Start is called before the first frame update  
     void Start()
@@ -23,7 +24,7 @@ public class EnemyBullet : MonoBehaviour
 
     IEnumerator SelfDestruct()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(Lifetime);
         Destroy(gameObject);
     }
 }
