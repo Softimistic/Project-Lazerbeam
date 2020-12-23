@@ -222,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFx: {fileID: 1290715649332758, guid: 587eaecaa621be74486f351c78b4f0a8, type: 3}
   hitColor: {r: 1, g: 0, b: 0, a: 0}
-  hitTimes: 5
+  hitTimes: 30
 --- !u!1 &1881326642234513844
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFx: {fileID: 1290715649332758, guid: 587eaecaa621be74486f351c78b4f0a8, type: 3}
   hitColor: {r: 1, g: 0, b: 0, a: 0}
-  hitTimes: 5
+  hitTimes: 30
 --- !u!1 &3944688483155134739
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,7 +558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFx: {fileID: 1290715649332758, guid: 587eaecaa621be74486f351c78b4f0a8, type: 3}
   hitColor: {r: 1, g: 0, b: 0, a: 0}
-  hitTimes: 5
+  hitTimes: 30
 --- !u!1 &4592925232149451332
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,7 +853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8d2e62283a4f9ba54536c72a120dc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetDistance: 10
+  targetDistance: 20
   camera: {fileID: 0}
   player: {fileID: 0}
   circut: {fileID: 0}
@@ -1070,7 +1070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFx: {fileID: 1290715649332758, guid: 587eaecaa621be74486f351c78b4f0a8, type: 3}
   hitColor: {r: 1, g: 0, b: 0, a: 0}
-  hitTimes: 5
+  hitTimes: 30
 --- !u!1 &7565690991754639390
 GameObject:
   m_ObjectHideFlags: 0

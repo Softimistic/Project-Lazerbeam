@@ -12,7 +12,7 @@ public class StraightEnemy : Enemy
     {
         if (thisGameState != gameState.attached)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.position, speed * time);
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * time);
         }
         else if (thisGameState == gameState.attached)
         {

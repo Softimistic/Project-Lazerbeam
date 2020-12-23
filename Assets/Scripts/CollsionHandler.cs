@@ -14,11 +14,11 @@ public class CollsionHandler : MonoBehaviour
     [Tooltip("FX Prefab")] [SerializeField] GameObject hitFX;
 
 
-    [SerializeField] int healthDecreaseOnMeteoriteHit = 50;
-    [SerializeField] int healthDecreaseOnEnemyBulletHit = 5;
-    [SerializeField] int healthDecreaseOnEnemyRocketHit = 30;
-    [SerializeField] int healthDecreasePerHit = 5;
-    [SerializeField] int healthDecreasePerHitByMissle = 25;
+    int healthDecreaseOnMeteoriteHit = 10;
+    int healthDecreaseOnEnemyBulletHit = 5;
+    int healthDecreaseOnEnemyRocketHit = 30;
+    int healthDecreasePerHit = 5;
+    int healthDecreasePerHitByMissle = 25;
 
     Health health;
     bool isAlGehit = false;
@@ -38,19 +38,12 @@ public class CollsionHandler : MonoBehaviour
     void OnTriggerEnter(Collider collision)
     {
        // check if it's player's bullet, if it's not then collision happen, ship destroyed 
-        if (!collision.gameObject.CompareTag("EventTrigger") && !collision.gameObject.CompareTag("bullet") && !isAlGehit)
+        if (collision.gameObject.CompareTag("ParryObject") && !isAlGehit)
         {
-           
-            isAlGehit = true;
+            
             if (Int32.Parse(health.getHealth()) >= 0)
             {
-                
-                if (collision.gameObject.CompareTag("ParryObject"))
-                    health.HealthHit(healthDecreaseOnMeteoriteHit);
-                if (collision.gameObject.CompareTag("EnemyBullet"))
-                    health.HealthHit(healthDecreaseOnEnemyBulletHit);
-                if (collision.gameObject.CompareTag("EnemyRocket"))
-                    health.HealthHit(healthDecreaseOnEnemyRocketHit);
+                health.HealthHit(healthDecreaseOnMeteoriteHit);
             }
 
             if (Int32.Parse(health.getHealth()) <= 25)
@@ -62,6 +55,7 @@ public class CollsionHandler : MonoBehaviour
             {
                 PlayerDies();
             }
+            isAlGehit = true;
         }
 
         if (collision.gameObject.CompareTag("missle") && !isAlGehit)
@@ -88,6 +82,13 @@ public class CollsionHandler : MonoBehaviour
             Debug.Log(collision.name + " ");
             health.HealthHit(healthDecreaseOnEnemyBulletHit);
         }
+
+        if (collision.gameObject.CompareTag("EnemyRocket"))
+        {
+            health.HealthHit(healthDecreaseOnEnemyRocketHit);
+        }
+            
+
     }
 
     //When the player dies
@@ -99,9 +100,10 @@ public class CollsionHandler : MonoBehaviour
         Invoke("ReloadScene", levelLoadDelay);
     }
 
-    private void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
-        if (!other.gameObject.CompareTag("bullet")){
+        
+        if (other.gameObject.CompareTag("ParryObject")){
             isAlGehit = false;
         }
         
