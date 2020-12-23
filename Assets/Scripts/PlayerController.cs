@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public float Boost1;
     public float boostOverTime;
     public bool boostIsLeeg = false;
+    public bool BossMode;
 
     float xThrow, yThrow;
     bool isControlEnabled = true;
@@ -46,23 +47,23 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Boost
-        if (Input.GetButton("Fire3"))
+        if (Input.GetButton("Fire3") && !BossMode)
         {
             _boosting = true; ;
         }
 
-        if (Input.GetButtonUp("Fire3"))
+        if (Input.GetButtonUp("Fire3") && !BossMode)
         {
             _boosting = false;
         }
 
         // Brake
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && !BossMode)
         {
             _braking = true;
         }
 
-        if (Input.GetButtonUp("Fire1"))
+        if (Input.GetButtonUp("Fire1") && !BossMode)
         {
             _braking = false;
         }

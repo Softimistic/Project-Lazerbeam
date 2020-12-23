@@ -11,13 +11,21 @@ public class createBullet : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject ship;
     public GameObject camera;
-    [SerializeField] [Range(2, 100)] private int speedfactor;
+    public bool BossMode;
+    [SerializeField] private int speedfactor;
 
     // Start is called before the first frame update
     void Start()
     {
         //set speed to bullet
-        bulletPrefab.GetComponent<bullet>().Speed = camera.GetComponent<BetterWaypointFollower>().routeSpeed * speedfactor;
+        if (BossMode)
+        {
+            bulletPrefab.GetComponent<bullet>().Speed = speedfactor;
+        }
+        else
+        {
+            bulletPrefab.GetComponent<bullet>().Speed = camera.GetComponent<BetterWaypointFollower>().routeSpeed * speedfactor;
+        }
     }
 
     // Update is called once per frame

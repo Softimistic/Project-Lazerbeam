@@ -54,7 +54,7 @@ public class BossAI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         #region Combat
         if (_bossState == BossState.WAITING)
