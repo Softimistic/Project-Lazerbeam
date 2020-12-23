@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Messager : MonoBehaviour
 {
+    public bool DisablePausing;
     private AudioSource _audioSource;
     private Image _frame;
     private Image _portrait;
@@ -19,7 +20,7 @@ public class Messager : MonoBehaviour
 
     void FixedUpdate()
     {
-        if ((_messageActive && !_audioSource.isPlaying) || _messageActive && Input.GetKeyDown("x"))
+        if ((_messageActive && !_audioSource.isPlaying) || _messageActive && (Input.GetKeyDown("x") && !DisablePausing))
         {
             StopMessage();
         }
