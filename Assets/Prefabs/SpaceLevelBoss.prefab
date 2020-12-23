@@ -95,8 +95,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1042100867186391929}
   - component: {fileID: 377626835614507468}
-  - component: {fileID: 377626835614507470}
-  - component: {fileID: 377626835614507469}
   m_Layer: 0
   m_Name: SpaceLevelBoss
   m_TagString: Untagged
@@ -158,59 +156,6 @@ MonoBehaviour:
   - {r: 0, g: 0.63318527, b: 0.9716981, a: 0}
   - {r: 0.074971914, g: 1, b: 0, a: 0}
   - {r: 0.99215686, g: 0.2745098, b: 0.33759004, a: 0}
---- !u!33 &377626835614507470
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377626835614507459}
-  m_Mesh: {fileID: -5495902117074765545, guid: 404ce41358244ab4bb0ab2dd21da8147, type: 3}
---- !u!23 &377626835614507469
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377626835614507459}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: -6478536213147159724, guid: 404ce41358244ab4bb0ab2dd21da8147, type: 3}
-  - {fileID: 4874126678125670354, guid: 404ce41358244ab4bb0ab2dd21da8147, type: 3}
-  - {fileID: -876546973899608171, guid: 404ce41358244ab4bb0ab2dd21da8147, type: 3}
-  - {fileID: -3846018093981099296, guid: 404ce41358244ab4bb0ab2dd21da8147, type: 3}
-  - {fileID: -6922793697723135513, guid: 404ce41358244ab4bb0ab2dd21da8147, type: 3}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &4012778844045413891
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,7 +785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 471fc1a809abb8c43890830c2d54aa04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetScene: PlanetLevel
+  TargetScene: Briefing-BossFight1PhaseTransition
 --- !u!1 &4012778845640053604
 GameObject:
   m_ObjectHideFlags: 0
