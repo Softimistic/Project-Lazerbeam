@@ -11,7 +11,12 @@ public class SceneTransitionEvent : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene(TargetScene);
+            LoadNextScene();
         }
+    }
+
+    protected void LoadNextScene()
+    {
+        SceneManager.LoadScene(TargetScene);
     }
 }

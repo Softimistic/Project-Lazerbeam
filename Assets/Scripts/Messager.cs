@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class Messager : MonoBehaviour
 {
+    public bool DisablePausing;
     private AudioSource _audioSource;
     private Image _frame;
     private Image _portrait;
-    private bool _active; //Wether or not a message is currently playing
+    private bool _messageActive; //Wether or not a message is currently playing
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class Messager : MonoBehaviour
 
     void FixedUpdate()
     {
-        if ((_active && !_audioSource.isPlaying) || _active && Input.GetKeyDown("x"))
+        if ((_messageActive && !_audioSource.isPlaying) || _messageActive && (Input.GetKeyDown("x") && !DisablePausing))
         {
             StopMessage();
         }
@@ -30,18 +31,23 @@ public class Messager : MonoBehaviour
     /// </summary>
     public void StopMessage()
     {
-        _active = false;
+        _messageActive = false;
         _frame.enabled = false;
         _portrait.enabled = false;
         _audioSource.Stop();
     }
     public void PlayMessage(Sprite portrait, AudioClip audio)
     {
-        _active = true;
+        _messageActive = true;
         _frame.enabled = true;
         _portrait.enabled = true;
         _portrait.sprite = portrait;//Resources.Load<Sprite>(portraitFileName);
         _audioSource.clip = audio;//Resources.Load<AudioClip>(audioFileName);
         _audioSource.Play();
+    }
+
+    public bool IsMessageActive()
+    {
+        return _messageActive;
     }
 }

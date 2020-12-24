@@ -18,8 +18,13 @@ public class MessageEvent : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Messager.PlayMessage(Portrait, Audio);
+            Play();
             this.enabled = false;
         }
+    }
+
+    public void Play()
+    {
+        Messager.PlayMessage(Portrait, Audio);
     }
 }
