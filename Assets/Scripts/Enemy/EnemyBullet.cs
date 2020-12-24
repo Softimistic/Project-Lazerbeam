@@ -6,7 +6,7 @@ public class EnemyBullet : MonoBehaviour
 {
 
     private Rigidbody rb;
-    public float speed = 100.0f;
+    [SerializeField] private float speed = 100.0f;
 
     // Start is called before the first frame update  
     void Start()
@@ -14,11 +14,6 @@ public class EnemyBullet : MonoBehaviour
         StartCoroutine(SelfDestruct());
         rb = this.GetComponent<Rigidbody>();
         rb.velocity = transform.up * speed;
-    }
-
-    void Update()
-    {
-        
     }
 
     IEnumerator SelfDestruct()

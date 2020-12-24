@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4046244507248603984}
   m_Layer: 0
   m_Name: EnemyGun
-  m_TagString: Untagged
+  m_TagString: EnemyGun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,6 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aefe960a88030514da88f8b32dfa35ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 2485618898901908897, guid: 8c7c85223d6a5e448962d47d0a4fd4ff,
+    type: 3}
 --- !u!1 &4046244507436741461
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +220,7 @@ GameObject:
   - component: {fileID: 4046244508228994299}
   - component: {fileID: 4046244508228994278}
   m_Layer: 0
-  m_Name: EnemyZigZag
+  m_Name: Enemy_ZigZag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -281,6 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4691d92278ffeb042bb9a07f58abbbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathFx: {fileID: 0}
   hitColor: {r: 0, g: 0, b: 0, a: 0}
   hitTimes: 1
 --- !u!114 &4046244508228994278
@@ -301,8 +304,6 @@ MonoBehaviour:
   maxDistance: 40
   shootingRange: 75
   shootingSpeed: 2
-  accuracy: 5
-  projectile: {fileID: 2485618898901908897, guid: 8c7c85223d6a5e448962d47d0a4fd4ff,
-    type: 3}
+  accuracy: 0
   frequency: 2
   magnitude: 5
