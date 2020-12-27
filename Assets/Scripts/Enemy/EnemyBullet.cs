@@ -6,8 +6,8 @@ public class EnemyBullet : MonoBehaviour
 {
 
     private Rigidbody rb;
-    public float speed = 100.0f;
-    public int Lifetime;
+    [SerializeField] private float speed = 100.0f;
+    [SerializeField] private int Lifetime;
 
     // Start is called before the first frame update  
     void Start()
