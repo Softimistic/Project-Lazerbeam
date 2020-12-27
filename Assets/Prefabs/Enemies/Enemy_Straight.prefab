@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1438294010420223494}
   - component: {fileID: 5160110979978747429}
   m_Layer: 0
-  m_Name: EnemyStraight
+  m_Name: Enemy_Straight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,8 +99,6 @@ MonoBehaviour:
   shootingRange: 75
   shootingSpeed: 1
   accuracy: 3
-  projectile: {fileID: 2485618898901908897, guid: 8c7c85223d6a5e448962d47d0a4fd4ff,
-    type: 3}
 --- !u!1 &1755488990053789516
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +209,7 @@ GameObject:
   - component: {fileID: 1755488990069076985}
   m_Layer: 0
   m_Name: EnemyGun
-  m_TagString: Untagged
+  m_TagString: EnemyGun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -305,3 +303,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aefe960a88030514da88f8b32dfa35ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 2485618898901908897, guid: 8c7c85223d6a5e448962d47d0a4fd4ff,
+    type: 3}

@@ -17,11 +17,6 @@ public class EnemyBullet : MonoBehaviour
         rb.velocity = transform.up * speed;
     }
 
-    void Update()
-    {
-        
-    }
-
     IEnumerator SelfDestruct()
     {
         yield return new WaitForSeconds(Lifetime);

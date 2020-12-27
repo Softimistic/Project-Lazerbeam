@@ -10,11 +10,11 @@ public class StraightEnemy : Enemy
     }
     protected override void Movement()
     {
-        if (thisGameState != gameState.attached)
+        if (thisGameState != GameState.attached)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * time);
         }
-        else if (thisGameState == gameState.attached)
+        else if (thisGameState == GameState.attached)
         {
 
         }

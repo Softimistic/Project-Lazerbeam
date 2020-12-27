@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5155402036283918035}
   m_Layer: 0
   m_Name: EnemyGun
-  m_TagString: Untagged
+  m_TagString: EnemyGun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,7 +49,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3424558752462448204}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -109,3 +109,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aefe960a88030514da88f8b32dfa35ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 2485618898901908897, guid: 8c7c85223d6a5e448962d47d0a4fd4ff,
+    type: 3}

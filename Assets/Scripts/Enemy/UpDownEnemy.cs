@@ -7,8 +7,9 @@ public class UpDownEnemy : Enemy
     private float up;
     private bool moveUp;
     private Vector3 pos;
-    public float frequency;
-    public float magnitude;
+    [Header("Angle variables")]
+    [SerializeField] private float frequency;
+    [SerializeField] private float magnitude;
 
     public override void Start()
     {
@@ -18,12 +19,12 @@ public class UpDownEnemy : Enemy
     }
     protected override void Movement()
     {
-        if (thisGameState != gameState.attached)
+        if (thisGameState != GameState.attached)
         {
             pos += transform.forward * time * -speed;
             transform.position = pos + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
         }
-        else if (thisGameState == gameState.attached)
+        else if (thisGameState == GameState.attached)
         {
             pos = transform.position;
             if (up <= 0)
