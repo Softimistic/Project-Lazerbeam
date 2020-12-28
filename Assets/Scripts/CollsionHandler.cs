@@ -15,7 +15,6 @@ public class CollsionHandler : MonoBehaviour
 
 
     int healthDecreaseOnMeteoriteHit = 10;
-    int healthDecreaseOnEnemyBulletHit = 5;
     int healthDecreaseOnEnemyRocketHit = 30;
     int healthDecreasePerHit = 5;
     int healthDecreasePerHitByMissle = 25;
@@ -40,55 +39,44 @@ public class CollsionHandler : MonoBehaviour
        // check if it's player's bullet, if it's not then collision happen, ship destroyed 
         if (collision.gameObject.CompareTag("ParryObject") && !isAlGehit)
         {
-            
-            if (Int32.Parse(health.getHealth()) >= 0)
-            {
-                health.HealthHit(healthDecreaseOnMeteoriteHit);
-            }
 
-            if (Int32.Parse(health.getHealth()) <= 25)
-            {
-                hitFX.SetActive(true);
-            }
-
-            if (Int32.Parse(health.getHealth()) <= 0)
-            {
-                PlayerDies();
-            }
+            HealthCheckNChange(healthDecreaseOnMeteoriteHit);
             isAlGehit = true;
         }
 
         if (collision.gameObject.CompareTag("missle") && !isAlGehit)
         {
+            HealthCheckNChange(healthDecreasePerHitByMissle);
             isAlGehit = true;
-            if (Int32.Parse(health.getHealth()) >= 0)
-            {
-                health.HealthHit(healthDecreasePerHitByMissle);
-
-            }
-            if (Int32.Parse(health.getHealth()) <= 25)
-            {
-                hitFX.SetActive(true);
-            }
-
-            if (Int32.Parse(health.getHealth()) <= 0)
-            {
-                PlayerDies();
-            }
         }
 
         if (collision.gameObject.CompareTag("EnemyBullet"))
         {
-            Debug.Log(collision.name + " ");
-            health.HealthHit(healthDecreaseOnEnemyBulletHit);
+            HealthCheckNChange(collision.GetComponent<EnemyBullet>().Damage);
         }
 
         if (collision.gameObject.CompareTag("EnemyRocket"))
         {
-            health.HealthHit(healthDecreaseOnEnemyRocketHit);
+            HealthCheckNChange(healthDecreaseOnEnemyRocketHit);
         }
-            
+    }
 
+    private void HealthCheckNChange(int healthDecrease)
+    {
+        isAlGehit = true;
+        if (Int32.Parse(health.getHealth()) >= 0)
+        {
+            health.HealthHit(healthDecrease);
+        }
+        if (Int32.Parse(health.getHealth()) <= 25)
+        {
+            hitFX.SetActive(true);
+        }
+
+        if (Int32.Parse(health.getHealth()) <= 0)
+        {
+            PlayerDies();
+        }
     }
 
     //When the player dies
