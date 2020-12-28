@@ -103,9 +103,9 @@ GameObject:
   - component: {fileID: 4938935894715590309}
   - component: {fileID: 4938935894715590315}
   - component: {fileID: 4938935894715590311}
-  - component: {fileID: 7495142559739422896}
   - component: {fileID: 7899654302224247396}
   - component: {fileID: 3171305806052510749}
+  - component: {fileID: 2066216834456777468}
   m_Layer: 0
   m_Name: EnemyProjectileType3
   m_TagString: EnemyBullet
@@ -157,23 +157,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b26f360224a52724ea3763a774673fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 30
   speed: 50
   Lifetime: 2
---- !u!64 &7495142559739422896
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4938935894715590308}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &7899654302224247396
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -223,6 +209,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2066216834456777468
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4938935894715590308}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5284676, y: 2.4361858, z: 5.8676257}
+  m_Center: {x: -0.0055491626, y: 0.21809292, z: 0.01707387}
 --- !u!1001 &5906592636758953636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -293,7 +292,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 141c34f6eb214a94686c229bf92538c4,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 141c34f6eb214a94686c229bf92538c4,
         type: 3}

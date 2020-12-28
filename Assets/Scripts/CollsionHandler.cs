@@ -12,6 +12,7 @@ public class CollsionHandler : MonoBehaviour
     [Tooltip("In seconds")] [SerializeField] float levelLoadDelay = 1f;
     [Tooltip("FX Prefab")] [SerializeField] GameObject deathFX;
     [Tooltip("FX Prefab")] [SerializeField] GameObject hitFX;
+    [Tooltip("FX Prefab")] [SerializeField] ParticleSystem impactFX;
 
 
     int healthDecreaseOnMeteoriteHit = 10;
@@ -41,13 +42,11 @@ public class CollsionHandler : MonoBehaviour
         {
 
             HealthCheckNChange(healthDecreaseOnMeteoriteHit);
-            isAlGehit = true;
         }
 
         if (collision.gameObject.CompareTag("missle") && !isAlGehit)
         {
             HealthCheckNChange(healthDecreasePerHitByMissle);
-            isAlGehit = true;
         }
 
         if (collision.gameObject.CompareTag("EnemyBullet"))
@@ -63,6 +62,7 @@ public class CollsionHandler : MonoBehaviour
 
     private void HealthCheckNChange(int healthDecrease)
     {
+        impactFX.Play();
         isAlGehit = true;
         if (Int32.Parse(health.getHealth()) >= 0)
         {
