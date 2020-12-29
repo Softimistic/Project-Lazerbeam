@@ -26,7 +26,8 @@ public class BossAI : MonoBehaviour
     public Transform player;
     public BetterWaypointFollower circut;
 
-    [Header("Combat")] 
+    [Header("Combat")]
+    public AudioSource LaserSoundEffect;
     public GameObject[] turrets;
     public GameObject lazer;
     public float lazerAttackPeriod;
@@ -99,6 +100,7 @@ public class BossAI : MonoBehaviour
                         if (eachTurret.transform.GetChild(0))
                         {
                             eachTurret.transform.GetChild(0).GetComponent<CreateBossLazer>().Shoot(lazer, player);
+                            LaserSoundEffect.Play();
                             i--;
                         }
                     }

@@ -9,6 +9,7 @@ using UnityEngine.Serialization;
 public class BulletHit : MonoBehaviour
 {
     [SerializeField] private GameObject deathFx;
+    [SerializeField] private AudioSource hitSoundFx;
 
     /// <summary>
     /// the color while the object is hit by bullets
@@ -77,6 +78,7 @@ public class BulletHit : MonoBehaviour
             //Destory bullets
             Destroy(collision.gameObject);
             scoreBoard.ScoreHit(10);
+            hitSoundFx.Play();
         }
     }
 
