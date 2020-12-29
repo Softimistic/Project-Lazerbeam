@@ -9668,10 +9668,20 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 534669902}
+    - target: {fileID: 8559516666445403613, guid: d3cc795ba9015554a8548a146f95db90,
+        type: 3}
+      propertyPath: cooldown_ms
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8559516666717119864, guid: d3cc795ba9015554a8548a146f95db90,
         type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 534669902}
+    - target: {fileID: 8559516666717119864, guid: d3cc795ba9015554a8548a146f95db90,
+        type: 3}
+      propertyPath: cooldown_ms
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3cc795ba9015554a8548a146f95db90, type: 3}
