@@ -7,6 +7,7 @@ public class MissleTower : MonoBehaviour
 
     public Transform[] spawnPoints;
     public GameObject missle;
+    public int range;
     int index = 0;
     int delayMissleTime = 5;
     bool lockOn = false;
@@ -44,7 +45,7 @@ public class MissleTower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, target.position) < 200)
+        if (Vector3.Distance(transform.position, target.position) < range)
         {
             
             if (!onetime)
