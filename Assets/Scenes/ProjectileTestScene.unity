@@ -1728,6 +1728,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4938935894715590308, guid: f723115860a71ef43bd267ce78a3c0a2,
         type: 3}
+    - target: {fileID: 1281455078830992704, guid: d175051b2784a5345855bafdb34c8dce,
+        type: 3}
+      propertyPath: projectileAlternate
+      value: 
+      objectReference: {fileID: 7777959313968213790, guid: 5c11a8ed2c67e2743be29e09bb7e3e44,
+        type: 3}
     - target: {fileID: 5607405670453884709, guid: d175051b2784a5345855bafdb34c8dce,
         type: 3}
       propertyPath: m_LocalPosition.x
