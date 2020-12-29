@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Small_Meteorite_1 Gray
       objectReference: {fileID: 0}
+    - target: {fileID: 8193864767319971128, guid: 7f9979da4c8b4fb4787e5132a2477164,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9c61cfdf7abf7ab4194b9b1b108a5be1, type: 2}
     - target: {fileID: 9183082916733013691, guid: 7f9979da4c8b4fb4787e5132a2477164,
         type: 3}
       propertyPath: m_LocalPosition.x
