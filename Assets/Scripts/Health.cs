@@ -7,8 +7,7 @@ public class Health : MonoBehaviour
 {
     
 
-    // Health begins at 100
-    int health = 100;
+    public int health;
     // healthText changes te text on screen
     Text healthText;
 
