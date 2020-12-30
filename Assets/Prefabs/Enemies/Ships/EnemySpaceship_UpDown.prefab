@@ -266,7 +266,7 @@ Transform:
   m_GameObject: {fileID: 4448231724257532545}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -53.421, y: 40, z: 0}
-  m_LocalScale: {x: 25, y: 25, z: 25}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children:
   - {fileID: 5233981550105119442}
   - {fileID: 5279948616326100269}
@@ -327,6 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathFx: {fileID: 0}
+  hitSoundFx: {fileID: 0}
   hitColor: {r: 1, g: 0, b: 0, a: 0}
   hitTimes: 1
 --- !u!1 &4979960008880515155
