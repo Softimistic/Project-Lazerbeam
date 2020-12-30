@@ -150,10 +150,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1976799459468813334, guid: 074a36f82061a9d41b8dfdcdec780c18, type: 3}
+  - {fileID: 2100000, guid: f28cc5e6dceefc44c99fa538fd930a22, type: 2}
   - {fileID: 5561349426305759274, guid: 074a36f82061a9d41b8dfdcdec780c18, type: 3}
   - {fileID: 7831832615331589979, guid: 074a36f82061a9d41b8dfdcdec780c18, type: 3}
-  - {fileID: 5775865398287329665, guid: 074a36f82061a9d41b8dfdcdec780c18, type: 3}
+  - {fileID: 2100000, guid: f28cc5e6dceefc44c99fa538fd930a22, type: 2}
   - {fileID: -8255497921437555292, guid: 074a36f82061a9d41b8dfdcdec780c18, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -217,6 +217,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1593352447484634071}
   - component: {fileID: 1267201337261277462}
+  - component: {fileID: 197506124629885739}
+  - component: {fileID: 7904934854684001209}
+  - component: {fileID: 1207386042774757706}
   m_Layer: 0
   m_Name: EnemySpaceship
   m_TagString: Untagged
@@ -260,6 +263,50 @@ MonoBehaviour:
   shootingRange: 75
   shootingSpeed: 1
   accuracy: 0
+--- !u!54 &197506124629885739
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114274236911745389}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &7904934854684001209
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114274236911745389}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1422699, y: 0.071279906, z: 0.28138024}
+  m_Center: {x: -0.0026779175, y: 0.024565125, z: 0.010339317}
+--- !u!114 &1207386042774757706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114274236911745389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4691d92278ffeb042bb9a07f58abbbe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathFx: {fileID: 0}
+  hitColor: {r: 1, g: 0, b: 0, a: 0}
+  hitTimes: 1
 --- !u!1 &2729843779086198879
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +595,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1593352447484634071}
     m_Modifications:
+    - target: {fileID: 3424558752462448202, guid: bd711e541a8bcdf4b9172375836f0a4b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3424558752462448204, guid: bd711e541a8bcdf4b9172375836f0a4b,
         type: 3}
       propertyPath: m_Name
@@ -628,6 +680,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1593352447484634071}
     m_Modifications:
+    - target: {fileID: 3424558752462448202, guid: bd711e541a8bcdf4b9172375836f0a4b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3424558752462448204, guid: bd711e541a8bcdf4b9172375836f0a4b,
         type: 3}
       propertyPath: m_Name

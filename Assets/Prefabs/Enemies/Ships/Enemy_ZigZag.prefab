@@ -111,6 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 2485618898901908897, guid: 8c7c85223d6a5e448962d47d0a4fd4ff,
     type: 3}
+  projectileAlternate: {fileID: 0}
 --- !u!1 &4046244507436741461
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +220,7 @@ GameObject:
   - component: {fileID: 4046244508228994296}
   - component: {fileID: 4046244508228994299}
   - component: {fileID: 4046244508228994278}
+  - component: {fileID: -1577261823894574170}
   m_Layer: 0
   m_Name: Enemy_ZigZag
   m_TagString: Untagged
@@ -307,3 +309,18 @@ MonoBehaviour:
   accuracy: 0
   frequency: 2
   magnitude: 5
+--- !u!114 &-1577261823894574170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4046244508228994298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4691d92278ffeb042bb9a07f58abbbe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathFx: {fileID: 0}
+  hitColor: {r: 1, g: 0, b: 0, a: 0}
+  hitTimes: 1

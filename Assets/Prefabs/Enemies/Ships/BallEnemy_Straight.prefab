@@ -10,8 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3102545068949574330}
   - component: {fileID: 3102545068949574331}
+  - component: {fileID: 2185377354166583850}
+  - component: {fileID: 8844664602358100372}
+  - component: {fileID: 7401115406425748314}
   m_Layer: 0
-  m_Name: BallEnemy
+  m_Name: BallEnemy_Straight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,6 +55,50 @@ MonoBehaviour:
   shootingRange: 75
   shootingSpeed: 1
   accuracy: 0
+--- !u!54 &2185377354166583850
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3102545068949574328}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!135 &8844664602358100372
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3102545068949574328}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7401115406425748314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3102545068949574328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4691d92278ffeb042bb9a07f58abbbe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathFx: {fileID: 0}
+  hitColor: {r: 1, g: 0, b: 0, a: 0}
+  hitTimes: 1
 --- !u!1001 &3102545067910856541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -199,6 +246,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5155402036283918035, guid: bd711e541a8bcdf4b9172375836f0a4b,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 4938935894715590308, guid: f723115860a71ef43bd267ce78a3c0a2,
+        type: 3}
+    - target: {fileID: 5155402036283918035, guid: bd711e541a8bcdf4b9172375836f0a4b,
+        type: 3}
+      propertyPath: projectileAlternate
+      value: 
+      objectReference: {fileID: 7777959313968213790, guid: 5c11a8ed2c67e2743be29e09bb7e3e44,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd711e541a8bcdf4b9172375836f0a4b, type: 3}
 --- !u!4 &326526675263992577 stripped

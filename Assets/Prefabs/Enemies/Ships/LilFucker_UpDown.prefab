@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathFx: {fileID: 0}
-  hitColor: {r: 0, g: 0, b: 0, a: 0}
+  hitColor: {r: 1, g: 0, b: 0, a: 0}
   hitTimes: 1
 --- !u!114 &8370002199522012806
 MonoBehaviour:
@@ -173,6 +173,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5155402036283918035, guid: bd711e541a8bcdf4b9172375836f0a4b,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 7357443418793100744, guid: b74b11d555304bc4a8cfde010adcf5bf,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 3424558752462448202, guid: bd711e541a8bcdf4b9172375836f0a4b, type: 3}
     - {fileID: 3424558752462448201, guid: bd711e541a8bcdf4b9172375836f0a4b, type: 3}
