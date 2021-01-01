@@ -10,6 +10,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+
+    public void LoadLeaderBoard()
+    {
+        Debug.Log("SHOW UP LEADERBOARD!");
+    }
+
     public void Quit()
     {
         Debug.Log("Game Quit");
