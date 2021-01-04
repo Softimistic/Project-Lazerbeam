@@ -3,7 +3,11 @@ guid: 3107463bd180ff84b99bd1fbb2c1733b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - healthPowerUp: {fileID: -6123806696371061730, guid: 91c9a4702729fc145aba471aba864a96,
+      type: 3}
+  - boostPowerUp: {fileID: 2469135114437867812, guid: ae367f05de2f4c34d8b9348424a3b227,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

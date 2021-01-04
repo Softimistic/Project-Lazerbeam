@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 6057278934280505039}
   - component: {fileID: 9045531198403255859}
   - component: {fileID: 6892372469953165131}
-  - component: {fileID: 850931215122823016}
   - component: {fileID: 7071278953759849671}
+  - component: {fileID: -9118174365040564913}
   m_Layer: 0
   m_Name: LilFucker_Straight
-  m_TagString: Untagged
+  m_TagString: EnemyShips
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,25 +68,6 @@ MonoBehaviour:
   hitSoundFx: {fileID: 0}
   hitColor: {r: 1, g: 0, b: 0, a: 0}
   hitTimes: 1
---- !u!114 &850931215122823016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6057278934280505026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cae045552c99ddf488c68fa8ee0dcfb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawningRange: 150
-  speed: 10
-  despawnTime: 30
-  maxDistance: 70
-  shootingRange: 75
-  shootingSpeed: 1
-  accuracy: 0
 --- !u!65 &7071278953759849671
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -100,6 +81,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.9934273, y: 5.0894775, z: 5.366952}
   m_Center: {x: -0.050268173, y: 2.2009583, z: 0.8528552}
+--- !u!114 &-9118174365040564913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6057278934280505026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae045552c99ddf488c68fa8ee0dcfb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawningRange: 80
+  speed: 10
+  despawnTime: 30
+  maxDistance: 40
+  shootingRange: 75
+  shootingSpeed: 1
+  accuracy: 3
+  itemDropChance: 20
+  healthPowerUp: {fileID: -6123806696371061730, guid: 91c9a4702729fc145aba471aba864a96,
+    type: 3}
+  boostPowerUp: {fileID: 2469135114437867812, guid: ae367f05de2f4c34d8b9348424a3b227,
+    type: 3}
 --- !u!1001 &2569271290292894204
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -216,13 +216,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1593352447484634071}
-  - component: {fileID: 1267201337261277462}
   - component: {fileID: 197506124629885739}
   - component: {fileID: 7904934854684001209}
   - component: {fileID: 1207386042774757706}
+  - component: {fileID: -4433792574741768392}
   m_Layer: 0
   m_Name: EnemySpaceship
-  m_TagString: Untagged
+  m_TagString: EnemyShips
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -244,25 +244,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1267201337261277462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114274236911745389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cae045552c99ddf488c68fa8ee0dcfb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawningRange: 150
-  speed: 10
-  despawnTime: 30
-  maxDistance: 40
-  shootingRange: 75
-  shootingSpeed: 1
-  accuracy: 0
 --- !u!54 &197506124629885739
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -308,6 +289,30 @@ MonoBehaviour:
   hitSoundFx: {fileID: 0}
   hitColor: {r: 1, g: 0, b: 0, a: 0}
   hitTimes: 1
+--- !u!114 &-4433792574741768392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114274236911745389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae045552c99ddf488c68fa8ee0dcfb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawningRange: 80
+  speed: 10
+  despawnTime: 30
+  maxDistance: 40
+  shootingRange: 75
+  shootingSpeed: 1
+  accuracy: 3
+  itemDropChance: 20
+  healthPowerUp: {fileID: -6123806696371061730, guid: 91c9a4702729fc145aba471aba864a96,
+    type: 3}
+  boostPowerUp: {fileID: 2469135114437867812, guid: ae367f05de2f4c34d8b9348424a3b227,
+    type: 3}
 --- !u!1 &2729843779086198879
 GameObject:
   m_ObjectHideFlags: 0

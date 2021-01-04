@@ -27,6 +27,10 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] private int accuracy; // the lower the better
     protected float time;
     protected GameState thisGameState;
+    [Header("Item drop variables")]
+    [SerializeField] protected int itemDropChance; // in percentage (60 = 60%)
+    [SerializeField] protected PowerUpHealth healthPowerUp;
+    [SerializeField] protected PowerUpBoost boostPowerUp;
 
     protected List<GameObject> guns = new List<GameObject>();
     protected int currentGun;
@@ -120,5 +124,23 @@ public abstract class Enemy : MonoBehaviour
     public int GetAccuracy()
     {
         return accuracy;
+    }
+
+    public void OnDeath()
+    {
+        int willDrop = Random.Range(1, 101);
+        if(willDrop <= itemDropChance)
+        {
+        int itemToDrop = Random.Range(0, 2);
+        PowerUp pickup = null;
+        switch (itemToDrop)
+        {
+            case 0: pickup = healthPowerUp;
+                break;
+            case 1: pickup = boostPowerUp;
+                break;
+        }
+        Instantiate(pickup, transform.position, transform.rotation);
+        }
     }
 }

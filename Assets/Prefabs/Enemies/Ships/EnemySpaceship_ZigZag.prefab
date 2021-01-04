@@ -40,12 +40,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2974003516631951768}
-  - component: {fileID: 4676102785042074215}
   - component: {fileID: -4656208801191495679}
   - component: {fileID: 5184241699637928235}
+  - component: {fileID: 8309571457786538969}
   m_Layer: 0
   m_Name: EnemySpaceship_ZigZag
-  m_TagString: Untagged
+  m_TagString: EnemyShips
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,27 +73,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4676102785042074215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2453926187033719586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5205603c3c34fc548b8940a6885056ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawningRange: 150
-  speed: 10
-  despawnTime: 30
-  maxDistance: 40
-  shootingRange: 75
-  shootingSpeed: 1
-  accuracy: 0
-  frequency: 2
-  magnitude: 5
 --- !u!65 &-4656208801191495679
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -123,6 +102,32 @@ MonoBehaviour:
   hitSoundFx: {fileID: 0}
   hitColor: {r: 1, g: 0, b: 0, a: 0}
   hitTimes: 1
+--- !u!114 &8309571457786538969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2453926187033719586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5205603c3c34fc548b8940a6885056ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawningRange: 150
+  speed: 10
+  despawnTime: 30
+  maxDistance: 70
+  shootingRange: 75
+  shootingSpeed: 1
+  accuracy: 0
+  itemDropChance: 20
+  healthPowerUp: {fileID: -6123806696371061730, guid: 91c9a4702729fc145aba471aba864a96,
+    type: 3}
+  boostPowerUp: {fileID: 2469135114437867812, guid: ae367f05de2f4c34d8b9348424a3b227,
+    type: 3}
+  frequency: 2
+  magnitude: 5
 --- !u!1 &3165431610296009961
 GameObject:
   m_ObjectHideFlags: 0

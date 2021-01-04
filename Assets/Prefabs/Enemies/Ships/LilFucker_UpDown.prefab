@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 6116761805565915593}
   - component: {fileID: 9035614888677599541}
   - component: {fileID: 6866438378127917133}
-  - component: {fileID: 8370002199522012806}
   - component: {fileID: -6396454903690107054}
+  - component: {fileID: -2700558089394980057}
   m_Layer: 0
   m_Name: LilFucker_UpDown
-  m_TagString: Untagged
+  m_TagString: EnemyShips
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,7 +68,20 @@ MonoBehaviour:
   hitSoundFx: {fileID: 0}
   hitColor: {r: 1, g: 0, b: 0, a: 0}
   hitTimes: 1
---- !u!114 &8370002199522012806
+--- !u!65 &-6396454903690107054
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6116761805565915588}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.9934273, y: 5.0894775, z: 5.366952}
+  m_Center: {x: -0.050268173, y: 2.2009583, z: 0.8528552}
+--- !u!114 &-2700558089394980057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83,25 +96,17 @@ MonoBehaviour:
   spawningRange: 150
   speed: 10
   despawnTime: 30
-  maxDistance: 70
+  maxDistance: 40
   shootingRange: 75
   shootingSpeed: 1
   accuracy: 0
+  itemDropChance: 20
+  healthPowerUp: {fileID: -6123806696371061730, guid: 91c9a4702729fc145aba471aba864a96,
+    type: 3}
+  boostPowerUp: {fileID: 2469135114437867812, guid: ae367f05de2f4c34d8b9348424a3b227,
+    type: 3}
   frequency: 2
   magnitude: 5
---- !u!65 &-6396454903690107054
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6116761805565915588}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.9934273, y: 5.0894775, z: 5.366952}
-  m_Center: {x: -0.050268173, y: 2.2009583, z: 0.8528552}
 --- !u!1001 &2543196566275329786
 PrefabInstance:
   m_ObjectHideFlags: 0

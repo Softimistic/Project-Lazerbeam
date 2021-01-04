@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2166549592763983465}
   m_Layer: 0
   m_Name: Enemy_Straight
-  m_TagString: Untagged
+  m_TagString: EnemyShips
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,6 +101,11 @@ MonoBehaviour:
   shootingRange: 75
   shootingSpeed: 1
   accuracy: 3
+  itemDropChance: 20
+  healthPowerUp: {fileID: -6123806696371061730, guid: 91c9a4702729fc145aba471aba864a96,
+    type: 3}
+  boostPowerUp: {fileID: 2469135114437867812, guid: ae367f05de2f4c34d8b9348424a3b227,
+    type: 3}
 --- !u!114 &2166549592763983465
 MonoBehaviour:
   m_ObjectHideFlags: 0
