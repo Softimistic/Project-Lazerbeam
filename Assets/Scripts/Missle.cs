@@ -62,10 +62,10 @@ public class Missle : MonoBehaviour
             StartCoroutine(SelfDestruct());
         }
 
-        if (!GetComponent<Renderer>().isVisible)
+        /*if (!GetComponent<Renderer>().isVisible)
         {
             Destroy(gameObject);
-        }
+        }*/
     }
 
     IEnumerator SelfDestruct()

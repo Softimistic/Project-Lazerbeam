@@ -60,7 +60,7 @@ public class CollsionHandler : MonoBehaviour
 
         if (collision.gameObject.CompareTag("missle") && !isAlGehit)
         {
-            isAlGehit = true;
+            Debug.Log("hit");
             if (Int32.Parse(health.getHealth()) >= 0)
             {
                 health.HealthHit(healthDecreasePerHitByMissle);
@@ -75,6 +75,7 @@ public class CollsionHandler : MonoBehaviour
             {
                 PlayerDies();
             }
+            isAlGehit = true;
         }
 
         if (collision.gameObject.CompareTag("EnemyBullet"))
