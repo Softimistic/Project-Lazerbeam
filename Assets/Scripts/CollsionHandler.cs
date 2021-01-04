@@ -58,8 +58,26 @@ public class CollsionHandler : MonoBehaviour
             isAlGehit = true;
         }
 
+
+        if (collision.gameObject.CompareTag("EnemyBullet"))
+        {
+            Debug.Log(collision.name + " ");
+            health.HealthHit(healthDecreaseOnEnemyBulletHit);
+        }
+
+        if (collision.gameObject.CompareTag("EnemyRocket"))
+        {
+            health.HealthHit(healthDecreaseOnEnemyRocketHit);
+        }
+            
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
         if (collision.gameObject.CompareTag("missle") && !isAlGehit)
         {
+            isAlGehit = true;
             Debug.Log("hit");
             if (Int32.Parse(health.getHealth()) >= 0)
             {
@@ -75,20 +93,12 @@ public class CollsionHandler : MonoBehaviour
             {
                 PlayerDies();
             }
-            isAlGehit = true;
-        }
 
-        if (collision.gameObject.CompareTag("EnemyBullet"))
-        {
-            Debug.Log(collision.name + " ");
-            health.HealthHit(healthDecreaseOnEnemyBulletHit);
-        }
-
-        if (collision.gameObject.CompareTag("EnemyRocket"))
-        {
-            health.HealthHit(healthDecreaseOnEnemyRocketHit);
-        }
+            Debug.Log(isAlGehit);
             
+        }
+        isAlGehit = false;
+        Debug.Log(isAlGehit);
 
     }
 

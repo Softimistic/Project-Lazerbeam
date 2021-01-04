@@ -193,8 +193,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2111641385240508693}
-  - component: {fileID: 2141138670568819793}
   - component: {fileID: 2133937977293149735}
+  - component: {fileID: 2141138670568819793}
   - component: {fileID: 2074373428775968599}
   - component: {fileID: 2116216742366279560}
   m_Layer: 0
@@ -233,19 +233,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2141138670568819793
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2115151599521277901}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.86, y: 0.67, z: 5.89}
-  m_Center: {x: -0.00000025331974, y: -0.21, z: 1.73}
 --- !u!54 &2133937977293149735
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -262,6 +249,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &2141138670568819793
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115151599521277901}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.86, y: 0.67, z: 5.89}
+  m_Center: {x: -0.00000025331974, y: -0.21, z: 1.73}
 --- !u!114 &2074373428775968599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,11 +304,6 @@ MonoBehaviour:
   levelLoadDelay: 1
   deathFX: {fileID: 2116035761154321962}
   hitFX: {fileID: 7535966219114918634}
-  healthDecreaseOnMeteoriteHit: 5
-  healthDecreaseOnEnemyBulletHit: 5
-  healthDecreaseOnEnemyRocketHit: 30
-  healthDecreasePerHit: 5
-  healthDecreasePerHitByMissle: 25
 --- !u!1 &3425174698617856531
 GameObject:
   m_ObjectHideFlags: 0

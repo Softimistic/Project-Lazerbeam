@@ -2923,6 +2923,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6038728507241151665, guid: 15e4c2fd728eafa48bea6df2e6be09d0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6868316822184092741, guid: 15e4c2fd728eafa48bea6df2e6be09d0,
         type: 3}
       propertyPath: m_Shadows.m_Strength
@@ -2946,12 +2951,12 @@ PrefabInstance:
     - target: {fileID: 8821929618725904388, guid: 15e4c2fd728eafa48bea6df2e6be09d0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -118.8
+      value: -172.3
       objectReference: {fileID: 0}
     - target: {fileID: 8821929618725904388, guid: 15e4c2fd728eafa48bea6df2e6be09d0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -811.1
+      value: -830.1
       objectReference: {fileID: 0}
     - target: {fileID: 8821929618725904388, guid: 15e4c2fd728eafa48bea6df2e6be09d0,
         type: 3}
@@ -9615,6 +9620,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player Ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115151599521277901, guid: d3cc795ba9015554a8548a146f95db90,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2141138670568819793, guid: d3cc795ba9015554a8548a146f95db90,
         type: 3}
