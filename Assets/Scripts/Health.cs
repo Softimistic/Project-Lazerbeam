@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     public int health;
     // healthText changes te text on screen
     Text healthText;
+    public int maxHealth = 100;
 
     /// Start is called before the first frame update
     void Start()
@@ -27,6 +28,18 @@ public class Health : MonoBehaviour
     public void HealthHit(int healthDescrease)
     {
         health = health - healthDescrease;
+    }
+
+    public void HealthAdd(int healthIncrease)
+    {
+        if(health + healthIncrease > maxHealth)
+        {
+            health = maxHealth;
+        }
+        else
+        {
+            health = health + healthIncrease;
+        }    
     }
 
     public void setHealthToZero(int setHealth)
