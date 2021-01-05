@@ -44,6 +44,11 @@ public class CollsionHandler : MonoBehaviour
             HealthCheckNChange(healthDecreaseOnMeteoriteHit);
         }
 
+        if (collision.gameObject.CompareTag("missle") && !isAlGehit)
+        {
+            HealthCheckNChange(healthDecreasePerHitByMissle);
+        }
+
         if (collision.gameObject.CompareTag("EnemyBullet"))
         {
             HealthCheckNChange(collision.GetComponent<EnemyBullet>().Damage);
@@ -53,18 +58,6 @@ public class CollsionHandler : MonoBehaviour
         {
             HealthCheckNChange(healthDecreaseOnEnemyRocketHit);
         }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("pspspspspps");
-        if (collision.gameObject.CompareTag("missle") && !isAlGehit)
-        {
-            Debug.Log(isAlGehit);
-            HealthCheckNChange(healthDecreasePerHitByMissle);
-        }
-        isAlGehit = false;
-        Debug.Log(isAlGehit);
     }
 
     private void HealthCheckNChange(int healthDecrease)

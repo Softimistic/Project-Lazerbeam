@@ -39,7 +39,7 @@ public class Missle : MonoBehaviour
                 if((target.position - transform.position).magnitude > 50)
                 {
                     randomOffset = 100.0f;
-                    rocketTurnSpeed = 220.0f;
+                    rocketTurnSpeed = 150.0f;
                 }
                 else
                 {
