@@ -5,12 +5,10 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    
-
-    public int health;
+    [SerializeField] private int maxHealth = 100;
+    [SerializeField] private int health;
     // healthText changes te text on screen
     Text healthText;
-    public int maxHealth = 100;
 
     /// Start is called before the first frame update
     void Start()

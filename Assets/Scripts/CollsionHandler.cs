@@ -21,6 +21,7 @@ public class CollsionHandler : MonoBehaviour
     int healthDecreasePerHitByMissle = 25;
 
     Health health;
+    Shield shield;
     bool isAlGehit = false;
     
 
@@ -29,6 +30,7 @@ public class CollsionHandler : MonoBehaviour
     private void Start()
     {
         health = FindObjectOfType<Health>();
+        shield = FindObjectOfType<Shield>();
     }
 
     /// <summary>
@@ -66,7 +68,9 @@ public class CollsionHandler : MonoBehaviour
         isAlGehit = true;
         if (Int32.Parse(health.getHealth()) >= 0)
         {
-            health.HealthHit(healthDecrease);
+            int leftover = (healthDecrease - shield.getShieldInt() < 0)? 0 : healthDecrease - shield.getShieldInt();
+            shield.ShieldHit(healthDecrease);
+            health.HealthHit(leftover);
         }
         if (Int32.Parse(health.getHealth()) <= 25)
         {
