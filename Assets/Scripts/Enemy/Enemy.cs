@@ -51,7 +51,6 @@ public abstract class Enemy : MonoBehaviour
     {
         // Checks if the enemy is active. If the enemy is not active the timer will still continue but the enemy won't do anything
         time = Time.deltaTime;
-        DespawnEnemy();
         if (thisGameState != GameState.despawning)
         {
             CheckPlayerInRange();
@@ -60,6 +59,7 @@ public abstract class Enemy : MonoBehaviour
         {
             Movement();
             Shooting();
+            DespawnEnemy();
         }
     }
 
