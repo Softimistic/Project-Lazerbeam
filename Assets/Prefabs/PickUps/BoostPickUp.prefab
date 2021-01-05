@@ -578,6 +578,7 @@ GameObject:
   - component: {fileID: 2724282160227683016}
   - component: {fileID: 2469135114437867818}
   - component: {fileID: 2469135114437867812}
+  - component: {fileID: 731322686}
   m_Layer: 0
   m_Name: BoostPickUp
   m_TagString: Untagged
@@ -644,6 +645,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boostSound: {fileID: 8300000, guid: 68c54d8897769ff478160e0fe87a5ca9, type: 3}
+--- !u!95 &731322686
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3352165333690372210}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 228ddafc21a44cf4f82b6428f1845c8f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4338298690524033113
 GameObject:
   m_ObjectHideFlags: 0
