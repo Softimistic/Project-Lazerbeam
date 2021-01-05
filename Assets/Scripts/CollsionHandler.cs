@@ -29,8 +29,8 @@ public class CollsionHandler : MonoBehaviour
     
     private void Start()
     {
-        health = FindObjectOfType<Health>();
-        shield = FindObjectOfType<Shield>();
+        health = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+        shield = GameObject.FindGameObjectWithTag("Player").GetComponent<Shield>();
     }
 
     /// <summary>
@@ -66,18 +66,18 @@ public class CollsionHandler : MonoBehaviour
     {
         impactFX.Play();
         isAlGehit = true;
-        if (Int32.Parse(health.getHealth()) >= 0)
+        if (health.GetHealthInt() >= 0)
         {
             int leftover = (healthDecrease - shield.getShieldInt() < 0)? 0 : healthDecrease - shield.getShieldInt();
             shield.ShieldHit(healthDecrease);
             health.HealthHit(leftover);
         }
-        if (Int32.Parse(health.getHealth()) <= 25)
+        if (health.GetHealthInt() <= 25)
         {
             hitFX.SetActive(true);
         }
 
-        if (Int32.Parse(health.getHealth()) <= 0)
+        if (health.GetHealthInt() <= 0)
         {
             PlayerDies();
         }
@@ -86,7 +86,7 @@ public class CollsionHandler : MonoBehaviour
     //When the player dies
     public void PlayerDies()
     {
-        health.setHealthToZero(0);
+        health.SetHealthToZero(0);
         StartDeathSequence(); /// Start de doodsequence
         deathFX.SetActive(true);
         Invoke("ReloadScene", levelLoadDelay);

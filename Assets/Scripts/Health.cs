@@ -5,14 +5,16 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 100;
-    [SerializeField] private int health;
+    private int maxHealth;
+    private int health;
     // healthText changes te text on screen
     Text healthText;
 
     /// Start is called before the first frame update
     void Start()
     {
+        maxHealth = 100;
+        health = maxHealth;
         // Calling the Text in Canvas.text
         healthText = GetComponent<Text>();
         // Converting the text from int to string
@@ -40,12 +42,17 @@ public class Health : MonoBehaviour
         }    
     }
 
-    public void setHealthToZero(int setHealth)
+    public void SetHealthToZero(int setHealth)
     {
         health = setHealth;
     }
 
-    public string getHealth()
+    public int GetHealthInt()
+    {
+        return health;
+    }
+
+    public string GetHealth()
     {
         return health.ToString();
     }
