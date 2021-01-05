@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float controlRollFactor = -20f;
    
     [Header("Henk's abilities")]
+    [Tooltip("FOV in it's default state")] public float defaultFOV = 60f;
     [Tooltip("FOV when braking")] public float brakeFOV = 50f;
     private bool _braking;
     [Tooltip("FOV when boosting")] public float boostFOV = 90f;
@@ -133,7 +134,7 @@ public class PlayerController : MonoBehaviour
             transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 75f;
             
         }
-        else if(Camera.main.fieldOfView > 60f)
+        else if(Camera.main.fieldOfView > defaultFOV)
         {
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60f, 1f * Time.deltaTime);
             transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 30f;
@@ -149,7 +150,7 @@ public class PlayerController : MonoBehaviour
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, brakeFOV, 1f * Time.deltaTime);
             transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 10f; 
         }
-        else if (Camera.main.fieldOfView < 60f)
+        else if (Camera.main.fieldOfView < defaultFOV)
         {
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60f, 1f * Time.deltaTime);
             transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 30f;
