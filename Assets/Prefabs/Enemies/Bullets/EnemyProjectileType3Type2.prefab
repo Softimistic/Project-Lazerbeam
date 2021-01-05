@@ -72,11 +72,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyProjectileType3Type2
       objectReference: {fileID: 0}
-    - target: {fileID: 3488468700672383262, guid: c42ed4d72b8df7542b77cb90aaa67ee6,
-        type: 3}
-      propertyPath: Damage
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 3664484097641786777, guid: c42ed4d72b8df7542b77cb90aaa67ee6,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

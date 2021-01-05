@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3752757206459375201}
   - component: {fileID: 822911565469361378}
   - component: {fileID: 7104807343646293446}
+  - component: {fileID: 877772263586637802}
   - component: {fileID: -5470223283687075225}
   m_Layer: 0
   m_Name: MissleTower
@@ -84,6 +85,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &877772263586637802
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039156816281552199}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.007, y: 0.007, z: 0.05}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &-5470223283687075225
 MeshCollider:
   m_ObjectHideFlags: 0
