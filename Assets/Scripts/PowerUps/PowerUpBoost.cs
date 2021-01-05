@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PowerUpBoost : PowerUp
 {
-    PlayerController player1;
-
+    private PlayerController player1;
+    public AudioClip boostSound;
+    
     protected override void Pickup(Collider player)
     {
+        AudioSource.PlayClipAtPoint(boostSound, transform.position);
         player1.addBoost(20);
     }
 

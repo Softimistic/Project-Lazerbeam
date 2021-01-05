@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 2469135114437867818}
   - component: {fileID: 2469135114437867812}
   m_Layer: 0
-  m_Name: nitrous (1)
+  m_Name: BoostPickUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -643,6 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d99084c6b970148820db307e1c40dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostSound: {fileID: 8300000, guid: 68c54d8897769ff478160e0fe87a5ca9, type: 3}
 --- !u!1 &4338298690524033113
 GameObject:
   m_ObjectHideFlags: 0
