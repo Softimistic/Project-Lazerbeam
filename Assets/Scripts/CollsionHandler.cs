@@ -44,11 +44,6 @@ public class CollsionHandler : MonoBehaviour
             HealthCheckNChange(healthDecreaseOnMeteoriteHit);
         }
 
-        if (collision.gameObject.CompareTag("missle") && !isAlGehit)
-        {
-            HealthCheckNChange(healthDecreasePerHitByMissle);
-        }
-
         if (collision.gameObject.CompareTag("EnemyBullet"))
         {
             HealthCheckNChange(collision.GetComponent<EnemyBullet>().Damage);
@@ -77,6 +72,18 @@ public class CollsionHandler : MonoBehaviour
         {
             PlayerDies();
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+        if (collision.gameObject.CompareTag("missle") && !isAlGehit)
+        {
+            
+            HealthCheckNChange(healthDecreasePerHitByMissle);
+        }
+        isAlGehit = false;
+        
     }
 
     //When the player dies
