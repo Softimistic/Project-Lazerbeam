@@ -33,11 +33,10 @@ public class PlayerController : MonoBehaviour
     public float boostOverTime;
     public bool boostIsLeeg = false;
     public bool BossMode;
+    public bool WarpSpeed;
 
     float xThrow, yThrow;
     bool isControlEnabled = true;
-
-    
 
     private void Start()
     {
@@ -131,8 +130,13 @@ public class PlayerController : MonoBehaviour
             boostPop.SetActive(true);
             boostTrail.SetActive(true);
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, boostFOV, 1f * Time.deltaTime);
-            transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 75f;
-            
+            int warp = 0;
+            if (WarpSpeed)
+            {
+                warp = 10;
+            }
+
+            transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 75f * warp;
         }
         else if(Camera.main.fieldOfView > defaultFOV)
         {
