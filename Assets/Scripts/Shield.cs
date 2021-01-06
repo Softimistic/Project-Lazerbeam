@@ -8,8 +8,11 @@ public class Shield : MonoBehaviour
     private int maxShield;
     private int shield;
     [SerializeField] private GameObject visualShield;
+    public AudioSource shieldActive;
     // shieldText changes te text on screen
     Text shieldText;
+    public AudioClip shieldBroken;
+
 
     /// Start is called before the first frame update
     void Start()
@@ -19,6 +22,7 @@ public class Shield : MonoBehaviour
         shield = 0;
         maxShield = 100;
         visualShield.SetActive(false);
+        shieldActive = GetComponent<AudioSource>();
     }
 
     /// <summary>
@@ -29,7 +33,12 @@ public class Shield : MonoBehaviour
         if (shield - shieldDecrease <= 0)
         {
             shield = 0;
+            shieldActive.Stop();
             visualShield.SetActive(false);
+            if (!visualShield.activeSelf)
+            {
+                AudioSource.PlayClipAtPoint(shieldBroken, transform.position);
+            }
         }
         else
         {
@@ -47,7 +56,12 @@ public class Shield : MonoBehaviour
         {
             shield = shield + shieldIncrease;
         }
-        visualShield.SetActive(true);
+
+        if (!visualShield.activeSelf)
+        {
+            shieldActive.Play();
+            visualShield.SetActive(true);
+        }
     }
 
     public void setShieldToZero(int setShield)
@@ -64,4 +78,5 @@ public class Shield : MonoBehaviour
     {
         return shield.ToString();
     }
+
 }
