@@ -34,11 +34,12 @@ public class Shield : MonoBehaviour
         {
             shield = 0;
             shieldActive.Stop();
-            visualShield.SetActive(false);
-            if (!visualShield.activeSelf)
+            if (visualShield.activeSelf)
             {
+                
                 AudioSource.PlayClipAtPoint(shieldBroken, transform.position);
             }
+            visualShield.SetActive(false);
         }
         else
         {
