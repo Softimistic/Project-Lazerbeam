@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -22,12 +23,33 @@ public class GameStateController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        #region controll music
+        FindObjectOfType<AudioManager>().PauseAll();
+        FindObjectOfType<AudioManager>().Play(GetCurrentThemeName(SceneManager.GetActiveScene().name));
+        #endregion
+    }
+
+    private String GetCurrentThemeName(string scenename)
+    {
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "Boss1Phase1":
+                return "BossMusic";
+                break;
+            case "Boss1Phase2":
+                return "BossMusic";
+                break;
+            default:
+                return "Theme";
+                break;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        #region disable menu
+
         if (Input.GetKeyDown(KeyCode.Escape) && !gameOverMenu.activeSelf)
         {
             if (!_isPause)
@@ -39,6 +61,8 @@ public class GameStateController : MonoBehaviour
                 ClosePauseMenu();
             }
         }
+
+        #endregion
     }
 
     /// <summary>
@@ -76,7 +100,7 @@ public class GameStateController : MonoBehaviour
     {
         pauseMenu.SetActive(true);
        // audioManager.PauseTheme("Theme");
-        FindObjectOfType<AudioManager>().PauseTheme("Theme");
+        FindObjectOfType<AudioManager>().PauseTheme(GetCurrentThemeName(SceneManager.GetActiveScene().name));
         Pause();
         _isPause = true;
     }
@@ -87,7 +111,7 @@ public class GameStateController : MonoBehaviour
     public void ClosePauseMenu()
     {
         pauseMenu.SetActive(false);
-        FindObjectOfType<AudioManager>().ResumeTheme("Theme");
+        FindObjectOfType<AudioManager>().ResumeTheme(GetCurrentThemeName(SceneManager.GetActiveScene().name));
         Resume();
         _isPause = false;
     }
@@ -115,6 +139,7 @@ public class GameStateController : MonoBehaviour
     public void BackToMainMenu()
     {
         Time.timeScale = 1f;
+        FindObjectOfType<AudioManager>().ResumeTheme(GetCurrentThemeName(SceneManager.GetActiveScene().name));
         SceneManager.LoadScene(2);
     }
 
