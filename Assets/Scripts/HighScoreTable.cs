@@ -14,27 +14,30 @@ public class HighScoreTable : MonoBehaviour
     private void Awake()
     {
         _entryContainer = transform.Find("HighScoreEntryContainer");
-        _enteryTemplate = _entryContainer.Find("HighScoreEntryTemplate");
         //ResetDatabase();
         //AddNewScoreEntry(100000);
-        _enteryTemplate.gameObject.SetActive(false);
-        String jsonString = PlayerPrefs.GetString("ScoreTable");
-        if (jsonString != "")
-        {
-            HighScores highScores = JsonUtility.FromJson<HighScores>(jsonString);
-            if (highScores.highscoreList.Count != 0)
+        if (_entryContainer)
+        { 
+            _enteryTemplate = _entryContainer.Find("HighScoreEntryTemplate");
+            _enteryTemplate.gameObject.SetActive(false);
+            String jsonString = PlayerPrefs.GetString("ScoreTable");
+            if (jsonString != "")
             {
-                //sort Scores desending
-                highScores.highscoreList.Sort(
-                    delegate(HighScoreEntry p1, HighScoreEntry p2) { return p2.score.CompareTo(p1.score); });
-                _highScoreEntryTransformList = new List<Transform>();
-                //render
-                for (int i = 0; i < 5; i++)
+                HighScores highScores = JsonUtility.FromJson<HighScores>(jsonString);
+                if (highScores.highscoreList.Count != 0)
                 {
-                    if (i < highScores.highscoreList.Count)
+                    //sort Scores desending
+                    highScores.highscoreList.Sort(
+                        delegate(HighScoreEntry p1, HighScoreEntry p2) { return p2.score.CompareTo(p1.score); });
+                    _highScoreEntryTransformList = new List<Transform>();
+                    //render
+                    for (int i = 0; i < 5; i++)
                     {
-                        CreateHighScoreEntry(highScores.highscoreList[i], _entryContainer,
-                            _highScoreEntryTransformList);
+                        if (i < highScores.highscoreList.Count)
+                        {
+                            CreateHighScoreEntry(highScores.highscoreList[i], _entryContainer,
+                                _highScoreEntryTransformList);
+                        }
                     }
                 }
             }
@@ -78,7 +81,7 @@ public class HighScoreTable : MonoBehaviour
     private void CreateHighScoreEntry(HighScoreEntry highScoreEntry, Transform container,
         List<Transform> transformsList)
     {
-        float templateHeight = 35f;
+        float templateHeight = 50f;
         Transform entryTransform = Instantiate(_enteryTemplate, container);
         RectTransform entryRectTransform = entryTransform.GetComponent<RectTransform>();
         entryRectTransform.anchoredPosition = new Vector2(0, -templateHeight * transformsList.Count);

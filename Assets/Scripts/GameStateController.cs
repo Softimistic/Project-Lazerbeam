@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameStateController : MonoBehaviour
 {
@@ -131,6 +132,8 @@ public class GameStateController : MonoBehaviour
     /// </summary>
     public void ActiveGameOverMenu()
     {
+        //Debug.Log(GameObject.FindWithTag("ScoreText").GetComponent<Text>().text.ToString() + " 6986");
+        FindObjectOfType<HighScoreTable>().AddNewScoreEntry(int.Parse(GameObject.FindWithTag("ScoreText").GetComponent<Text>().text.ToString()));
         CloseScoreMenu();
         Pause();
         gameOverMenu.SetActive(true);

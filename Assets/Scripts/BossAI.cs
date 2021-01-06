@@ -145,7 +145,14 @@ public class BossAI : MonoBehaviour
         //         break;
         // }
         // keep going circle movement
-        transform.RotateAround(camera.position, circut.MoveDir(), degPerSec * Time.deltaTime);
+        if (!circut.MoveDir().Equals(Vector3.zero))
+        {
+            transform.RotateAround(camera.position, circut.MoveDir(), degPerSec * Time.deltaTime);
+        }
+        else
+        {
+            transform.RotateAround(player.position,Vector3.forward, degPerSec * Time.deltaTime * 10f);
+        }
     }
 
     private void FollowCamera()
