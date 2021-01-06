@@ -58,6 +58,11 @@ public class CollsionHandler : MonoBehaviour
         {
             HealthCheckNChange(healthDecreaseOnEnemyRocketHit);
         }
+
+        if (collision.gameObject.CompareTag("InstaKill"))
+        {
+            PlayerDies();
+        }
     }
 
     private void HealthCheckNChange(int healthDecrease)
