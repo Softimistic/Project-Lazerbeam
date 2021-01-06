@@ -15,7 +15,7 @@ public class CreateEnemyBullet : MonoBehaviour
 
     public void Shoot(GameObject player)
     {
-        Vector3 direction = (player.transform.position + player.transform.forward * 6f) - transform.position;
+        Vector3 direction = (player.transform.position) - transform.position;
 
 
         Quaternion rotation = Quaternion.LookRotation(direction);

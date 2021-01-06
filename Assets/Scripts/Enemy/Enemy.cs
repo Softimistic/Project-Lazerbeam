@@ -59,8 +59,8 @@ public abstract class Enemy : MonoBehaviour
         {
             Movement();
             Shooting();
-            DespawnEnemy();
         }
+        DespawnEnemy();
     }
 
     private void CheckPlayerInRange()
@@ -114,7 +114,8 @@ public abstract class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        despawnTimer -= (player.GetComponent<PlayerController>().IsBoosting())? time * 3 : time;
+        if (thisGameState != GameState.inactive)
+            despawnTimer -= (player.GetComponent<PlayerController>().IsBoosting()) ? time * 3 : time;
     }
 
     public int GetAccuracy()
