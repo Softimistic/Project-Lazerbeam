@@ -1,24 +1,36 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    
-
-    public int health;
+    private int maxHealth;
+    private int health = 100;
     // healthText changes te text on screen
     Text healthText;
+    public Slider healthSlider;
 
     /// Start is called before the first frame update
     void Start()
     {
+        maxHealth = 100;
+        healthSlider.maxValue = maxHealth;
+        health = maxHealth;
+        healthSlider.value = health;
         // Calling the Text in Canvas.text
         healthText = GetComponent<Text>();
-        // Converting the text from int to string
-        //healthText.text = health.ToString();
+    }
 
+    void Update()
+    {
+        updateUI();
+    }
+
+    private void updateUI()
+    {
+        healthSlider.value = health;
     }
 
     /// <summary>
@@ -29,12 +41,29 @@ public class Health : MonoBehaviour
         health = health - healthDescrease;
     }
 
-    public void setHealthToZero(int setHealth)
+    public void HealthAdd(int healthIncrease)
+    {
+        if(health + healthIncrease > maxHealth)
+        {
+            health = maxHealth;
+        }
+        else
+        {
+            health = health + healthIncrease;
+        }    
+    }
+
+    public void SetHealthToZero(int setHealth)
     {
         health = setHealth;
     }
 
-    public string getHealth()
+    public int GetHealthInt()
+    {
+        return health;
+    }
+
+    public string GetHealth()
     {
         return health.ToString();
     }

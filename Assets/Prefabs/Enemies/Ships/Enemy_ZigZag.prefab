@@ -219,11 +219,11 @@ GameObject:
   - component: {fileID: 4046244508228994297}
   - component: {fileID: 4046244508228994296}
   - component: {fileID: 4046244508228994299}
-  - component: {fileID: 4046244508228994278}
   - component: {fileID: -1577261823894574170}
+  - component: {fileID: -4987101980655201405}
   m_Layer: 0
   m_Name: Enemy_ZigZag
-  m_TagString: Untagged
+  m_TagString: EnemyShips
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -289,27 +289,6 @@ MonoBehaviour:
   hitSoundFx: {fileID: 0}
   hitColor: {r: 0, g: 0, b: 0, a: 0}
   hitTimes: 1
---- !u!114 &4046244508228994278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4046244508228994298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5205603c3c34fc548b8940a6885056ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawningRange: 150
-  speed: 10
-  despawnTime: 30
-  maxDistance: 40
-  shootingRange: 75
-  shootingSpeed: 2
-  accuracy: 0
-  frequency: 2
-  magnitude: 5
 --- !u!114 &-1577261823894574170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,3 +305,29 @@ MonoBehaviour:
   hitSoundFx: {fileID: 0}
   hitColor: {r: 1, g: 0, b: 0, a: 0}
   hitTimes: 1
+--- !u!114 &-4987101980655201405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4046244508228994298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5205603c3c34fc548b8940a6885056ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawningRange: 150
+  speed: 10
+  despawnTime: 30
+  maxDistance: 70
+  shootingRange: 75
+  shootingSpeed: 1
+  accuracy: 0
+  itemDropChance: 20
+  healthPowerUp: {fileID: -6123806696371061730, guid: 91c9a4702729fc145aba471aba864a96,
+    type: 3}
+  boostPowerUp: {fileID: 2469135114437867812, guid: ae367f05de2f4c34d8b9348424a3b227,
+    type: 3}
+  frequency: 2
+  magnitude: 5

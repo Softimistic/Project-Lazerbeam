@@ -55,6 +55,15 @@ public class BulletHit : MonoBehaviour
                     }
                 }
             }
+            else if (gameObject.CompareTag("EnemyShips")){
+                StartCoroutine(SelfDestroy());
+                if (deathFx)
+                {
+                    GameObject nwFx = Instantiate(deathFx, transform.position, Quaternion.identity);
+                    FxSelfDestroy(nwFx);
+                    gameObject.GetComponentInChildren<Enemy>().OnDeath();
+                }
+            }
             else
             {
                 StartCoroutine(SelfDestroy());
