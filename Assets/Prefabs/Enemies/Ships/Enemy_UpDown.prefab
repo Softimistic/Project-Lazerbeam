@@ -106,6 +106,8 @@ MonoBehaviour:
     type: 3}
   boostPowerUp: {fileID: 2469135114437867812, guid: ae367f05de2f4c34d8b9348424a3b227,
     type: 3}
+  shieldPowerUp: {fileID: 788184397011054506, guid: 34e392188eea5c64898eb67b32da99ae,
+    type: 3}
   frequency: 2
   magnitude: 5
 --- !u!114 &-9135484010437301251
