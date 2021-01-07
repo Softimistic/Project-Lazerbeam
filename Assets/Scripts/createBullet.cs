@@ -11,7 +11,7 @@ public class createBullet : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject ship;
     public GameObject camera;
-    [SerializeField] [Range(2, 100)] private int speedfactor;
+    [SerializeField] [Range(2, 300)] private int speedfactor;
     bool spacebarPressed = false;
     public float cooldown_ms;
     float timer_ms = 0;
@@ -19,7 +19,14 @@ public class createBullet : MonoBehaviour
     void Start()
     {
         //set speed to bullet
-        bulletPrefab.GetComponent<bullet>().Speed = camera.GetComponent<BetterWaypointFollower>().routeSpeed * speedfactor;
+        if (camera.GetComponent<BetterWaypointFollower>().routeSpeed != 0)
+        {
+            bulletPrefab.GetComponent<bullet>().Speed = camera.GetComponent<BetterWaypointFollower>().routeSpeed * speedfactor;
+        }
+        else
+        {
+            bulletPrefab.GetComponent<bullet>().Speed = 300f;
+        }
     }
 
     // Update is called once per frame

@@ -34,7 +34,7 @@ public class AudioManager : MonoBehaviour
 
       void Start()
      {
-         Play("Theme");
+         //Play("Theme");
      }
 
      public void Play(string name)
@@ -70,5 +70,16 @@ public class AudioManager : MonoBehaviour
 
          s.source.spatialBlend = 0f;
          s.source.volume = 0.2f;
+     }
+
+     public void PauseAll()
+     {
+         foreach (Sound each in sounds)
+         {
+             if (each != null)
+             {
+                 each.source.Stop();
+             }
+         }
      }
 }
