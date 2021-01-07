@@ -17,6 +17,7 @@ TagManager:
   - missle
   - EventTrigger
   - EnemyGun
+  - ScoreText
   - InstaKill
   - Mine
   layers:

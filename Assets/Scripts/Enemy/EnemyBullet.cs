@@ -7,12 +7,13 @@ public class EnemyBullet : MonoBehaviour
 
     public int Damage;
     private Rigidbody rb;
-    [SerializeField] private float speed = 100.0f;
+    [SerializeField] private float speed;
     [SerializeField] private int Lifetime;
 
     // Start is called before the first frame update  
     void Start()
     {
+        transform.parent = GameObject.FindGameObjectWithTag("MainCamera").transform;
         StartCoroutine(SelfDestruct());
         rb = this.GetComponent<Rigidbody>();
         rb.velocity = transform.up * speed;

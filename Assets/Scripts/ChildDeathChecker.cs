@@ -17,7 +17,8 @@ public class ChildDeathChecker : SceneTransitionEvent
             }
 
             if (_counter > 100)
-            {
+            { 
+                FindObjectOfType<AudioManager>().PauseAll();
                 LoadNextScene();
             }
             _counter++;

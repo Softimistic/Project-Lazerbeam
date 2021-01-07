@@ -109,4 +109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 579e6cbd14c226942a1b96ee2a30191f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4398155798288899673, guid: 2ab3a59eb63bb4c4f8506fcf590d08b6, type: 3}
+  bulletPrefab: {fileID: 4398155798288899673, guid: 2ab3a59eb63bb4c4f8506fcf590d08b6,
+    type: 3}
+  ship: {fileID: 0}
+  camera: {fileID: 0}
+  speedfactor: 20
+  cooldown_ms: 250

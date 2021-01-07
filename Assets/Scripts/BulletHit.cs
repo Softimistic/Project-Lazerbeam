@@ -19,7 +19,7 @@ public class BulletHit : MonoBehaviour
     /// <summary>
     /// after being hit by bullets for hitTimes, will trigger some thing
     /// </summary>
-    [SerializeField] [Range(0, 100)] private int hitTimes;
+    [SerializeField] [Range(0, 999999)] private int hitTimes;
 
     private MeshRenderer _meshRenderer;
     private Color _originalColor;
@@ -53,6 +53,15 @@ public class BulletHit : MonoBehaviour
                         GameObject nwFx = Instantiate(deathFx, transform.position, Quaternion.identity);
                         FxSelfDestroy(nwFx);
                     }
+                }
+            }
+            else if (gameObject.CompareTag("EnemyShips")){
+                StartCoroutine(SelfDestroy());
+                if (deathFx)
+                {
+                    GameObject nwFx = Instantiate(deathFx, transform.position, Quaternion.identity);
+                    FxSelfDestroy(nwFx);
+                    gameObject.GetComponentInChildren<Enemy>().OnDeath();
                 }
             }
             else

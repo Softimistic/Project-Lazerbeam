@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     public bool boostIsLeeg = false;
     public bool BossMode;
     public bool WarpSpeed;
+    public float maxBoost = 100;
 
     float xThrow, yThrow;
     bool isControlEnabled = true;
@@ -165,6 +166,19 @@ public class PlayerController : MonoBehaviour
     {
         Boost1 = Mathf.Clamp(Boost1, 0, 100);
         BoostBar.value = Boost1;
+    }
+
+    public void addBoost(int boostIncrease)
+    {
+        if(Boost1 + boostIncrease > maxBoost)
+        {
+            Boost1 = maxBoost;
+        }
+        else
+        {
+            Boost1 = Boost1 + boostIncrease;
+        }
+        
     }
 
     public bool IsBoosting()

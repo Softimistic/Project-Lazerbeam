@@ -23,7 +23,7 @@ public class Missle : MonoBehaviour
     private void Start()
     {
         rocketTurnSpeed = 50.0f;
-        rocketSpeed = 100f;
+        rocketSpeed = 60f;
         randomOffset = 0.0f;
         target = GameObject.Find("Player Ship").transform;
         
@@ -38,15 +38,16 @@ public class Missle : MonoBehaviour
             {
                 if((target.position - transform.position).magnitude > 50)
                 {
-                    randomOffset = 100.0f;
-                    rocketTurnSpeed = 90.0f;
+                    randomOffset = 100f;
+                    rocketTurnSpeed = 150f;
                 }
                 else
                 {
-                    randomOffset = 5f;
+                    randomOffset = 5.5f;
                     if((target.position - transform.position).magnitude < 10)
                     {
-                        rocketSpeed = 180.0f;
+                        rocketSpeed = 135.0f; 
+                        rocketTurnSpeed = 90f;
                     }
                 }
             }
