@@ -18,6 +18,7 @@ TagManager:
   - EventTrigger
   - EnemyGun
   - InstaKill
+  - Mine
   layers:
   - Default
   - TransparentFX

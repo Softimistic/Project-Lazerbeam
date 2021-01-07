@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
             boostPop.SetActive(true);
             boostTrail.SetActive(true);
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, boostFOV, 1f * Time.deltaTime);
-            int warp = 0;
+            int warp = 1;
             if (WarpSpeed)
             {
                 warp = 10;
