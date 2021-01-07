@@ -31,6 +31,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected int itemDropChance; // in percentage (60 = 60%)
     [SerializeField] protected PowerUpHealth healthPowerUp;
     [SerializeField] protected PowerUpBoost boostPowerUp;
+    [SerializeField] protected PowerUpShield shieldPowerUp;
 
     protected List<GameObject> guns = new List<GameObject>();
     protected int currentGun;
