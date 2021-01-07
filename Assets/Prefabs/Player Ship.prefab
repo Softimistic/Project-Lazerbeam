@@ -422,6 +422,7 @@ MonoBehaviour:
   visualShield: {fileID: 9008491127547309792}
   shieldActive: {fileID: 1346653372529075}
   shieldBroken: {fileID: 8300000, guid: b22ef7a4b7af7fb4b9983335fa63fd2c, type: 3}
+  shieldBar: {fileID: 0}
 --- !u!114 &1346653372529070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,6 +435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebfb4f30b9e6a3b4998631c131059222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthSlider: {fileID: 0}
 --- !u!1 &3425174698617856531
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class Shield : MonoBehaviour
     // shieldText changes te text on screen
     Text shieldText;
     public AudioClip shieldBroken;
+    public Slider shieldBar;
 
 
     /// Start is called before the first frame update
@@ -21,8 +22,20 @@ public class Shield : MonoBehaviour
         shieldText = GetComponent<Text>();
         shield = 0;
         maxShield = 100;
+        shieldBar.value = shield;
+        shieldBar.maxValue = maxShield;
         visualShield.SetActive(false);
         shieldActive = GetComponent<AudioSource>();
+    }
+
+    void Update()
+    {
+        updateUI();
+    }
+
+    private void updateUI()
+    {
+        shieldBar.value = shield;
     }
 
     /// <summary>
