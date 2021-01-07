@@ -275,6 +275,11 @@ PrefabInstance:
       propertyPath: Messager
       value: 
       objectReference: {fileID: 4490832875590765052}
+    - target: {fileID: 3206354551513350961, guid: d0a2a5a8aadaf834db36a7464591d325,
+        type: 3}
+      propertyPath: TargetScene
+      value: SpaceLevelMustafa
+      objectReference: {fileID: 0}
     - target: {fileID: 3206354551513350974, guid: d0a2a5a8aadaf834db36a7464591d325,
         type: 3}
       propertyPath: m_LocalPosition.x

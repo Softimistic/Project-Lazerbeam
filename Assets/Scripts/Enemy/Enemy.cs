@@ -56,7 +56,6 @@ public abstract class Enemy : MonoBehaviour
     {
         // Checks if the enemy is active. If the enemy is not active the timer will still continue but the enemy won't do anything
         time = Time.deltaTime;
-        DespawnEnemy();
         if (thisGameState != GameState.despawning)
         {
             CheckPlayerInRange();
@@ -66,6 +65,7 @@ public abstract class Enemy : MonoBehaviour
             Movement();
             Shooting();
         }
+        DespawnEnemy();
     }
 
     private void CheckPlayerInRange()
@@ -119,7 +119,8 @@ public abstract class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        despawnTimer -= (player.GetComponent<PlayerController>().IsBoosting())? time * 3 : time;
+        if (thisGameState != GameState.inactive)
+            despawnTimer -= (player.GetComponent<PlayerController>().IsBoosting()) ? time * 3 : time;
     }
 
     public int GetAccuracy()
