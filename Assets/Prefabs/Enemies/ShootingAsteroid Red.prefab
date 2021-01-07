@@ -114,7 +114,7 @@ MonoBehaviour:
   - {fileID: 7397853939233577245}
   - {fileID: 7397853938555513793}
   missle: {fileID: 724345175001270576, guid: af23b3e9d2875af43b05c0893cb44c77, type: 3}
-  range: 200
+  range: 500
   target: {fileID: 2111641385240508693, guid: d3cc795ba9015554a8548a146f95db90, type: 3}
   health: 100
 --- !u!1 &1696852543825524977
