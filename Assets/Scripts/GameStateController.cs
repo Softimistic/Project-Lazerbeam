@@ -143,7 +143,7 @@ public class GameStateController : MonoBehaviour
     {
         Time.timeScale = 1f;
         FindObjectOfType<AudioManager>().ResumeTheme(GetCurrentThemeName(SceneManager.GetActiveScene().name));
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(0);
     }
 
     public void DisablePlayerControl()

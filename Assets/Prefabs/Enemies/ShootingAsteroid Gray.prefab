@@ -293,7 +293,7 @@ MonoBehaviour:
   missle: {fileID: 724345175001270576, guid: af23b3e9d2875af43b05c0893cb44c77, type: 3}
   range: 500
   target: {fileID: 2111641385240508693, guid: d3cc795ba9015554a8548a146f95db90, type: 3}
-  health: 100
+  hitCounter: 4
 --- !u!1 &3347546492976248459
 GameObject:
   m_ObjectHideFlags: 0

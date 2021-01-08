@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.04518666, g: 0.039375115, b: 0.047922775, a: 1}
+  m_IndirectSpecularColor: {r: 0.044349514, g: 0.03931563, b: 0.047046646, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebfb4f30b9e6a3b4998631c131059222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  healthSlider: {fileID: 0}
 --- !u!4 &31653632
 Transform:
   m_ObjectHideFlags: 0
@@ -1845,12 +1845,12 @@ PrefabInstance:
     - target: {fileID: 8559516666445403613, guid: d3cc795ba9015554a8548a146f95db90,
         type: 3}
       propertyPath: speedfactor
-      value: 300
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8559516666445403613, guid: d3cc795ba9015554a8548a146f95db90,
         type: 3}
       propertyPath: cooldown_ms
-      value: 100
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 8559516666717119864, guid: d3cc795ba9015554a8548a146f95db90,
         type: 3}
@@ -1865,12 +1865,12 @@ PrefabInstance:
     - target: {fileID: 8559516666717119864, guid: d3cc795ba9015554a8548a146f95db90,
         type: 3}
       propertyPath: speedfactor
-      value: 300
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8559516666717119864, guid: d3cc795ba9015554a8548a146f95db90,
         type: 3}
       propertyPath: cooldown_ms
-      value: 100
+      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3cc795ba9015554a8548a146f95db90, type: 3}
@@ -1907,6 +1907,12 @@ PrefabInstance:
       propertyPath: circut
       value: 
       objectReference: {fileID: 534669906}
+    - target: {fileID: 377626835614507468, guid: 2a5e793766a6032439c61d4d67b0dd8b,
+        type: 3}
+      propertyPath: lazer
+      value: 
+      objectReference: {fileID: 3488468700672383261, guid: c42ed4d72b8df7542b77cb90aaa67ee6,
+        type: 3}
     - target: {fileID: 1042100867186391929, guid: 2a5e793766a6032439c61d4d67b0dd8b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1962,6 +1968,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4012778844045413901, guid: 2a5e793766a6032439c61d4d67b0dd8b,
+        type: 3}
+      propertyPath: hitSoundFx
+      value: 
+      objectReference: {fileID: 8300000, guid: e747bfad018f4a64e8a5e75d2222f47a, type: 3}
+    - target: {fileID: 4012778844239880841, guid: 2a5e793766a6032439c61d4d67b0dd8b,
+        type: 3}
+      propertyPath: hitSoundFx
+      value: 
+      objectReference: {fileID: 8300000, guid: e747bfad018f4a64e8a5e75d2222f47a, type: 3}
+    - target: {fileID: 4012778845284771875, guid: 2a5e793766a6032439c61d4d67b0dd8b,
+        type: 3}
+      propertyPath: hitSoundFx
+      value: 
+      objectReference: {fileID: 8300000, guid: e747bfad018f4a64e8a5e75d2222f47a, type: 3}
     - target: {fileID: 4012778845295516872, guid: 2a5e793766a6032439c61d4d67b0dd8b,
         type: 3}
       propertyPath: m_Enabled
@@ -1970,6 +1991,21 @@ PrefabInstance:
     - target: {fileID: 4012778845295516879, guid: 2a5e793766a6032439c61d4d67b0dd8b,
         type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012778845295516879, guid: 2a5e793766a6032439c61d4d67b0dd8b,
+        type: 3}
+      propertyPath: hitSoundFx
+      value: 
+      objectReference: {fileID: 8300000, guid: e747bfad018f4a64e8a5e75d2222f47a, type: 3}
+    - target: {fileID: 4271061523674370706, guid: 2a5e793766a6032439c61d4d67b0dd8b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020827177707036023, guid: 2a5e793766a6032439c61d4d67b0dd8b,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
