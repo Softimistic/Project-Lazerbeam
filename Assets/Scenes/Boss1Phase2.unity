@@ -296,6 +296,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edc0ce7dc21c70f43b4eead1094f49c3, type: 3}
+--- !u!114 &212349786 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1724083479320806707, guid: edc0ce7dc21c70f43b4eead1094f49c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 212349785}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &212349787 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1724083479575541260, guid: edc0ce7dc21c70f43b4eead1094f49c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 212349785}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &212349788 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1724083478603209531, guid: edc0ce7dc21c70f43b4eead1094f49c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 212349785}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,11 +1971,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 534669905}
     m_Modifications:
+    - target: {fileID: 1346653372529069, guid: d3cc795ba9015554a8548a146f95db90, type: 3}
+      propertyPath: shieldBar
+      value: 
+      objectReference: {fileID: 212349787}
+    - target: {fileID: 1346653372529070, guid: d3cc795ba9015554a8548a146f95db90, type: 3}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 212349786}
     - target: {fileID: 2074373428775968599, guid: d3cc795ba9015554a8548a146f95db90,
         type: 3}
       propertyPath: BoostBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 212349788}
     - target: {fileID: 2074373428775968599, guid: d3cc795ba9015554a8548a146f95db90,
         type: 3}
       propertyPath: boostOverTime
