@@ -80,7 +80,7 @@ public class Messager : MonoBehaviour
 
     public string[][] getSpeechSubtitles(string speech)
     {
-        // UnityEngine.Debug.Log(speech);
+        UnityEngine.Debug.Log(speech);
         switch (speech)
         {
             case "Attention":
@@ -178,7 +178,7 @@ public class Messager : MonoBehaviour
 
             case "Joe1":
                 subtitleLine = new string[1][];
-                subtitleLine[0] = new string[2] { "Sorry to interrupt, gentlement", "2" };
+                subtitleLine[0] = new string[2] { "Sorry to interrupt, gentlemen", "2" };
                 break;
             case "Joe2":
                 subtitleLine = new string[1][];
@@ -205,6 +205,7 @@ public class Messager : MonoBehaviour
                 subtitleLine[2] = new string[2] { "you son of a #!", "1,5" };
                 break;
             default:
+                subtitleLine = new string[0][];
                 break;
         }
         return subtitleLine;
