@@ -80,7 +80,7 @@ public class Messager : MonoBehaviour
 
     public string[][] getSpeechSubtitles(string speech)
     {
-        UnityEngine.Debug.Log(speech);
+      //  UnityEngine.Debug.Log(speech);
         switch (speech)
         {
             case "Attention":
@@ -181,16 +181,31 @@ public class Messager : MonoBehaviour
                 subtitleLine[0] = new string[2] { "Sorry to interrupt, gentlemen", "2" };
                 break;
             case "Joe2":
-                subtitleLine = new string[1][];
-                subtitleLine[0] = new string[2] { "#", "1" };
+                subtitleLine = new string[6][];
+                subtitleLine[0] = new string[2] { "That's right", "1,5" };
+                subtitleLine[1] = new string[2] { "The United States of America needs you Hank!", "3" };
+                subtitleLine[2] = new string[2] { "We have detected a fleed of extra-terrestrial beings..", "3" };
+                subtitleLine[3] = new string[2] { "..that are on their way to earth!", "2" };
+                subtitleLine[4] = new string[2] { "Our forces cannot make it in time", "2" };
+                subtitleLine[5] = new string[2] { "You are the only one that is close enough to stop them Hank!", "4,5" };
                 break;
             case "Joe3":
                 subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "Listen Fat!", "1" };
+                subtitleLine[0] = new string[2] { "You either do as you are told..", "1" };
+                subtitleLine[0] = new string[2] { "or i will have you arrested for stealing that ship!", "1" };
+                subtitleLine[0] = new string[2] { "Somewhere in that alien fleed, there should be an alien commander..", "1" };
+                subtitleLine[0] = new string[2] { "who is carrying a wormhole generator", "1" };
+                subtitleLine[0] = new string[2] { "If he activates that generator he will be able to bring the rest of his alien fleed here!", "1" };
+                subtitleLine[0] = new string[2] { "There will be millions swarming us", "1" };
+                subtitleLine[0] = new string[2] { "#", "1" };
+                subtitleLine[0] = new string[2] { "#", "1" };
                 subtitleLine[0] = new string[2] { "#", "1" };
                 break;
             case "Show1":
-                subtitleLine = new string[1][];
-                subtitleLine[0] = new string[2] { "#", "1" };
+                subtitleLine = new string[2][];
+                subtitleLine[0] = new string[2] { "Turn that ship around right now #", "1" };
+                subtitleLine[1] = new string[2] { "That is my ship!", "1" };
                 break;
             case "Show2":
                 subtitleLine = new string[3][];
