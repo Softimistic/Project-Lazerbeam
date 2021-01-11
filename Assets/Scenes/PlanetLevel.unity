@@ -8493,7 +8493,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.7
+  near clip plane: 0.3
   far clip plane: 2000
   field of view: 80
   orthographic: 0
@@ -16044,12 +16044,12 @@ PrefabInstance:
     - target: {fileID: 2349273792423285573, guid: 181cb1d1fb4ee144d966bbbf921ff465,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 42.4
+      value: 34.33
       objectReference: {fileID: 0}
     - target: {fileID: 2349273792423285573, guid: 181cb1d1fb4ee144d966bbbf921ff465,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -115.25
+      value: -113.55
       objectReference: {fileID: 0}
     - target: {fileID: 2349273792423285573, guid: 181cb1d1fb4ee144d966bbbf921ff465,
         type: 3}
@@ -47712,6 +47712,11 @@ PrefabInstance:
       propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 108757178063643558, guid: a7ed2f93f7ec710488a831b91b45f019,
+        type: 3}
+      propertyPath: m_Shadows.m_NormalBias
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7ed2f93f7ec710488a831b91b45f019, type: 3}
 --- !u!1001 &1726457392
@@ -63959,7 +63964,7 @@ PrefabInstance:
     - target: {fileID: 7832103934661500650, guid: 47c594f889bf21946b73aea8e0c72171,
         type: 3}
       propertyPath: MaxDistance
-      value: 920.5381
+      value: 852.7012
       objectReference: {fileID: 0}
     - target: {fileID: 7832103934661500651, guid: 47c594f889bf21946b73aea8e0c72171,
         type: 3}
