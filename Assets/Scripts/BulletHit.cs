@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class BulletHit : MonoBehaviour
+public class BulletHit : SceneTransitionEvent
 {
     [SerializeField] private GameObject deathFx;
     [SerializeField] private AudioSource hitSoundFx;
@@ -20,6 +20,8 @@ public class BulletHit : MonoBehaviour
     /// after being hit by bullets for hitTimes, will trigger some thing
     /// </summary>
     [SerializeField] [Range(0, 999999)] private int hitTimes;
+
+    [Tooltip("Load a scene on hit")] [SerializeField] private bool SceneLoaderMode;
 
     private MeshRenderer _meshRenderer;
     private Color _originalColor;
@@ -80,14 +82,21 @@ public class BulletHit : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("bullet"))
         {
-            _currentHitTimes++;
-            //do sth here(eg: AUDIO)
-            _meshRenderer.material.color = hitColor;
-            StartCoroutine(RestoreColor(_originalColor));
-            //Destory bullets
-            Destroy(collision.gameObject);
-            scoreBoard.ScoreHit(10);
-            hitSoundFx.Play();
+            if (SceneLoaderMode)
+            {
+                LoadNextScene();
+            }
+            else
+            {
+                _currentHitTimes++;
+                //do sth here(eg: AUDIO)
+                _meshRenderer.material.color = hitColor;
+                StartCoroutine(RestoreColor(_originalColor));
+                //Destory bullets
+                Destroy(collision.gameObject);
+                scoreBoard.ScoreHit(10);
+                hitSoundFx.Play();
+            }
         }
     }
 

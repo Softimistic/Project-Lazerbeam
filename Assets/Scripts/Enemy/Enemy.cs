@@ -74,7 +74,7 @@ public abstract class Enemy : MonoBehaviour
         Quaternion rotation = Quaternion.LookRotation(direction);
         transform.rotation = rotation;
         // checks if the enemy is too close to the player and makes it despawn when it is
-        if (transform.position.z < player.transform.position.z + 3.0f)
+        if (Vector3.Distance(transform.position, player.transform.position) < 3.0f)
         {
             despawnTimer = 0;
         }
