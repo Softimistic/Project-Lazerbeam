@@ -18809,7 +18809,7 @@ PrefabInstance:
     - target: {fileID: 2074373428775968599, guid: d3cc795ba9015554a8548a146f95db90,
         type: 3}
       propertyPath: WarpSpeed
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2111641385240508693, guid: d3cc795ba9015554a8548a146f95db90,
         type: 3}
