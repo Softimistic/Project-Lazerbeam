@@ -16,6 +16,7 @@ public class CollsionHandler : MonoBehaviour
 
 
     int healthDecreaseOnMeteoriteHit = 10;
+    int healthDecreaseOnMineHit = 35;
     int healthDecreaseOnEnemyRocketHit = 30;
     int healthDecreasePerHit = 5;
     int healthDecreasePerHitByMissle = 25;
@@ -54,6 +55,20 @@ public class CollsionHandler : MonoBehaviour
         if (collision.gameObject.CompareTag("EnemyRocket"))
         {
             HealthCheckNChange(healthDecreaseOnEnemyRocketHit);
+        }
+
+        if (collision.gameObject.CompareTag("Mine"))
+        {
+            HealthCheckNChange(healthDecreaseOnMineHit);
+            collision.gameObject.GetComponent<MeshRenderer>().enabled = false;
+            collision.gameObject.GetComponent<MeshCollider>().enabled = false;
+            collision.gameObject.GetComponentInChildren<ParticleSystem>().Play();
+            collision.gameObject.GetComponentInChildren<AudioSource>().Play();
+        }
+
+        if (collision.gameObject.CompareTag("InstaKill"))
+        {
+            PlayerDies();
         }
     }
 

@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float controlRollFactor = -20f;
    
     [Header("Henk's abilities")]
+    [Tooltip("FOV in it's default state")] public float defaultFOV = 60f;
     [Tooltip("FOV when braking")] public float brakeFOV = 50f;
     private bool _braking;
     [Tooltip("FOV when boosting")] public float boostFOV = 90f;
@@ -32,12 +33,11 @@ public class PlayerController : MonoBehaviour
     public float boostOverTime;
     public bool boostIsLeeg = false;
     public bool BossMode;
+    public bool WarpSpeed;
     public float maxBoost = 100;
 
     float xThrow, yThrow;
     bool isControlEnabled = true;
-
-    
 
     private void Start()
     {
@@ -131,10 +131,15 @@ public class PlayerController : MonoBehaviour
             boostPop.SetActive(true);
             boostTrail.SetActive(true);
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, boostFOV, 1f * Time.deltaTime);
-            transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 75f;
-            
+            int warp = 1;
+            if (WarpSpeed)
+            {
+                warp = 10;
+            }
+
+            transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 75f * warp;
         }
-        else if(Camera.main.fieldOfView > 60f)
+        else if(Camera.main.fieldOfView > defaultFOV)
         {
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60f, 1f * Time.deltaTime);
             transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 30f;
@@ -150,7 +155,7 @@ public class PlayerController : MonoBehaviour
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, brakeFOV, 1f * Time.deltaTime);
             transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 10f; 
         }
-        else if (Camera.main.fieldOfView < 60f)
+        else if (Camera.main.fieldOfView < defaultFOV)
         {
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60f, 1f * Time.deltaTime);
             transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 30f;
