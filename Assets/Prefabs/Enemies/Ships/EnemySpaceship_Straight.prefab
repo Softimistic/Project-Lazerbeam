@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 1207386042774757706}
   - component: {fileID: -4433792574741768392}
   m_Layer: 0
-  m_Name: EnemySpaceship
+  m_Name: EnemySpaceship_Straight
   m_TagString: EnemyShips
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -236,7 +236,7 @@ Transform:
   m_GameObject: {fileID: 2114274236911745389}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -53.421, y: 40, z: 0}
-  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 4472209584604455760}
   - {fileID: 4472209586024551461}
@@ -301,14 +301,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cae045552c99ddf488c68fa8ee0dcfb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawningRange: 80
-  speed: 10
-  despawnTime: 30
-  maxDistance: 40
+  spawningRange: 130
+  speed: 8
+  despawnTime: 35
+  maxDistance: 60
   shootingRange: 75
   shootingSpeed: 1
-  accuracy: 3
-  itemDropChance: 20
+  accuracy: 0
+  rngDrops: 0
   healthPowerUp: {fileID: -6123806696371061730, guid: 91c9a4702729fc145aba471aba864a96,
     type: 3}
   boostPowerUp: {fileID: 2469135114437867812, guid: ae367f05de2f4c34d8b9348424a3b227,
