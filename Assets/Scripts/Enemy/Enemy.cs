@@ -29,7 +29,6 @@ public abstract class Enemy : MonoBehaviour
     protected GameState thisGameState;
     [Header("Item drop variables")]
     [SerializeField] protected bool rngDrops;
-    [SerializeField] protected int itemDropChance; // in percentage (60 = 60%)
     [SerializeField] protected PowerUpHealth healthPowerUp;
     [SerializeField] protected PowerUpBoost boostPowerUp;
     [SerializeField] protected PowerUpShield shieldPowerUp;
