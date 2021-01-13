@@ -10,6 +10,7 @@ public class BulletHit : SceneTransitionEvent
 {
     [SerializeField] private GameObject deathFx;
     [SerializeField] private AudioClip hitSoundFx;
+    [SerializeField] private bool disableObstacleCollision;
 
     /// <summary>
     /// the color while the object is hit by bullets
@@ -98,13 +99,20 @@ public class BulletHit : SceneTransitionEvent
                 scoreBoard.ScoreHit(10);
             }
         }
-        else if (collision.gameObject.CompareTag("ParryObject") || collision.gameObject.CompareTag("Mine") || collision.gameObject.CompareTag("InstaKill"))
+        else if ((collision.gameObject.CompareTag("ParryObject") || collision.gameObject.CompareTag("Mine") || collision.gameObject.CompareTag("InstaKill")) && !disableObstacleCollision)
         {
             StartCoroutine(SelfDestroy());
             if (deathFx)
             {
                 GameObject nwFx = Instantiate(deathFx, transform.position, Quaternion.identity);
                 FxSelfDestroy(nwFx);
+            }
+            if (collision.gameObject.CompareTag("Mine"))
+            {
+                collision.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                collision.gameObject.GetComponent<MeshCollider>().enabled = false;
+                collision.gameObject.GetComponentInChildren<ParticleSystem>().Play();
+                collision.gameObject.GetComponentInChildren<AudioSource>().Play();
             }
         }
     }
