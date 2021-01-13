@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
@@ -9,9 +10,15 @@ public class ScoreBoard : MonoBehaviour
     [SerializeField] int scorePerHit = 100;
 
     // Score begins at zero
-    int score = 0;
+    int score;
     // scoreText changes te text on screen
     Text scoreText;
+
+     void Awake()
+     {
+         Debug.Log(FindObjectOfType<ScoreHolder>().ReadTempScore() + "  8527");
+         score = FindObjectOfType<ScoreHolder>().ReadTempScore();
+     }
 
     /// Start is called before the first frame update
     void Start()

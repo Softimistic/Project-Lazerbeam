@@ -11,6 +11,8 @@ public class SceneTransitionEvent : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            //Update TempScore
+            FindObjectOfType<ScoreHolder>().UpdateTempScore();
             LoadNextScene();
         }
     }

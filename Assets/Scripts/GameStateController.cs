@@ -28,6 +28,14 @@ public class GameStateController : MonoBehaviour
         FindObjectOfType<AudioManager>().PauseAll();
         FindObjectOfType<AudioManager>().Play(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
         #endregion
+
+        #region getScoreFromPreviousLevel
+        // if (FindObjectOfType<ScoreHolder>().ReadTempScore() != 0)
+        // {
+        //     GameObject.FindWithTag("ScoreText").GetComponent<Text>().text =
+        //         FindObjectOfType<ScoreHolder>().ReadTempScore().ToString();
+        // }
+        #endregion
     }
 
     private String GetCurrentThemeName(string scenename)
@@ -133,7 +141,9 @@ public class GameStateController : MonoBehaviour
     public void ActiveGameOverMenu()
     {
         //Debug.Log(GameObject.FindWithTag("ScoreText").GetComponent<Text>().text.ToString() + " 6986");
-        FindObjectOfType<HighScoreTable>().AddNewScoreEntry(int.Parse(GameObject.FindWithTag("ScoreText").GetComponent<Text>().text.ToString()));
+        //FindObjectOfType<HighScoreTable>().AddNewScoreEntry(int.Parse(GameObject.FindWithTag("ScoreText").GetComponent<Text>().text.ToString()));
+        //FindObjectOfType<ScoreHolder>().StoreScoreToDatabase();
+        //FindObjectOfType<ScoreHolder>().ResetTempScore();
         CloseScoreMenu();
         Pause();
         gameOverMenu.SetActive(true);
@@ -143,6 +153,8 @@ public class GameStateController : MonoBehaviour
     {
         Time.timeScale = 1f;
         FindObjectOfType<AudioManager>().ResumeTheme(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
+        FindObjectOfType<ScoreHolder>().StoreScoreToDatabase();
+        FindObjectOfType<ScoreHolder>().ResetTempScore();
         SceneManager.LoadScene(0);
     }
 
