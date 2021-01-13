@@ -28,6 +28,7 @@ public abstract class Enemy : MonoBehaviour
     protected float time;
     protected GameState thisGameState;
     [Header("Item drop variables")]
+    [SerializeField] protected bool rngDrops;
     [SerializeField] protected int itemDropChance; // in percentage (60 = 60%)
     [SerializeField] protected PowerUpHealth healthPowerUp;
     [SerializeField] protected PowerUpBoost boostPowerUp;
@@ -130,21 +131,27 @@ public abstract class Enemy : MonoBehaviour
 
     public void OnDeath()
     {
-        int willDrop = Random.Range(1, 101);
-        if(willDrop <= itemDropChance)
+        if (rngDrops)
         {
-        int itemToDrop = Random.Range(0, 3);
-        PowerUp pickup = null;
-        switch (itemToDrop)
-        {
-            case 0: pickup = healthPowerUp;
-                break;
-            case 1: pickup = boostPowerUp;
-                break;
-            case 2: pickup = shieldPowerUp;
-                break;
-        }
-        Instantiate(pickup, transform.position, transform.rotation);
+            int willDrop = Random.Range(1, 101);
+            if (willDrop <= itemDropChance)
+            {
+                int itemToDrop = Random.Range(0, 3);
+                PowerUp pickup = null;
+                switch (itemToDrop)
+                {
+                    case 0:
+                        pickup = healthPowerUp;
+                        break;
+                    case 1:
+                        pickup = boostPowerUp;
+                        break;
+                    case 2:
+                        pickup = shieldPowerUp;
+                        break;
+                }
+                Instantiate(pickup, transform.position, transform.rotation);
+            }
         }
     }
 }
