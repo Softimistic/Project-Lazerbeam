@@ -98,6 +98,15 @@ public class BulletHit : SceneTransitionEvent
                 scoreBoard.ScoreHit(10);
             }
         }
+        else if (collision.gameObject.CompareTag("ParryObject") || collision.gameObject.CompareTag("Mine") || collision.gameObject.CompareTag("InstaKill"))
+        {
+            StartCoroutine(SelfDestroy());
+            if (deathFx)
+            {
+                GameObject nwFx = Instantiate(deathFx, transform.position, Quaternion.identity);
+                FxSelfDestroy(nwFx);
+            }
+        }
     }
 
     IEnumerator SelfDestroy()
