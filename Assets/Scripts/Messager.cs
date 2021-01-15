@@ -82,7 +82,7 @@ public class Messager : MonoBehaviour
       //  UnityEngine.Debug.Log(speech);
         switch (speech)
         {
-            case "Attention":
+            case "Attention": //#
                 subtitleLine = new string[1][];
                 subtitleLine[0] = new string[2] { "Seems like you're really getting his attention, Hank", "2" };
                 break;
@@ -99,16 +99,7 @@ public class Messager : MonoBehaviour
             case "Insect":
                 subtitleLine = new string[2][];
                 subtitleLine[0] = new string[2] { "What is this human doing here?", "2" };
-                subtitleLine[1] = new string[2] { "..take care of this insect for me boys!", "2,5" };
-                break;
-            case "Pay":
-                subtitleLine = new string[6][];
-                subtitleLine[0] = new string[2] { "You will pay for this human!", "2" };
-                subtitleLine[1] = new string[2] { "i'm redirecting all of my shield energy", "2" };
-                subtitleLine[2] = new string[2] { "to my robot penis", "1,8" };
-                subtitleLine[3] = new string[2] { "You cannot stand against the #", "2" };
-                subtitleLine[4] = new string[2] { "# charged robot #", "1,5" };
-                subtitleLine[5] = new string[2] { "foolish insect! #", "1" };
+                subtitleLine[1] = new string[2] { "..take care of this insect for me boys!", "2,5" };               
                 break;
             case "Portal":
                 subtitleLine = new string[2][];
@@ -160,13 +151,13 @@ public class Messager : MonoBehaviour
                 break;
             case "Hank4":
                 subtitleLine = new string[3][];
-                subtitleLine[0] = new string[2] { "Well come and get me then", "2" };
+                subtitleLine[0] = new string[2] { "Well come and get me then", "2" }; //#Redo
                 subtitleLine[1] = new string[2] { "YOU don’t even know where I am", "2,5" };
                 subtitleLine[2] = new string[2] { "I don’t even know where I am...", "2" };
                 break;
             case "Hank5":
                 subtitleLine = new string[1][];
-                subtitleLine[0] = new string[2] { "President Biden", "1,5" };
+                subtitleLine[0] = new string[2] { "President Biden?!", "1,5" };
                 break;
             case "Hank6":
                 subtitleLine = new string[2][];
@@ -189,7 +180,7 @@ public class Messager : MonoBehaviour
                 subtitleLine[2] = new string[2] { "We have detected a fleed of extra-terrestrial beings..", "3" };
                 subtitleLine[3] = new string[2] { "..that are on their way to earth!", "2" };
                 subtitleLine[4] = new string[2] { "Our forces cannot make it in time", "2" };
-                subtitleLine[5] = new string[2] { "You are the only one that is close enough to stop them Hank!", "4,5" };
+                subtitleLine[5] = new string[2] { "You are the only one that is close enough to stop them Hank!", "5" };
                 break;
             case "Joe3":
                 subtitleLine = new string[10][];
@@ -206,24 +197,151 @@ public class Messager : MonoBehaviour
                 break;
             case "Show1":
                 subtitleLine = new string[2][];
-                subtitleLine[0] = new string[2] { "Turn that ship around right now thief!", "1" };
+                subtitleLine[0] = new string[2] { "Turn that ship around right now thief!", "1" }; //#redo
                 subtitleLine[1] = new string[2] { "That is my ship!", "1" };
                 break;
             case "Show2":
                 subtitleLine = new string[3][];
                 subtitleLine[0] = new string[2] { "You haven't even signed the papers..", "2" };
                 subtitleLine[1] = new string[2] { "I could have you arrested!", "1,5" };
-                subtitleLine[2] = new string[2] { "Hell, i could sue you for millions just for what you did to my roof!", "3,5" };
+                subtitleLine[2] = new string[2] { "Hell, i could sue you for millions just for what you did to my roof!", "4,5" }; //#redo
                 break;
             case "Show3":
                 subtitleLine = new string[3][];
                 subtitleLine[0] = new string[2] { "I will get you sooner or later Hank!!", "2" };
                 subtitleLine[1] = new string[2] { "I will get you!!!", "1,5" };
-                subtitleLine[2] = new string[2] { "you son of a []!", "1,5" };
+                subtitleLine[2] = new string[2] { "you son of a @#@#@$!", "1,5" };
                 break;
+            //New Joe
+            case "CyclopeDone":
+                subtitleLine = new string[3][];
+                subtitleLine[0] = new string[2] { "Great Job Hank!", "1,5" };
+                subtitleLine[1] = new string[2] { "That Cyclops won't be bothering us no more", "2" };
+                subtitleLine[2] = new string[2] { "I have lost track of the Alien commander however", "3" };
+                break;
+            case "FoundCommander":
+                subtitleLine = new string[3][];
+                subtitleLine[0] = new string[2] { "Well, guess we found the alien commander.", "2" };
+                subtitleLine[1] = new string[2] { "Enter that planet’s atmosphere and hunt that son of a bitch down", "3" };
+                subtitleLine[2] = new string[2] { "Please..", "1" };
+                break;
+            //New floopy
+            case "Contacted":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "We are being contacted by that planet in front of us Hank", "3" };
+                break;
+            case "Count1":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "1", "0,5" };
+                break;
+            case "Count2":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "2", "0,5" };
+                break;
+            case "Count3":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "3", "0,5" };
+                break;
+            case "Goobye":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "Goodbye Hank", "2" };
+                break;
+            case "SelfDestruct":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "Selft destruct countdown activated", "2" };
+                break;
+            case "SomethingBig":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "I am detecting something big, and it's comming our way", "3" };
+                break;
+            //new Hank
+            case "ButHow":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "But how?", "1" };
+                break;
+            case "Commander":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "That must be him, that must be the commander!", "3" };
+                break;
+            case "Geez":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "Geez, he's still not dead?", "2" };
+                break;
+            case "HelpMe":
+                subtitleLine = new string[2][];
+                subtitleLine[0] = new string[2] { "Oh god", "1" };
+                subtitleLine[1] = new string[2] { "Joe! Help me, what do i do?!", "2" };
+                break;
+            case "ISavedHumanity":
+                subtitleLine = new string[2][];
+                subtitleLine[0] = new string[2] { "I did it", "1" };
+                subtitleLine[1] = new string[2] { "I saved humanity", "1,5" };
+                break;
+            case "ItsOver":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "It's over, í've got you!", "2" };
+                break;
+            case "NotDoingThat":
+                subtitleLine = new string[2][];
+                subtitleLine[0] = new string[2] { "what?, NO!", "1" };
+                subtitleLine[1] = new string[2] { "I'M NOT GOING TO DO THAT!", "2" };
+                break;
+            case "No":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "NO!", "1" };
+                break;
+            case "ReadyForAnything":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "NO!", "1" };
+                break;
+            case "YouToo":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "y-you too..", "1" };
+                break;
+            case "YouWillPayJoe":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "YOU WILL PAY FOR THIS JOE!!", "2" };
+                break;
+            //New AllienCommander
+            case "Trap":
+                subtitleLine = new string[4][];
+                subtitleLine[0] = new string[2] { "Ha! Not so fast human!", "2" };
+                subtitleLine[1] = new string[2] { "You've fallen right into my trap!", "2" };
+                subtitleLine[2] = new string[2] { "May I introduce you to the most feared member of my fleet..", "3" };
+                subtitleLine[3] = new string[2] { "THE CYCLOPS!", "1,5" };
+                break;
+            case "Sayonara":
+                subtitleLine = new string[2][];
+                subtitleLine[0] = new string[2] { "Keep him busy Cyclops. Meanwhile I’m out of here. ", "3" };
+                subtitleLine[0] = new string[2] { "Sayonara humans!", "2" };
+                break;
+            case "NothingToSee":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "Nothing to see here, move along.", "3" };
+                break;
+            case "Bothering":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "Stop bothering me human!", "2" };
+                break;
+            case "FarFromOver":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "It’s far from over. I’m activating my wormhole generator", "3" };
+                subtitleLine[1] = new string[2] { "Soon you will face the might of my infinite fleet!", "3" };
+                break;
+            case "PrepareToDie":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "Enough Talking, Prepare to die!", "3" };
+                break;
+            case "Penis":
+                subtitleLine = new string[2][];
+                subtitleLine[0] = new string[2] { "Ow my penises!", "1,5" };
+                subtitleLine[1] = new string[2] { "You shot off my penises!", "2" };
+                break;
+
             default:
                 subtitleLine = new string[0][];
                 break;
+           
         }
         return subtitleLine;
     }
