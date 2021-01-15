@@ -26,13 +26,13 @@ public class GameStateController : MonoBehaviour
     {
         #region controll music
         FindObjectOfType<AudioManager>().PauseAll();
-        FindObjectOfType<AudioManager>().Play(GetCurrentThemeName(SceneManager.GetActiveScene().name));
+        FindObjectOfType<AudioManager>().Play(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
         #endregion
     }
 
     private String GetCurrentThemeName(string scenename)
     {
-        switch (SceneManager.GetActiveScene().name)
+        switch (scenename)
         {
             case "Boss1Phase1":
                 return "BossMusic";
@@ -101,7 +101,7 @@ public class GameStateController : MonoBehaviour
     {
         pauseMenu.SetActive(true);
        // audioManager.PauseTheme("Theme");
-        FindObjectOfType<AudioManager>().PauseTheme(GetCurrentThemeName(SceneManager.GetActiveScene().name));
+        FindObjectOfType<AudioManager>().PauseTheme(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
         Pause();
         _isPause = true;
     }
@@ -112,7 +112,7 @@ public class GameStateController : MonoBehaviour
     public void ClosePauseMenu()
     {
         pauseMenu.SetActive(false);
-        FindObjectOfType<AudioManager>().ResumeTheme(GetCurrentThemeName(SceneManager.GetActiveScene().name));
+        FindObjectOfType<AudioManager>().ResumeTheme(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
         Resume();
         _isPause = false;
     }
@@ -142,8 +142,8 @@ public class GameStateController : MonoBehaviour
     public void BackToMainMenu()
     {
         Time.timeScale = 1f;
-        FindObjectOfType<AudioManager>().ResumeTheme(GetCurrentThemeName(SceneManager.GetActiveScene().name));
-        SceneManager.LoadScene(2);
+        FindObjectOfType<AudioManager>().ResumeTheme(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
+        SceneManager.LoadScene(0);
     }
 
     public void DisablePlayerControl()

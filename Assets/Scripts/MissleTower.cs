@@ -13,7 +13,8 @@ public class MissleTower : MonoBehaviour
     bool lockOn = false;
     public Transform target;
     bool onetime = false;
-    public float health = 100;
+   [Tooltip("Missile Tower health")] [Range(1, 100)] public int hitCounter;
+    private int currentHitCounter = 0;
 
     void Start()
     {
@@ -67,7 +68,10 @@ public class MissleTower : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("bullet"))
         {
-            Destroy(gameObject);
+            currentHitCounter++;
+            if (currentHitCounter >= hitCounter) {
+                Destroy(gameObject);
+            }
         }
     }
 }

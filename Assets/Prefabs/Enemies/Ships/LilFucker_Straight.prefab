@@ -65,9 +65,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathFx: {fileID: 1095912818707076, guid: 237360a382f15bd4eb671f8b0a9dbd3e, type: 3}
-  hitSoundFx: {fileID: 0}
+  hitSoundFx: {fileID: 8300000, guid: d48a322c801e4ed429ef9776056fd83c, type: 3}
   hitColor: {r: 1, g: 0, b: 0, a: 0}
-  hitTimes: 1
+  hitTimes: 3
 --- !u!65 &7071278953759849671
 BoxCollider:
   m_ObjectHideFlags: 0

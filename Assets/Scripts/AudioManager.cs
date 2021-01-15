@@ -82,4 +82,20 @@ public class AudioManager : MonoBehaviour
              }
          }
      }
+     
+     public String GetCurrentThemeName(string scenename)
+     {
+         switch (scenename)
+         {
+             case "Boss1Phase1":
+                 return "BossMusic";
+                 break;
+             case "Boss1Phase2":
+                 return "level3";
+                 break;
+             default:
+                 return "Theme";
+                 break;
+         }
+     }
 }
