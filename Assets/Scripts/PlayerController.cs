@@ -83,6 +83,10 @@ public class PlayerController : MonoBehaviour
             {
                 boostIsLeeg = true;
             }
+            else
+            {
+                boostIsLeeg = false;
+            }
         }
     }
 
