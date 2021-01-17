@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Messager: {fileID: 4490832875590765052}
-  Portrait: {fileID: 21300000, guid: 5cdc383d7ce313348a319bc6ff63368f, type: 3}
-  Audio: {fileID: 8300000, guid: 6f567971a40804e4585b38ab27f315b5, type: 3}
+  Portrait: {fileID: 21300000, guid: d009ce8dad2ee3346909439f6e6de771, type: 3}
+  Audio: {fileID: 8300000, guid: 8555b5ba0fc4b154b95b3a404ac45d83, type: 3}
 --- !u!1 &241721490
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,7 +654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Messager: {fileID: 4490832875590765052}
   Portrait: {fileID: 21300000, guid: 5cdc383d7ce313348a319bc6ff63368f, type: 3}
-  Audio: {fileID: 8300000, guid: 6f567971a40804e4585b38ab27f315b5, type: 3}
+  Audio: {fileID: 8300000, guid: 020ae9e0d44dec54bb7ca93ae7a6d7cd, type: 3}
 --- !u!1 &1922800494
 GameObject:
   m_ObjectHideFlags: 0

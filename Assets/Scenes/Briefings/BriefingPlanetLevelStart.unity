@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Messager: {fileID: 4490832875590765052}
-  Portrait: {fileID: 21300000, guid: 815ff4cf1a75a434f91f2b82f359418d, type: 3}
+  Portrait: {fileID: 21300000, guid: 96aced39a708ecd408fb33513528c6d4, type: 3}
   Audio: {fileID: 8300000, guid: 4579063ab84d49947a54499e6db60ed9, type: 3}
 --- !u!1 &1374285728
 GameObject:

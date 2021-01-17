@@ -214,6 +214,10 @@ public class Messager : MonoBehaviour
                 subtitleLine[2] = new string[2] { "you son of a @#@#@$!", "1,5" };
                 break;
             //New Joe
+            case "KillCyclops":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "Kill that Cyclops, Hank!", "2" };
+                break;
             case "CyclopsDone":
                 subtitleLine = new string[3][];
                 subtitleLine[0] = new string[2] { "Great Job Hank!", "1,5" };
@@ -344,13 +348,13 @@ public class Messager : MonoBehaviour
                 subtitleLine = new string[4][];
                 subtitleLine[0] = new string[2] { "Ha! Not so fast human!", "2" };
                 subtitleLine[1] = new string[2] { "You've fallen right into my trap!", "2" };
-                subtitleLine[2] = new string[2] { "May I introduce you to the most feared member of my fleet..", "3" };
-                subtitleLine[3] = new string[2] { "THE CYCLOPS!", "1,5" };
+                subtitleLine[2] = new string[2] { "May I introduce you to the most feared member of my fleet..", "4" };
+                subtitleLine[3] = new string[2] { "THE CYCLOPS!", "1,2" };
                 break;
             case "Sayonara":
                 subtitleLine = new string[2][];
                 subtitleLine[0] = new string[2] { "Keep him busy Cyclops. Meanwhile I’m out of here. ", "3" };
-                subtitleLine[1] = new string[2] { "Sayonara humans!", "2" };
+                subtitleLine[1] = new string[2] { "Sayonara humans!", "1,7" };
                 break;
             case "NothingToSee":
                 subtitleLine = new string[1][];
@@ -384,6 +388,14 @@ public class Messager : MonoBehaviour
                 subtitleLine[0] = new string[2] { "Aaaaah help us we’re being attacked by a..", "2,5" };
                 subtitleLine[1] = new string[2] { "..giant green tentacle monster with a satan face! ", "2,5" };
                 subtitleLine[2] = new string[2] { "God would somebody please help us! ", "2" };
+                break;
+            case "CyclopsNoise1":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "[Cylops noises]", "1,5" };              
+                break;
+            case "CyclopsNoise2":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "[Angrier Cyclops noises]", "2" };
                 break;
             default:
                 subtitleLine = new string[0][];
