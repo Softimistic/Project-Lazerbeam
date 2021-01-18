@@ -289,7 +289,7 @@ PrefabInstance:
     - target: {fileID: 2074373428775968599, guid: d3cc795ba9015554a8548a146f95db90,
         type: 3}
       propertyPath: WarpSpeed
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2074373428775968599, guid: d3cc795ba9015554a8548a146f95db90,
         type: 3}
@@ -355,6 +355,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player Ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 3965346452974030382, guid: d3cc795ba9015554a8548a146f95db90,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3965346452974030382, guid: d3cc795ba9015554a8548a146f95db90,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3cc795ba9015554a8548a146f95db90, type: 3}

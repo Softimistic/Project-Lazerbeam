@@ -79123,11 +79123,6 @@ PrefabInstance:
       propertyPath: BoostBar
       value: 
       objectReference: {fileID: 2035686593}
-    - target: {fileID: 7804929725076619119, guid: a2950a91d5be5e34f8aff7f8e31ed9b6,
-        type: 3}
-      propertyPath: WarpSpeed
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8113526782894242828, guid: a2950a91d5be5e34f8aff7f8e31ed9b6,
         type: 3}
       propertyPath: m_Name

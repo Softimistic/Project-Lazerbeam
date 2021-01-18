@@ -278,6 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac975b9c37e13b46bded79fbf2af44d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
   speed: 15
   xRange: 7
   yRange: 4.5
@@ -285,6 +286,7 @@ MonoBehaviour:
   controlPitchFactor: -20
   positionYawFactor: 5
   controlRollFactor: -30
+  defaultFOV: 60
   brakeFOV: 50
   boostFOV: 90
   boostTrail: {fileID: 5193729101974804032}
@@ -294,6 +296,7 @@ MonoBehaviour:
   boostOverTime: 10
   boostIsLeeg: 0
   BossMode: 0
+  WarpSpeed: 0
   maxBoost: 100
 --- !u!114 &2116216742366279560
 MonoBehaviour:
@@ -6441,7 +6444,7 @@ PrefabInstance:
     - target: {fileID: 8344901581706917819, guid: 62cbc4765660d124c8648424beec8f83,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8344901581706917819, guid: 62cbc4765660d124c8648424beec8f83,
         type: 3}
@@ -6487,6 +6490,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8344901581706917819, guid: 62cbc4765660d124c8648424beec8f83,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62cbc4765660d124c8648424beec8f83, type: 3}
