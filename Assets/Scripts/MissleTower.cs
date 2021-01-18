@@ -20,7 +20,7 @@ public class MissleTower : MonoBehaviour
     {
         if (lockOn)
         {
-            Invoke("SpawnMissle", 5f);
+            Invoke("SpawnMissle", 3f);
         }
     }
 
@@ -38,7 +38,7 @@ public class MissleTower : MonoBehaviour
         }
         if (lockOn)
         {
-            Invoke("SpawnMissle", 5f);
+            Invoke("SpawnMissle", 3f);
         }
         
     }
