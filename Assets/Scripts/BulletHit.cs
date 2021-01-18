@@ -78,6 +78,7 @@ public class BulletHit : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
+        Debug.Log(collision.name + " 8689");
         if (collision.gameObject.CompareTag("bullet"))
         {
             AudioSource.PlayClipAtPoint(hitSoundFx, transform.position);
