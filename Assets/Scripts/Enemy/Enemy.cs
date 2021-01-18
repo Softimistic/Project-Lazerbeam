@@ -33,6 +33,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected PowerUpBoost boostPowerUp;
     [SerializeField] protected PowerUpShield shieldPowerUp;
 
+    private BulletHit bulletHit;
     protected List<GameObject> guns = new List<GameObject>();
     protected int currentGun;
     protected GameObject player;
@@ -40,6 +41,7 @@ public abstract class Enemy : MonoBehaviour
     public virtual void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        bulletHit = GetComponent<BulletHit>();
 
         shootingTimer = shootingSpeed;
         despawnTimer = despawnTime;
@@ -88,6 +90,7 @@ public abstract class Enemy : MonoBehaviour
         else if (thisGameState != GameState.attached && thisGameState != GameState.active && Vector3.Distance(transform.position, player.transform.position) <= spawningRange)
         {
             thisGameState = GameState.active;
+            bulletHit.enabled = true;
         }
     }
 

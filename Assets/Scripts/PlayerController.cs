@@ -8,7 +8,7 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerController : MonoBehaviour
 {
-
+    [SerializeField] private Camera mainCamera;
     [Tooltip("in ms^-1")] [SerializeField] float speed = 20f;
     [Tooltip("in ms")] [SerializeField] float xRange = 5f;
     [Tooltip("in ms")] [SerializeField] float yRange = 3f;
@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
             Boost1 -= boostOverTime * Time.deltaTime;
             boostPop.SetActive(true);
             boostTrail.SetActive(true);
-            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, boostFOV, 1f * Time.deltaTime);
+            mainCamera.fieldOfView = Mathf.Lerp(mainCamera.fieldOfView, boostFOV, 1f * Time.deltaTime);
             int warp = 1;
             if (WarpSpeed)
             {
@@ -139,9 +139,9 @@ public class PlayerController : MonoBehaviour
 
             transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 75f * warp;
         }
-        else if(Camera.main.fieldOfView > defaultFOV)
+        else if(mainCamera.fieldOfView > defaultFOV)
         {
-            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60f, 1f * Time.deltaTime);
+            mainCamera.fieldOfView = Mathf.Lerp(mainCamera.fieldOfView, 60f, 1f * Time.deltaTime);
             transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 30f;
             boostPop.SetActive(false);
             boostTrail.SetActive(false);
@@ -152,12 +152,12 @@ public class PlayerController : MonoBehaviour
     {
         if (_braking)
         {
-            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, brakeFOV, 1f * Time.deltaTime);
+            mainCamera.fieldOfView = Mathf.Lerp(mainCamera.fieldOfView, brakeFOV, 1f * Time.deltaTime);
             transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 10f; 
         }
-        else if (Camera.main.fieldOfView < defaultFOV)
+        else if (mainCamera.fieldOfView < defaultFOV)
         {
-            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60f, 1f * Time.deltaTime);
+            mainCamera.fieldOfView = Mathf.Lerp(mainCamera.fieldOfView, 60f, 1f * Time.deltaTime);
             transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 30f;
         }
     }

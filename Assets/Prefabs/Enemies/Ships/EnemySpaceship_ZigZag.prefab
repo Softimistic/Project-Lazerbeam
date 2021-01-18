@@ -93,15 +93,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2453926187033719586}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4691d92278ffeb042bb9a07f58abbbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TargetScene: 
   deathFx: {fileID: 1095912818707076, guid: 237360a382f15bd4eb671f8b0a9dbd3e, type: 3}
   hitSoundFx: {fileID: 8300000, guid: d48a322c801e4ed429ef9776056fd83c, type: 3}
+  disableObstacleCollision: 0
   hitColor: {r: 1, g: 0, b: 0, a: 0}
   hitTimes: 5
+  SceneLoaderMode: 0
 --- !u!114 &8309571457786538969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +124,7 @@ MonoBehaviour:
   shootingRange: 75
   shootingSpeed: 1
   accuracy: 0
-  itemDropChance: 20
+  rngDrops: 0
   healthPowerUp: {fileID: -6123806696371061730, guid: 91c9a4702729fc145aba471aba864a96,
     type: 3}
   boostPowerUp: {fileID: 2469135114437867812, guid: ae367f05de2f4c34d8b9348424a3b227,

@@ -39,7 +39,7 @@ public class BulletHit : SceneTransitionEvent
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //trigger
         if (_currentHitTimes >= hitTimes && hitTimes != 0)
@@ -81,7 +81,7 @@ public class BulletHit : SceneTransitionEvent
 
     void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("bullet"))
+        if (collision.gameObject.CompareTag("bullet") && this.enabled)
         {
             if (SceneLoaderMode)
             {
