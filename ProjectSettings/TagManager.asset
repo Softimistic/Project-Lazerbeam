@@ -20,6 +20,7 @@ TagManager:
   - ScoreText
   - InstaKill
   - Mine
+  - Train
   layers:
   - Default
   - TransparentFX
