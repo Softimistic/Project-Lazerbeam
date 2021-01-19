@@ -290,7 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 5
   speed: 50
-  Lifetime: 2
+  Lifetime: 5
 --- !u!64 &5374021118286760924
 MeshCollider:
   m_ObjectHideFlags: 0
