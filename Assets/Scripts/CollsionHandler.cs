@@ -41,13 +41,13 @@ public class CollsionHandler : MonoBehaviour
         {
             hitFX.SetActive(false);
         }
-        else if (health.GetHealthInt() <= 25)
-        {
-            hitFX.SetActive(true);
-        }
         else if (health.GetHealthInt() <= 0)
         {
             PlayerDies();
+        }
+        else if (health.GetHealthInt() <= 25)
+        {
+            hitFX.SetActive(true);
         }
     }
 

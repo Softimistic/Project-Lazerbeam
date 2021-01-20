@@ -54,7 +54,7 @@ public abstract class Enemy : MonoBehaviour
             }
     }
 
-    public virtual void Update()
+    public virtual void FixedUpdate()
     {
         // Checks if the enemy is active. If the enemy is not active the timer will still continue but the enemy won't do anything
         time = Time.deltaTime;
