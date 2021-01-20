@@ -12,7 +12,7 @@ public class Messager : MonoBehaviour
     private Image _frame;
     private Image _portrait;
     private bool _messageActive; //Wether or not a message is currently playing
-                         
+    private Color Kleur = Color.red;           
     private Text[] _text;
 
     private string[][] subtitleLine = new string[1][];
@@ -70,10 +70,12 @@ public class Messager : MonoBehaviour
             if (IsMessageActive()) 
             {
                 _text[0].text = subtitleLine[i][0];
+                
                 yield return new WaitForSeconds(float.Parse(subtitleLine[i][1]));
                 _text[0].text = null;
             }
         }
+        _text[0].color = Color.yellow;
     }
 
 
@@ -113,6 +115,7 @@ public class Messager : MonoBehaviour
                 subtitleLine[2] = new string[2] { "Joe what the hell?!", "1.3" };
                 break;
             case "YouShotMyDicks":
+                _text[0].color = Color.red;
                 subtitleLine = new string[4][];
                 subtitleLine[0] = new string[2] { "[cries in pain]", "1,3" };
                 subtitleLine[1] = new string[2] { "You insane man!", "1,5" };  
@@ -212,8 +215,17 @@ public class Messager : MonoBehaviour
                 subtitleLine[0] = new string[2] { "I will get you sooner or later Hank!!", "2" };
                 subtitleLine[1] = new string[2] { "I will get you!!!", "1,5" };
                 subtitleLine[2] = new string[2] { "you son of a @#@#@$!", "1,5" };
-                break;
+                break; 
             //New Joe
+            case "DisableForcefield":
+                subtitleLine = new string[1][];
+                subtitleLine[0] = new string[2] { "Find a way to disable that forcefield Hank!", "2,7" };
+                break;
+            case "Minefield":
+                subtitleLine = new string[2][];
+                subtitleLine[0] = new string[2] { "Be careful Hank", "1,2" };
+                subtitleLine[1] = new string[2] { "You’re about to enter a minefield!", "1,8" };
+                break;
             case "KillCyclops":
                 subtitleLine = new string[1][];
                 subtitleLine[0] = new string[2] { "Kill that Cyclops, Hank!", "2" };
@@ -318,7 +330,7 @@ public class Messager : MonoBehaviour
                 subtitleLine[0] = new string[2] { "I did it", "1" };
                 subtitleLine[1] = new string[2] { "I saved humanity", "1,5" };
                 break;
-            case "ItsOver":
+            case "ItsOver":            
                 subtitleLine = new string[1][];
                 subtitleLine[0] = new string[2] { "It's over, i've got you!", "2" };
                 break;
@@ -336,6 +348,7 @@ public class Messager : MonoBehaviour
                 subtitleLine[0] = new string[2] { "I'm ready for anything, mr.President!", "2,5" };
                 break;
             case "YouToo":
+                _text[0].color = Color.yellow; //No idea why this one stays read
                 subtitleLine = new string[1][];
                 subtitleLine[0] = new string[2] { "y-you too..", "1" };
                 break;
@@ -345,6 +358,7 @@ public class Messager : MonoBehaviour
                 break;
             //New AllienCommander
             case "Trap":
+                _text[0].color = Color.red;
                 subtitleLine = new string[4][];
                 subtitleLine[0] = new string[2] { "Ha! Not so fast human!", "2" };
                 subtitleLine[1] = new string[2] { "You've fallen right into my trap!", "2" };
@@ -352,32 +366,39 @@ public class Messager : MonoBehaviour
                 subtitleLine[3] = new string[2] { "THE CYCLOPS!", "1,2" };
                 break;
             case "Sayonara":
+                _text[0].color = Color.red;
                 subtitleLine = new string[2][];
                 subtitleLine[0] = new string[2] { "Keep him busy Cyclops. Meanwhile I’m out of here. ", "3" };
                 subtitleLine[1] = new string[2] { "Sayonara humans!", "1,7" };
                 break;
             case "NothingToSee":
+                _text[0].color = Color.red;
                 subtitleLine = new string[1][];
                 subtitleLine[0] = new string[2] { "Nothing to see here, move along.", "3" };
                 break;
             case "StopBothering":
+                _text[0].color = Color.red;
                 subtitleLine = new string[1][];
                 subtitleLine[0] = new string[2] { "Stop bothering me human!", "1,8" };
                 break;
             case "Pay":
+                _text[0].color = Color.red;
                 subtitleLine = new string[1][];
                 subtitleLine[0] = new string[2] { "YOU WILL PAY FOR THIS!!", "1,4" };
                 break;
             case "FarFromOver":
+                _text[0].color = Color.red;
                 subtitleLine = new string[2][];
                 subtitleLine[0] = new string[2] { "It’s far from over. I’m activating my wormhole generator!", "4" };
                 subtitleLine[1] = new string[2] { "Soon you will face the might of my infinite fleet!", "3" };
                 break;
             case "PrepareToDie":
+                _text[0].color = Color.red;
                 subtitleLine = new string[1][];
                 subtitleLine[0] = new string[2] { "Enough Talking, Prepare to die!", "3" };
                 break;
-            case "Penis":
+            case "Penis": //#probably is not being used
+                _text[0].color = Color.red;
                 subtitleLine = new string[2][];
                 subtitleLine[0] = new string[2] { "Ow my penises!", "1,5" };
                 subtitleLine[1] = new string[2] { "You shot off my penises!", "2" };
