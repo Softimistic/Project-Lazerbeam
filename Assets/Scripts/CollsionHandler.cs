@@ -16,9 +16,11 @@ public class CollsionHandler : MonoBehaviour
 
 
     int healthDecreaseOnMeteoriteHit = 10;
+    int healthDecreaseOnMineHit = 25;
     int healthDecreaseOnEnemyRocketHit = 30;
     int healthDecreasePerHit = 5;
     int healthDecreasePerHitByMissle = 25;
+    int healthDecreasePerHitByTrain = 1;
 
     Health health;
     Shield shield;
@@ -42,7 +44,6 @@ public class CollsionHandler : MonoBehaviour
        // check if it's player's bullet, if it's not then collision happen, ship destroyed 
         if (collision.gameObject.CompareTag("ParryObject") && !isAlGehit)
         {
-
             HealthCheckNChange(healthDecreaseOnMeteoriteHit);
         }
 
@@ -54,6 +55,25 @@ public class CollsionHandler : MonoBehaviour
         if (collision.gameObject.CompareTag("EnemyRocket"))
         {
             HealthCheckNChange(healthDecreaseOnEnemyRocketHit);
+        }
+
+        if (collision.gameObject.CompareTag("Train"))
+        {
+            HealthCheckNChange(healthDecreasePerHitByTrain);
+        }
+
+        if (collision.gameObject.CompareTag("Mine"))
+        {
+            HealthCheckNChange(healthDecreaseOnMineHit);
+            collision.gameObject.GetComponent<MeshRenderer>().enabled = false;
+            collision.gameObject.GetComponent<MeshCollider>().enabled = false;
+            collision.gameObject.GetComponentInChildren<ParticleSystem>().Play();
+            collision.gameObject.GetComponentInChildren<AudioSource>().Play();
+        }
+
+        if (collision.gameObject.CompareTag("InstaKill"))
+        {
+            PlayerDies();
         }
     }
 
@@ -83,7 +103,6 @@ public class CollsionHandler : MonoBehaviour
         
         if (collision.gameObject.CompareTag("missle") && !isAlGehit)
         {
-            
             HealthCheckNChange(healthDecreasePerHitByMissle);
         }
         isAlGehit = false;

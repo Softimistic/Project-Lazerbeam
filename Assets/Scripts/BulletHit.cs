@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class BulletHit : MonoBehaviour
+public class BulletHit : SceneTransitionEvent
 {
     [SerializeField] private GameObject deathFx;
     [SerializeField] private AudioClip hitSoundFx;
+    [SerializeField] private bool disableObstacleCollision;
 
     /// <summary>
     /// the color while the object is hit by bullets
@@ -20,6 +21,8 @@ public class BulletHit : MonoBehaviour
     /// after being hit by bullets for hitTimes, will trigger some thing
     /// </summary>
     [SerializeField] [Range(0, 100)] private int hitTimes;
+
+    [Tooltip("Load a scene on hit")] [SerializeField] private bool SceneLoaderMode;
 
     private MeshRenderer _meshRenderer;
     private Color _originalColor;
@@ -36,7 +39,7 @@ public class BulletHit : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //trigger
         if (_currentHitTimes >= hitTimes && hitTimes != 0)
@@ -78,17 +81,39 @@ public class BulletHit : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
-        Debug.Log(collision.name + " 8689");
-        if (collision.gameObject.CompareTag("bullet"))
+        if (collision.gameObject.CompareTag("bullet") && this.enabled)
         {
-            AudioSource.PlayClipAtPoint(hitSoundFx, transform.position);
-            _currentHitTimes++;
-            //do sth here(eg: AUDIO)
-            _meshRenderer.material.color = hitColor;
-            StartCoroutine(RestoreColor(_originalColor));
-            //Destory bullets
-            Destroy(collision.gameObject);
-            scoreBoard.ScoreHit(10);
+            if (SceneLoaderMode)
+            {
+                LoadNextScene();
+            }
+            else
+            {
+                AudioSource.PlayClipAtPoint(hitSoundFx, transform.position);
+                _currentHitTimes++;
+                //do sth here(eg: AUDIO)
+                _meshRenderer.material.color = hitColor;
+                StartCoroutine(RestoreColor(_originalColor));
+                //Destory bullets
+                Destroy(collision.gameObject);
+                scoreBoard.ScoreHit(10);
+            }
+        }
+        else if ((collision.gameObject.CompareTag("ParryObject") || collision.gameObject.CompareTag("Mine") || collision.gameObject.CompareTag("InstaKill")) && !disableObstacleCollision)
+        {
+            StartCoroutine(SelfDestroy());
+            if (deathFx)
+            {
+                GameObject nwFx = Instantiate(deathFx, transform.position, Quaternion.identity);
+                FxSelfDestroy(nwFx);
+            }
+            if (collision.gameObject.CompareTag("Mine"))
+            {
+                collision.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                collision.gameObject.GetComponent<MeshCollider>().enabled = false;
+                collision.gameObject.GetComponentInChildren<ParticleSystem>().Play();
+                collision.gameObject.GetComponentInChildren<AudioSource>().Play();
+            }
         }
     }
 
