@@ -8,12 +8,14 @@ using UnityEngine.SceneManagement;
 public class HankExplosionScene : SceneTransitionEvent
 {
     [Tooltip("FX Prefab")] [SerializeField] ParticleSystem deathFX;
-    bool AlOntploft = false;
     private GameObject controller;
+    AudioSource myAudio;
+    public MeshRenderer MeshSpaceship;
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("HankDies", 2.0f);
+        myAudio = GetComponent<AudioSource>();
+        Invoke("HankDies", 1.0f);
     }
 
     // Update is called once per frame
@@ -24,5 +26,12 @@ public class HankExplosionScene : SceneTransitionEvent
     public void HankDies()
     {
         deathFX.Play();
+        myAudio.Play();
+        Invoke("SpaceshipDestroyed", 0.5f);
+        Invoke("LoadNextScene", 1.5f);
+    }
+    public void SpaceshipDestroyed()
+    {
+        MeshSpaceship.enabled = false;
     }
 }

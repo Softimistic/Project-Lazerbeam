@@ -872,7 +872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8979d9498c1c89e448a99ce33a70c23f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 9
+  TargetScene: Menu
 --- !u!4 &2133572419
 Transform:
   m_ObjectHideFlags: 0
