@@ -13,7 +13,8 @@ public class CollsionHandler : MonoBehaviour
     [Tooltip("FX Prefab")] [SerializeField] GameObject deathFX;
     [Tooltip("FX Prefab")] [SerializeField] GameObject hitFX;
     [Tooltip("FX Prefab")] [SerializeField] ParticleSystem impactFX;
-
+    public AudioClip gettingHitByEnemySound;
+    public AudioClip gettingHitByMeteoriteSound;
 
     int healthDecreaseOnMeteoriteHit = 10;
     int healthDecreaseOnMineHit = 25;
@@ -45,11 +46,13 @@ public class CollsionHandler : MonoBehaviour
         if (collision.gameObject.CompareTag("ParryObject") && !isAlGehit)
         {
             HealthCheckNChange(healthDecreaseOnMeteoriteHit);
+            AudioSource.PlayClipAtPoint(gettingHitByMeteoriteSound, transform.position);
         }
 
         if (collision.gameObject.CompareTag("EnemyBullet"))
         {
             HealthCheckNChange(collision.GetComponent<EnemyBullet>().Damage);
+            AudioSource.PlayClipAtPoint(gettingHitByEnemySound, transform.position);
         }
 
         if (collision.gameObject.CompareTag("EnemyRocket"))

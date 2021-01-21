@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Missle : MonoBehaviour
 {
-    
+    public AudioClip missleSound;
     public Transform target;
     public Vector3 direction;
 
@@ -26,7 +26,8 @@ public class Missle : MonoBehaviour
         rocketSpeed = 60f;
         randomOffset = 0.0f;
         target = GameObject.Find("Player Ship").transform;
-        
+        AudioSource.PlayClipAtPoint(missleSound, transform.position);
+
     }
 
     void Update()

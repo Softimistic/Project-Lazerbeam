@@ -200,6 +200,7 @@ GameObject:
   - component: {fileID: 1346653372529075}
   - component: {fileID: 1346653372529069}
   - component: {fileID: 1346653372529070}
+  - component: {fileID: -466327329140682062}
   m_Layer: 0
   m_Name: Player Ship
   m_TagString: Player
@@ -298,6 +299,7 @@ MonoBehaviour:
   BossMode: 0
   WarpSpeed: 0
   maxBoost: 100
+  audio: {fileID: -466327329140682062}
 --- !u!114 &2116216742366279560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +316,10 @@ MonoBehaviour:
   deathFX: {fileID: 2116035761154321962}
   hitFX: {fileID: 7535966219114918634}
   impactFX: {fileID: 6309762191898046689}
+  gettingHitByEnemySound: {fileID: 8300000, guid: d48a322c801e4ed429ef9776056fd83c,
+    type: 3}
+  gettingHitByMeteoriteSound: {fileID: 8300000, guid: d7fe71f7567057946a84e6661f3d7c76,
+    type: 3}
 --- !u!82 &1346653372529075
 AudioSource:
   m_ObjectHideFlags: 0
@@ -439,6 +445,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 0}
+--- !u!114 &-466327329140682062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115151599521277901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22b961bb7abdafe469547412907737ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Boosting
+    clip: {fileID: 8300000, guid: 3d0d230bde6b2404db7cdca30f8d0b60, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &3425174698617856531
 GameObject:
   m_ObjectHideFlags: 0

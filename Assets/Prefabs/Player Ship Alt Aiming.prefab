@@ -40281,6 +40281,7 @@ GameObject:
   - component: {fileID: 5738197577756440151}
   - component: {fileID: 5689962396653240103}
   - component: {fileID: 5719895786189363192}
+  - component: {fileID: 4820382162715942602}
   m_Layer: 0
   m_Name: Player Ship Alt Aiming
   m_TagString: Player
@@ -40359,6 +40360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac975b9c37e13b46bded79fbf2af44d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
   speed: 15
   xRange: 7
   yRange: 4.5
@@ -40366,6 +40368,7 @@ MonoBehaviour:
   controlPitchFactor: -20
   positionYawFactor: 5
   controlRollFactor: -30
+  defaultFOV: 60
   brakeFOV: 50
   boostFOV: 90
   boostTrail: {fileID: 1886089165741422128}
@@ -40375,6 +40378,9 @@ MonoBehaviour:
   boostOverTime: 10
   boostIsLeeg: 0
   BossMode: 0
+  WarpSpeed: 0
+  maxBoost: 100
+  audio: {fileID: 0}
 --- !u!114 &5719895786189363192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40391,6 +40397,27 @@ MonoBehaviour:
   deathFX: {fileID: 5720348142609337946}
   hitFX: {fileID: 4227270755615494810}
   impactFX: {fileID: 409737731567915153}
+  gettingHitByEnemySound: {fileID: 0}
+  gettingHitByMeteoriteSound: {fileID: 0}
+--- !u!114 &4820382162715942602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5721240791099852733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22b961bb7abdafe469547412907737ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Boosting
+    clip: {fileID: 8300000, guid: 3d0d230bde6b2404db7cdca30f8d0b60, type: 3}
+    volume: 0.262
+    pitch: 0
+    loop: 1
+    source: {fileID: 0}
 --- !u!1 &6728805611112513644
 GameObject:
   m_ObjectHideFlags: 0
