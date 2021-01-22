@@ -55,7 +55,7 @@ public class EyeBall : MonoBehaviour
         {
             playerCurrentPos = GameObject.FindWithTag("Player").transform.position;
             Vector3 dir = playerCurrentPos - transform.position;
-            VectorLine.SetRay3D(Color.green, Time.deltaTime, transform.position, dir);
+            VectorLine.SetRay3D(Color.green, Time.deltaTime, transform.position, dir).layer = 0;
         }
         else
         {

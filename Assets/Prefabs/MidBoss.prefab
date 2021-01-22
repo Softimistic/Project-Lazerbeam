@@ -63,7 +63,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 3370593207378328486, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
   - {fileID: -6868914989936822799, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
-  - {fileID: 1589487249450911417, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
+  - {fileID: 9172981881473484046, guid: 1a23dffd9d1f85a468234ea7c1ee7fc1, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   hitSoundFx: {fileID: 8300000, guid: ff83fb1b9d2cb134b871b939877016a5, type: 3}
   disableObstacleCollision: 0
   hitColor: {r: 1, g: 0, b: 0, a: 0}
-  hitTimes: 4
+  hitTimes: 30
   SceneLoaderMode: 0
 --- !u!1 &711286121774795791
 GameObject:
@@ -148,7 +148,7 @@ Transform:
   m_Children:
   - {fileID: 1784577108285515731}
   - {fileID: 6287305136648403663}
-  - {fileID: 5431273405865452783}
+  - {fileID: 7944664033685732553}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 9109439696901884647}
   - component: {fileID: 1119142220047709962}
   - component: {fileID: 1119142220047709963}
+  - component: {fileID: 1704624046}
   m_Layer: 0
   m_Name: Cylinder.013
   m_TagString: Untagged
@@ -228,7 +229,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: -9163163211885300892, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
   - {fileID: -6796508776286440829, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
-  - {fileID: -2315404422835026341, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -281,8 +282,25 @@ MonoBehaviour:
   hitSoundFx: {fileID: 8300000, guid: ff83fb1b9d2cb134b871b939877016a5, type: 3}
   disableObstacleCollision: 0
   hitColor: {r: 1, g: 0, b: 0, a: 0}
-  hitTimes: 4
+  hitTimes: 10
   SceneLoaderMode: 0
+--- !u!114 &1704624046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119142220047709960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc55c4998ea6e14880d06b38fc86ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lerpTime: 0.95
+  finalColors:
+  - {r: 0.160779, g: 0, b: 1, a: 1}
+  - {r: 0.16498186, g: 1, b: 0.023584902, a: 0}
+  - {r: 0.013883919, g: 0.7942571, b: 0.9811321, a: 0}
 --- !u!1 &1243766863576676668
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +364,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 5163063355849896902, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
   - {fileID: 3548951601036501923, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
-  - {fileID: -6535512506995588235, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
+  - {fileID: 9172981881473484046, guid: 1a23dffd9d1f85a468234ea7c1ee7fc1, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -399,7 +417,7 @@ MonoBehaviour:
   hitSoundFx: {fileID: 8300000, guid: ff83fb1b9d2cb134b871b939877016a5, type: 3}
   disableObstacleCollision: 0
   hitColor: {r: 1, g: 0, b: 0, a: 0}
-  hitTimes: 4
+  hitTimes: 30
   SceneLoaderMode: 0
 --- !u!1 &1334429046642351721
 GameObject:
@@ -464,7 +482,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 752492319262309027, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
   - {fileID: -4192297992474313835, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
-  - {fileID: -8307573154506517046, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
+  - {fileID: 9172981881473484046, guid: 1a23dffd9d1f85a468234ea7c1ee7fc1, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -517,7 +535,7 @@ MonoBehaviour:
   hitSoundFx: {fileID: 8300000, guid: ff83fb1b9d2cb134b871b939877016a5, type: 3}
   disableObstacleCollision: 0
   hitColor: {r: 1, g: 0, b: 0, a: 0}
-  hitTimes: 4
+  hitTimes: 30
   SceneLoaderMode: 0
 --- !u!1 &1483801397446157240
 GameObject:
@@ -532,6 +550,7 @@ GameObject:
   - component: {fileID: 3066000414408678837}
   - component: {fileID: 1483801397446157242}
   - component: {fileID: 1483801397446157243}
+  - component: {fileID: 2055411016}
   m_Layer: 0
   m_Name: Cylinder.016
   m_TagString: Untagged
@@ -582,7 +601,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: -5254752162498044798, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
   - {fileID: 1493370413022115818, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
-  - {fileID: 145615223514590520, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -635,8 +654,25 @@ MonoBehaviour:
   hitSoundFx: {fileID: 8300000, guid: ff83fb1b9d2cb134b871b939877016a5, type: 3}
   disableObstacleCollision: 0
   hitColor: {r: 1, g: 0, b: 0, a: 0}
-  hitTimes: 4
+  hitTimes: 10
   SceneLoaderMode: 0
+--- !u!114 &2055411016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483801397446157240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc55c4998ea6e14880d06b38fc86ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lerpTime: 0.95
+  finalColors:
+  - {r: 0.160779, g: 0, b: 1, a: 1}
+  - {r: 0.16498186, g: 1, b: 0.023584902, a: 0}
+  - {r: 0.013883919, g: 0.7942571, b: 0.9811321, a: 0}
 --- !u!1 &1839196095741007197
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,9 +684,10 @@ GameObject:
   - component: {fileID: 8576468914968559980}
   - component: {fileID: 7009682467923485464}
   - component: {fileID: 5245729539652791682}
+  - component: {fileID: 3655000510617330881}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: ParryObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -696,9 +733,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1110233775959259594, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
-  - {fileID: -1637880222114644024, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
-  - {fileID: -8583780622465393609, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
+  - {fileID: 2100000, guid: fc5cd0e4b1f88434d9e48ecd52c9bd4f, type: 2}
+  - {fileID: -8705533452240791338, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
+  - {fileID: -4612162990109294230, guid: 5a84142a3f1da1442803984e6cdc84e3, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -720,6 +757,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3655000510617330881
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839196095741007197}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
 --- !u!1 &2356344745189747001
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +782,7 @@ GameObject:
   - component: {fileID: 1784577108285515731}
   - component: {fileID: 7005708745392755021}
   - component: {fileID: 1458967368790691218}
+  - component: {fileID: 576890770}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -779,7 +831,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7993982598810627253, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
+  - {fileID: 2100000, guid: 7527630de52bae942ae69dd49979f212, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -801,6 +853,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &576890770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2356344745189747001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a85dda6d635be954fafaa4b3de11c198, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3781043184140430758
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,11 +894,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3781043184140430758}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.097164065, y: -8.824665, z: 232.02228}
-  m_LocalScale: {x: 3.4104457, y: 3.4104457, z: 3.4104457}
+  m_LocalPosition: {x: 0, y: 13.680008, z: 0}
+  m_LocalScale: {x: 4.4134574, y: 4.4134574, z: 4.4134574}
   m_Children: []
-  m_Father: {fileID: 5431273405865452783}
-  m_RootOrder: 0
+  m_Father: {fileID: 2233628373590233315}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6923762176483087293
 MeshFilter:
@@ -863,8 +927,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
-  - {fileID: -3846018093981099296, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
+  - {fileID: 2100000, guid: 8d07ef8238fb8e548b4a0397f22e72e0, type: 2}
+  - {fileID: 4874126678125670354, guid: 9a7afdb5ce6b78042bdc7a54be33213c, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -912,7 +976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e381602c6d89752429f03bf91c3bc3dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackFrequency: 0
+  attackFrequency: 0.1
   bullet: {fileID: 4938935894715590308, guid: f723115860a71ef43bd267ce78a3c0a2, type: 3}
 --- !u!114 &7560010148294804472
 MonoBehaviour:
@@ -985,7 +1049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab91a0a7240791242830a62e3e8d5c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eyeball: {fileID: 0}
+  eyeball: {fileID: 3781043184140430758}
 --- !u!1 &5420274820348540677
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,6 +1063,7 @@ GameObject:
   - component: {fileID: 483920020512554563}
   - component: {fileID: 5420274820348540679}
   - component: {fileID: 5420274820348540676}
+  - component: {fileID: 1556006475}
   m_Layer: 0
   m_Name: Cylinder.009
   m_TagString: Untagged
@@ -1049,7 +1114,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 8975480819012031255, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
   - {fileID: -8705533452240791338, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
-  - {fileID: 8964088591131456171, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1102,54 +1167,25 @@ MonoBehaviour:
   hitSoundFx: {fileID: 8300000, guid: ff83fb1b9d2cb134b871b939877016a5, type: 3}
   disableObstacleCollision: 0
   hitColor: {r: 1, g: 0, b: 0, a: 0}
-  hitTimes: 4
+  hitTimes: 10
   SceneLoaderMode: 0
---- !u!1 &6152622410275253246
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5431273405865452783}
-  - component: {fileID: 3677974805282789533}
-  m_Layer: 0
-  m_Name: ChildDeathChecker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5431273405865452783
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6152622410275253246}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.12574, y: 25.1, z: -300.26}
-  m_LocalScale: {x: 1.2940999, y: 1.2940999, z: 1.2940999}
-  m_Children:
-  - {fileID: 7944664033685732553}
-  m_Father: {fileID: 2233628373590233315}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3677974805282789533
+--- !u!114 &1556006475
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6152622410275253246}
+  m_GameObject: {fileID: 5420274820348540677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 471fc1a809abb8c43890830c2d54aa04, type: 3}
+  m_Script: {fileID: 11500000, guid: cbc55c4998ea6e14880d06b38fc86ca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetScene: BriefingPlanetLevelStart
-  DisableMode: 0
+  lerpTime: 0.95
+  finalColors:
+  - {r: 0.160779, g: 0, b: 1, a: 1}
+  - {r: 0.16498186, g: 1, b: 0.023584902, a: 0}
+  - {r: 0.013883919, g: 0.7942571, b: 0.9811321, a: 0}
 --- !u!1 &7202708708998203494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,7 +1249,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 9101280890363022628, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
   - {fileID: 6133712870518801159, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
-  - {fileID: 1129505859253339258, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
+  - {fileID: 9172981881473484046, guid: 1a23dffd9d1f85a468234ea7c1ee7fc1, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1266,7 +1302,7 @@ MonoBehaviour:
   hitSoundFx: {fileID: 8300000, guid: ff83fb1b9d2cb134b871b939877016a5, type: 3}
   disableObstacleCollision: 0
   hitColor: {r: 1, g: 0, b: 0, a: 0}
-  hitTimes: 4
+  hitTimes: 30
   SceneLoaderMode: 0
 --- !u!1 &8985495757495071296
 GameObject:
@@ -1281,6 +1317,7 @@ GameObject:
   - component: {fileID: 1204025497961704216}
   - component: {fileID: 8985495757495071298}
   - component: {fileID: 8985495757495071299}
+  - component: {fileID: 1580391033}
   m_Layer: 0
   m_Name: Cylinder.012
   m_TagString: Untagged
@@ -1331,7 +1368,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 1877244072416195789, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
   - {fileID: -354735261257320667, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
-  - {fileID: -469649698186968152, guid: 5413d9b0bfa2bd048bf01c0f17701dcd, type: 3}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1384,5 +1421,22 @@ MonoBehaviour:
   hitSoundFx: {fileID: 8300000, guid: ff83fb1b9d2cb134b871b939877016a5, type: 3}
   disableObstacleCollision: 0
   hitColor: {r: 1, g: 0, b: 0, a: 0}
-  hitTimes: 4
+  hitTimes: 10
   SceneLoaderMode: 0
+--- !u!114 &1580391033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8985495757495071296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc55c4998ea6e14880d06b38fc86ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lerpTime: 0.95
+  finalColors:
+  - {r: 0.160779, g: 0, b: 1, a: 1}
+  - {r: 0.16498186, g: 1, b: 0.023584902, a: 0}
+  - {r: 0.013883919, g: 0.7942571, b: 0.9811321, a: 0}
