@@ -104,6 +104,9 @@ public class AudioManager : MonoBehaviour
              case "SpaceLevelMustafa":
                  return "level1";
                  break;
+             case "MidBoss":
+                 return "level3";
+                 break;
              case "FinalBossPhase1":
                  return "level3";
                  break;

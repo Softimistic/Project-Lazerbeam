@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using System.Timers;
 using Microsoft.SqlServer.Server;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Vectrosity;
 
 public class EyeBall : MonoBehaviour
 {
+    [FormerlySerializedAs("AttackFrequency")] [SerializeField] [Tooltip("Attack Frequency")]
+    public float attackFrequency;
     public GameObject bullet;
     private GameObject player;
 
@@ -77,11 +80,11 @@ public class EyeBall : MonoBehaviour
         playerCurrentPos = GameObject.FindWithTag("Player").transform.position;
         Vector3 dir = transform.position - playerCurrentPos;
        //TODO shooting
-       Debug.Log("射击！！！！！");
+       //Debug.Log("射击！！！！！");
        bullet.transform.rotation = Quaternion.LookRotation(dir) * Quaternion.Euler(-90, 0, 0);
        Instantiate(bullet, transform.position,bullet.transform.rotation);
-       Debug.Log("射击成功");
-       Invoke("ChangeShootingState",0.1f);
+       //Debug.Log("射击成功");
+       Invoke("ChangeShootingState",attackFrequency);
       
     }
 
