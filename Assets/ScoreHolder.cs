@@ -37,7 +37,10 @@ public class ScoreHolder : MonoBehaviour
     
     public void StoreScoreToDatabase()
     {
-        FindObjectOfType<HighScoreTable>().AddNewScoreEntry(ReadTempScore());
+        if (GetCurrentScore() != 0)
+        {
+            FindObjectOfType<HighScoreTable>().AddNewScoreEntry(GetCurrentScore());
+        }
     }
 
     public int GetCurrentScore()
@@ -65,6 +68,7 @@ public class ScoreHolder : MonoBehaviour
     public int ReadTempScore()
     {
         int tempScore = PlayerPrefs.GetInt("TempScore");
+        Debug.Log( tempScore + " 6523");
         if (tempScore != 0)
         {
             return tempScore;

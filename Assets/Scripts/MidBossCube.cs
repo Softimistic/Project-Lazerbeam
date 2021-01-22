@@ -9,14 +9,21 @@ public class MidBossCube : MonoBehaviour
     void Update()
     {
         //rotate plain
-        transform.Rotate (Vector3.forward,-60f * Time.deltaTime,Space.Self);
+        transform.Rotate (Vector3.up,-60f * Time.deltaTime,Space.Self);
         //check if eye boss dead
         if (transform.root.childCount == 2)
         {
-            FindObjectOfType<AudioManager>().PauseAll();
-            //Update TempScore
-            FindObjectOfType<ScoreHolder>().UpdateTempScore();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Invoke("LoadNextScene",5);
         }
     }
+
+    private void LoadNextScene()
+    { 
+        FindObjectOfType<AudioManager>().PauseAll();
+        //Update TempScore
+        FindObjectOfType<ScoreHolder>().UpdateTempScore();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }
+
+

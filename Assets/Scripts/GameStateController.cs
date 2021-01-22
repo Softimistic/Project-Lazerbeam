@@ -153,7 +153,7 @@ public class GameStateController : MonoBehaviour
     {
         Time.timeScale = 1f;
         FindObjectOfType<AudioManager>().ResumeTheme(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
-        FindObjectOfType<ScoreHolder>().StoreScoreToDatabase();
+        FindObjectOfType<ScoreHolder>().StoreScoreToDatabase();   
         FindObjectOfType<ScoreHolder>().ResetTempScore();
         SceneManager.LoadScene(0);
     }
