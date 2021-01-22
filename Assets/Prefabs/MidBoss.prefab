@@ -111,10 +111,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4691d92278ffeb042bb9a07f58abbbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TargetScene: 
   deathFx: {fileID: 1095912818707076, guid: 237360a382f15bd4eb671f8b0a9dbd3e, type: 3}
   hitSoundFx: {fileID: 8300000, guid: ff83fb1b9d2cb134b871b939877016a5, type: 3}
+  disableObstacleCollision: 0
   hitColor: {r: 1, g: 0, b: 0, a: 0}
   hitTimes: 4
+  SceneLoaderMode: 0
 --- !u!1 &711286121774795791
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,7 +148,7 @@ Transform:
   m_Children:
   - {fileID: 1784577108285515731}
   - {fileID: 6287305136648403663}
-  - {fileID: 7944664033685732553}
+  - {fileID: 5431273405865452783}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -273,10 +276,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4691d92278ffeb042bb9a07f58abbbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TargetScene: 
   deathFx: {fileID: 1095912818707076, guid: 237360a382f15bd4eb671f8b0a9dbd3e, type: 3}
   hitSoundFx: {fileID: 8300000, guid: ff83fb1b9d2cb134b871b939877016a5, type: 3}
+  disableObstacleCollision: 0
   hitColor: {r: 1, g: 0, b: 0, a: 0}
   hitTimes: 4
+  SceneLoaderMode: 0
 --- !u!1 &1243766863576676668
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,10 +394,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4691d92278ffeb042bb9a07f58abbbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TargetScene: 
   deathFx: {fileID: 1095912818707076, guid: 237360a382f15bd4eb671f8b0a9dbd3e, type: 3}
   hitSoundFx: {fileID: 8300000, guid: ff83fb1b9d2cb134b871b939877016a5, type: 3}
+  disableObstacleCollision: 0
   hitColor: {r: 1, g: 0, b: 0, a: 0}
   hitTimes: 4
+  SceneLoaderMode: 0
 --- !u!1 &1334429046642351721
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,10 +512,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4691d92278ffeb042bb9a07f58abbbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TargetScene: 
   deathFx: {fileID: 1095912818707076, guid: 237360a382f15bd4eb671f8b0a9dbd3e, type: 3}
   hitSoundFx: {fileID: 8300000, guid: ff83fb1b9d2cb134b871b939877016a5, type: 3}
+  disableObstacleCollision: 0
   hitColor: {r: 1, g: 0, b: 0, a: 0}
   hitTimes: 4
+  SceneLoaderMode: 0
 --- !u!1 &1483801397446157240
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,10 +630,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4691d92278ffeb042bb9a07f58abbbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TargetScene: 
   deathFx: {fileID: 1095912818707076, guid: 237360a382f15bd4eb671f8b0a9dbd3e, type: 3}
   hitSoundFx: {fileID: 8300000, guid: ff83fb1b9d2cb134b871b939877016a5, type: 3}
+  disableObstacleCollision: 0
   hitColor: {r: 1, g: 0, b: 0, a: 0}
   hitTimes: 4
+  SceneLoaderMode: 0
 --- !u!1 &1839196095741007197
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,11 +830,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3781043184140430758}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 13.68, z: 0}
-  m_LocalScale: {x: 4.4134574, y: 4.4134574, z: 4.4134574}
+  m_LocalPosition: {x: 0.097164065, y: -8.824665, z: 232.02228}
+  m_LocalScale: {x: 3.4104457, y: 3.4104457, z: 3.4104457}
   m_Children: []
-  m_Father: {fileID: 2233628373590233315}
-  m_RootOrder: 2
+  m_Father: {fileID: 5431273405865452783}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6923762176483087293
 MeshFilter:
@@ -897,6 +912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e381602c6d89752429f03bf91c3bc3dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackFrequency: 0
   bullet: {fileID: 4938935894715590308, guid: f723115860a71ef43bd267ce78a3c0a2, type: 3}
 --- !u!114 &7560010148294804472
 MonoBehaviour:
@@ -910,10 +926,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4691d92278ffeb042bb9a07f58abbbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TargetScene: 
   deathFx: {fileID: 191186, guid: 079954accd64b32419ec069129c81273, type: 3}
   hitSoundFx: {fileID: 8300000, guid: ff83fb1b9d2cb134b871b939877016a5, type: 3}
+  disableObstacleCollision: 0
   hitColor: {r: 1, g: 0, b: 0, a: 0}
   hitTimes: 50
+  SceneLoaderMode: 0
 --- !u!1 &5036683661006576261
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,10 +1097,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4691d92278ffeb042bb9a07f58abbbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TargetScene: 
   deathFx: {fileID: 1095912818707076, guid: 237360a382f15bd4eb671f8b0a9dbd3e, type: 3}
   hitSoundFx: {fileID: 8300000, guid: ff83fb1b9d2cb134b871b939877016a5, type: 3}
+  disableObstacleCollision: 0
   hitColor: {r: 1, g: 0, b: 0, a: 0}
   hitTimes: 4
+  SceneLoaderMode: 0
+--- !u!1 &6152622410275253246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5431273405865452783}
+  - component: {fileID: 3677974805282789533}
+  m_Layer: 0
+  m_Name: ChildDeathChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5431273405865452783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6152622410275253246}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.12574, y: 25.1, z: -300.26}
+  m_LocalScale: {x: 1.2940999, y: 1.2940999, z: 1.2940999}
+  m_Children:
+  - {fileID: 7944664033685732553}
+  m_Father: {fileID: 2233628373590233315}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3677974805282789533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6152622410275253246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471fc1a809abb8c43890830c2d54aa04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetScene: BriefingPlanetLevelStart
+  DisableMode: 0
 --- !u!1 &7202708708998203494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,10 +1261,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4691d92278ffeb042bb9a07f58abbbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TargetScene: 
   deathFx: {fileID: 1095912818707076, guid: 237360a382f15bd4eb671f8b0a9dbd3e, type: 3}
   hitSoundFx: {fileID: 8300000, guid: ff83fb1b9d2cb134b871b939877016a5, type: 3}
+  disableObstacleCollision: 0
   hitColor: {r: 1, g: 0, b: 0, a: 0}
   hitTimes: 4
+  SceneLoaderMode: 0
 --- !u!1 &8985495757495071296
 GameObject:
   m_ObjectHideFlags: 0
@@ -1308,7 +1379,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4691d92278ffeb042bb9a07f58abbbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TargetScene: 
   deathFx: {fileID: 1095912818707076, guid: 237360a382f15bd4eb671f8b0a9dbd3e, type: 3}
   hitSoundFx: {fileID: 8300000, guid: ff83fb1b9d2cb134b871b939877016a5, type: 3}
+  disableObstacleCollision: 0
   hitColor: {r: 1, g: 0, b: 0, a: 0}
   hitTimes: 4
+  SceneLoaderMode: 0

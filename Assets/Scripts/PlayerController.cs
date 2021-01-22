@@ -54,8 +54,7 @@ public class PlayerController : MonoBehaviour
         // Boost
         if (Input.GetButton("Fire3") && !BossMode)
         {
-            
-            _boosting = true; ;
+            _boosting = true;
         }
 
         if (Input.GetButtonUp("Fire3") && !BossMode)
@@ -136,7 +135,7 @@ public class PlayerController : MonoBehaviour
     void Boost()
     {
         
-        if (_boosting && boostIsLeeg.Equals(false))
+        if (_boosting && !boostIsLeeg)
         {
             if (!audioPlaying)
             {

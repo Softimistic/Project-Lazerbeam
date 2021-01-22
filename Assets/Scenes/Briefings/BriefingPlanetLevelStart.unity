@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d9e15534310bac439aea65041275e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetScene: newSpaceLevel
+  TargetScene: PlanetLevel
   Messager: {fileID: 4490832875590765052}
 --- !u!4 &680904808
 Transform:
