@@ -422,22 +422,19 @@ public class Messager : MonoBehaviour
             case "PressSpacebar": //Ai 
                 subtitleLine = new string[2][];
                 subtitleLine[0] = new string[2] { "Enemies detected", "1,2" };
-                subtitleLine[1] = new string[2] { "press [SPACEBAR] to use your ship's cannon", "2" };
+                subtitleLine[1] = new string[2] { "press [SPACEBAR] to use your ship's cannon", "2,1" };
                 break;
             case "PressCtrlOrShift": //Ai
                 subtitleLine = new string[2][];
-                subtitleLine[0] = new string[2] { "Meteorite cluster detected, try not to fly into them!", "3" };
-                subtitleLine[1] = new string[2] { "You can press [CTRL] to slow down or [SHIFT] to use boost.", "3" };
+                subtitleLine[0] = new string[2] { "Meteorite cluster detected, try not to fly into them!", "3,3" };
+                subtitleLine[1] = new string[2] { "You can press [CTRL] to slow down or [SHIFT] to use boost.", "4,2" };
                 break;
             case "DodgeRocketLauncher": //Joe
                 subtitleLine = new string[2][];
                 subtitleLine[0] = new string[2] { "Hank, you should fly more to the left to", "2,7" };
                 subtitleLine[1] = new string[2] { "dodge the rocket launchers in front of you", "2" };
                 break;
-            case "GoToPlanet": //Joe #not needed
-                subtitleLine = new string[1][];
-                subtitleLine[0] = new string[2] { "Hank, i need you to fly to that planet in front of you", "3,5" };
-                break;
+
             case "GrabItem": //Joe
                 subtitleLine = new string[2][];
                 subtitleLine[0] = new string[2] { "Hank, that enemy is holding an item.", "3" };
