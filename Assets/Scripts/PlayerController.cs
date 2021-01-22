@@ -35,6 +35,10 @@ public class PlayerController : MonoBehaviour
     public bool BossMode;
     public bool WarpSpeed;
     public float maxBoost = 100;
+    public AudioForPlayer audio;
+    public bool audioPlaying = false;
+    
+
 
     float xThrow, yThrow;
     bool isControlEnabled = true;
@@ -50,6 +54,7 @@ public class PlayerController : MonoBehaviour
         // Boost
         if (Input.GetButton("Fire3") && !BossMode)
         {
+            
             _boosting = true; ;
         }
 
@@ -85,6 +90,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
+                
                 boostIsLeeg = false;
             }
         }
@@ -129,8 +135,14 @@ public class PlayerController : MonoBehaviour
 
     void Boost()
     {
+        
         if (_boosting && boostIsLeeg.Equals(false))
         {
+            if (!audioPlaying)
+            {
+                audio.Play("Boosting");
+                audioPlaying = true;
+            }
             Boost1 -= boostOverTime * Time.deltaTime;
             boostPop.SetActive(true);
             boostTrail.SetActive(true);
@@ -145,11 +157,20 @@ public class PlayerController : MonoBehaviour
         }
         else if(mainCamera.fieldOfView > defaultFOV)
         {
+            
             mainCamera.fieldOfView = Mathf.Lerp(mainCamera.fieldOfView, 60f, 1f * Time.deltaTime);
             transform.parent.GetComponent<BetterWaypointFollower>().routeSpeed = 30f;
             boostPop.SetActive(false);
             boostTrail.SetActive(false);
         }
+
+        if(audioPlaying && !_boosting)
+        {
+            audio.Stop("Boosting");
+            audioPlaying = false;
+        }
+
+        
     }
 
     void Brake()
@@ -187,6 +208,7 @@ public class PlayerController : MonoBehaviour
 
     public bool IsBoosting()
     {
+        
         return _boosting;
     }
     public bool IsBraking()
