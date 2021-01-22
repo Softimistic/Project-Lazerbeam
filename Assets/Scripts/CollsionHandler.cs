@@ -36,6 +36,22 @@ public class CollsionHandler : MonoBehaviour
         shield = GameObject.FindGameObjectWithTag("Player").GetComponent<Shield>();
     }
 
+    private void FixedUpdate()
+    {
+        if (health.GetHealthInt() > 25 && hitFX.active)
+        {
+            hitFX.SetActive(false);
+        }
+        else if (health.GetHealthInt() <= 0)
+        {
+            PlayerDies();
+        }
+        else if (health.GetHealthInt() <= 25)
+        {
+            hitFX.SetActive(true);
+        }
+    }
+
     /// <summary>
     /// Check if there is no collision with the bullet and checking if the player is already hit. Descreasing health when hit once in the level. If the health is zero you die.
     /// </summary>
@@ -89,15 +105,6 @@ public class CollsionHandler : MonoBehaviour
             int leftover = (healthDecrease - shield.getShieldInt() < 0)? 0 : healthDecrease - shield.getShieldInt();
             shield.ShieldHit(healthDecrease);
             health.HealthHit(leftover);
-        }
-        if (health.GetHealthInt() <= 25)
-        {
-            hitFX.SetActive(true);
-        }
-
-        if (health.GetHealthInt() <= 0)
-        {
-            PlayerDies();
         }
     }
 

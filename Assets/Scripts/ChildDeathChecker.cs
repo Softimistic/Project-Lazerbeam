@@ -18,9 +18,6 @@ public class ChildDeathChecker : SceneTransitionEvent
 
             if (_counter > 100)
             { 
-                FindObjectOfType<AudioManager>().PauseAll();
-                //Update TempScore
-               FindObjectOfType<ScoreHolder>().UpdateTempScore();
                 LoadNextScene();
             }
             _counter++;

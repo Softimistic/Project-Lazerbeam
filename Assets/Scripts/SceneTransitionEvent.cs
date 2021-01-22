@@ -11,6 +11,7 @@ public class SceneTransitionEvent : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            FindObjectOfType<AudioManager>().PauseAll();
             //Update TempScore
             FindObjectOfType<ScoreHolder>().UpdateTempScore();
             LoadNextScene();
