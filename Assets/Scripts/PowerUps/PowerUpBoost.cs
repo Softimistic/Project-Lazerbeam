@@ -14,8 +14,9 @@ public class PowerUpBoost : PowerUp
     }
 
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
+        base.Start();
         player1 = FindObjectOfType<PlayerController>();
     }
 
