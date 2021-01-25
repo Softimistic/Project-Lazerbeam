@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MidBossBody : MonoBehaviour
 {
@@ -9,19 +10,25 @@ public class MidBossBody : MonoBehaviour
 
     private Vector3 startPosition;
     private bool _pause = false;
+    [SerializeField] private Slider healthBarBoss;
+    private float maxBossHitTimes;
+    private float bossHitTimes;
 
     // Start is called before the first frame update
     void Start()
     {
         startPosition = transform.position;
+        bossHitTimes = 210;
+        healthBarBoss.value = bossHitTimes; 
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-            RotateBody();
-            MoveVertical();
+        updateUI();
+        RotateBody();
+        MoveVertical();
+        //print(bossHitTimes);
     }
     
     private void RotateBody()
@@ -32,5 +39,15 @@ public class MidBossBody : MonoBehaviour
     private void MoveVertical()
     {
         transform.position = new Vector3(startPosition.x, startPosition.y + Mathf.Sin(Time.time * 3), startPosition.z);
+    }
+
+    private void updateUI()
+    {
+        healthBarBoss.value = bossHitTimes;
+    }
+
+    public void DecreaseBossHitTimes()
+    {
+        bossHitTimes--;
     }
 }

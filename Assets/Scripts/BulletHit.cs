@@ -48,6 +48,7 @@ public class BulletHit : SceneTransitionEvent
             //do sth here
             if (gameObject.CompareTag("BossComponent"))
             {
+                GetComponent<MidBossBody>().DecreaseBossHitTimes();
                 if (transform.parent.childCount == 3)
                 {
                     Destroy(gameObject.transform.parent.gameObject);
@@ -90,6 +91,8 @@ public class BulletHit : SceneTransitionEvent
             else
             {
                 AudioSource.PlayClipAtPoint(hitSoundFx, transform.position);
+                collision.GetComponent<MidBossBody>().DecreaseBossHitTimes();
+                Debug.Log("pepepeppepe");
                 _currentHitTimes++;
                 //do sth here(eg: AUDIO)
                 _meshRenderer.material.color = hitColor;
