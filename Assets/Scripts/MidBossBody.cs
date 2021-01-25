@@ -10,16 +10,17 @@ public class MidBossBody : MonoBehaviour
 
     private Vector3 startPosition;
     private bool _pause = false;
-    [SerializeField] private Slider healthBarBoss;
-    private float maxBossHitTimes;
-    private float bossHitTimes;
+    public Slider healthBarBoss;
+    public float bossHitTimes;
 
     // Start is called before the first frame update
     void Start()
     {
         startPosition = transform.position;
         bossHitTimes = 210;
-        healthBarBoss.value = bossHitTimes; 
+        healthBarBoss.value = bossHitTimes;
+        healthBarBoss.maxValue = 210;
+        updateUI();
     }
 
     // Update is called once per frame
@@ -40,7 +41,7 @@ public class MidBossBody : MonoBehaviour
         transform.position = new Vector3(startPosition.x, startPosition.y + Mathf.Sin(Time.time * 3), startPosition.z);
     }
 
-    private void updateUI()
+    public void updateUI()
     {
         healthBarBoss.value = bossHitTimes;
     }

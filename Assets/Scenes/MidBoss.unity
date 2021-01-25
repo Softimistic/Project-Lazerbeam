@@ -1831,7 +1831,7 @@ GameObject:
   - component: {fileID: 1531577714}
   - component: {fileID: 1531577715}
   m_Layer: 5
-  m_Name: HealthBar Boss
+  m_Name: HealthBarBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2779,5 +2779,10 @@ PrefabInstance:
       propertyPath: healthBarBoss
       value: 
       objectReference: {fileID: 1531577715}
+    - target: {fileID: 3781043184140430758, guid: dc97a1a8aa007c243a62822f0523684c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc97a1a8aa007c243a62822f0523684c, type: 3}

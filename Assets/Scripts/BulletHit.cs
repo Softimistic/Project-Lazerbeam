@@ -48,7 +48,6 @@ public class BulletHit : SceneTransitionEvent
             //do sth here
             if (gameObject.CompareTag("BossComponent"))
             {
-                GetComponent<MidBossBody>().DecreaseBossHitTimes();
                 if (transform.parent.childCount == 3)
                 {
                     Destroy(gameObject.transform.parent.gameObject);
