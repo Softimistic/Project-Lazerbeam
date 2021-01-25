@@ -28,7 +28,6 @@ public class MidBossBody : MonoBehaviour
         updateUI();
         RotateBody();
         MoveVertical();
-        //print(bossHitTimes);
     }
     
     private void RotateBody()

@@ -91,8 +91,7 @@ public class BulletHit : SceneTransitionEvent
             else
             {
                 AudioSource.PlayClipAtPoint(hitSoundFx, transform.position);
-                collision.GetComponent<MidBossBody>().DecreaseBossHitTimes();
-                Debug.Log("pepepeppepe");
+                transform.GetComponentInParent<MidBossBody>().DecreaseBossHitTimes();
                 _currentHitTimes++;
                 //do sth here(eg: AUDIO)
                 _meshRenderer.material.color = hitColor;
