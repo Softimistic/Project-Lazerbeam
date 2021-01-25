@@ -59,6 +59,6 @@ public class createBullet : MonoBehaviour
     {
         //Bullet gets called with position/rotation of gun object
         GameObject b = Instantiate(bulletPrefab, transform.position, transform.rotation) as GameObject;
-        Debug.Log("Bullet Speed : " + bulletPrefab.GetComponent<bullet>().Speed);
+        //Debug.Log("Bullet Speed : " + bulletPrefab.GetComponent<bullet>().Speed);
     }
 }

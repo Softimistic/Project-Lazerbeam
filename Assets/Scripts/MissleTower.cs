@@ -16,6 +16,7 @@ public class MissleTower : MonoBehaviour
    [Tooltip("Missile Tower health")] [Range(1, 100)] public int hitCounter;
     private int currentHitCounter = 0;
 
+
     void Start()
     {
         if (lockOn)
