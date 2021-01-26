@@ -12,6 +12,7 @@ public class MidBossBody : MonoBehaviour
     private bool _pause = false;
     public Slider healthBarBoss;
     public float bossHitTimes;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,7 @@ public class MidBossBody : MonoBehaviour
         updateUI();
         RotateBody();
         MoveVertical();
+        
     }
     
     private void RotateBody()
