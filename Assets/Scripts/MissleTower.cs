@@ -32,7 +32,7 @@ public class MissleTower : MonoBehaviour
         {
             index++;
         }
-        if(index == 1)
+        else if(index == 1)
         {
             index = 0;
         }
