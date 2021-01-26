@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class BulletHit : SceneTransitionEvent
@@ -28,6 +29,10 @@ public class BulletHit : SceneTransitionEvent
     private Color _originalColor;
     private ScoreBoard scoreBoard;
     private int _currentHitTimes = 0;
+    private Scene m_Scene;
+    private string sceneName;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +41,8 @@ public class BulletHit : SceneTransitionEvent
         //init Renderer & originColor
       _meshRenderer = GetComponent<MeshRenderer>();
       _originalColor = _meshRenderer.material.color;
+        m_Scene = SceneManager.GetActiveScene();
+        sceneName = m_Scene.name;
     }
 
     // Update is called once per frame
@@ -90,7 +97,15 @@ public class BulletHit : SceneTransitionEvent
             else
             {
                 AudioSource.PlayClipAtPoint(hitSoundFx, transform.position);
-                transform.GetComponentInParent<MidBossBody>().DecreaseBossHitTimes();
+                if (sceneName == "Midboss")
+                {
+                    transform.GetComponentInParent<MidBossBody>().DecreaseBossHitTimes();
+                }
+                else if(sceneName == "FinalBossPhase1" || sceneName == "FinalBossPhase2")
+                {
+                    transform.GetComponentInParent<BossAI>().DecreaseBossHitTimes();
+                }
+                
                 _currentHitTimes++;
                 //do sth here(eg: AUDIO)
                 _meshRenderer.material.color = hitColor;
