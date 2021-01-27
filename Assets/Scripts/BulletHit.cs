@@ -97,11 +97,11 @@ public class BulletHit : SceneTransitionEvent
             else
             {
                 AudioSource.PlayClipAtPoint(hitSoundFx, transform.position);
-                if (sceneName == "Midboss")
+                if (sceneName == "MidBoss")
                 {
                     transform.GetComponentInParent<MidBossBody>().DecreaseBossHitTimes();
                 }
-                else if(sceneName == "FinalBossPhase1" || sceneName == "FinalBossPhase2")
+                if(sceneName == "FinalBossPhase1" || sceneName == "FinalBossPhase2")
                 {
                     transform.GetComponentInParent<BossAI>().DecreaseBossHitTimes();
                 }
