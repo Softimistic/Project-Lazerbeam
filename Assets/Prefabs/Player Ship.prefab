@@ -476,8 +476,8 @@ MonoBehaviour:
   sounds:
   - name: Boosting
     clip: {fileID: 8300000, guid: 3d0d230bde6b2404db7cdca30f8d0b60, type: 3}
-    volume: 0.5
-    pitch: 0
+    volume: 0.014
+    pitch: 0.1
     loop: 1
     source: {fileID: 0}
 --- !u!1 &3425174698617856531

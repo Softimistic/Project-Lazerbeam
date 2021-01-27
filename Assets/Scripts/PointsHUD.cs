@@ -13,7 +13,7 @@ public class PointsHUD : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindWithTag("Player");
         _text = this.GetComponentsInChildren<Text>();
         _health = player.GetComponent<Health>();
         _shield = player.GetComponent<Shield>();

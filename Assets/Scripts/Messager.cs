@@ -128,7 +128,7 @@ public class Messager : MonoBehaviour
             case "Floopy1":
                 subtitleLine = new string[2][];
                 subtitleLine[0] = new string[2] { "Good morning Hank...", "1,5" };
-                subtitleLine[1] = new string[2] { "please wake up, we are being contacted", "2,5" };
+                subtitleLine[1] = new string[2] { "Please wake up, we are being contacted", "2,5" };
                 break;
             case "Floopy2":
                 subtitleLine = new string[4][];
@@ -156,17 +156,17 @@ public class Messager : MonoBehaviour
             case "Hank4":
                 subtitleLine = new string[3][];
                 subtitleLine[0] = new string[2] { "Well come and get me then", "2" }; //#Redo
-                subtitleLine[1] = new string[2] { "YOU don’t even know where I am", "2,5" };
+                subtitleLine[1] = new string[2] { "YOU don’t even know where I am", "2,5" }; 
                 subtitleLine[2] = new string[2] { "I don’t even know where I am...", "2" };
                 break;
             case "Hank5":
                 subtitleLine = new string[1][];
-                subtitleLine[0] = new string[2] { "President Biden?!", "1,5" };
+                subtitleLine[0] = new string[2] { "President Biden?!", "1,3" };
                 break;
             case "Hank6":
                 subtitleLine = new string[2][];
                 subtitleLine[0] = new string[2] { "Sorry i can't help you", "1,5" }; //#redo
-                subtitleLine[1] = new string[2] { "I'm just an accountant..", "1" };
+                subtitleLine[1] = new string[2] { "I'm just an accountant..", "2" };
                 break;
             case "Hank7":
                 subtitleLine = new string[1][];
@@ -179,36 +179,36 @@ public class Messager : MonoBehaviour
                 break;
             case "Joe2":
                 subtitleLine = new string[6][];
-                subtitleLine[0] = new string[2] { "That's right", "1,5" };
+                subtitleLine[0] = new string[2] { "That's right", "1,3" };
                 subtitleLine[1] = new string[2] { "The United States of America needs you Hank!", "3" };
-                subtitleLine[2] = new string[2] { "We have detected a fleed of extra-terrestrial beings..", "3" };
-                subtitleLine[3] = new string[2] { "..that are on their way to earth!", "2" };
-                subtitleLine[4] = new string[2] { "Our forces cannot make it in time", "2" };
-                subtitleLine[5] = new string[2] { "You are the only one that is close enough to stop them Hank!", "5" };
+                subtitleLine[2] = new string[2] { "We have detected a fleed of extra-terrestrial beings..", "3,2" };
+                subtitleLine[3] = new string[2] { "..that are on their way to invade earth!", "2" };
+                subtitleLine[4] = new string[2] { "Our forces cannot make it in time", "3" };
+                subtitleLine[5] = new string[2] { "You are the only one that is close enough to stop them Hank!", "4,2" };
                 break;
             case "Joe3":
                 subtitleLine = new string[10][];
                 subtitleLine[0] = new string[2] { "Listen Fat!", "1" };
-                subtitleLine[1] = new string[2] { "You either do as you are told..", "1" };
-                subtitleLine[2] = new string[2] { "or i will have you arrested for stealing that ship!", "1" };
-                subtitleLine[3] = new string[2] { "Somewhere in that alien fleed, there should be an alien commander..", "1" };
-                subtitleLine[4] = new string[2] { "who is carrying a wormhole generator", "1" };
-                subtitleLine[5] = new string[2] { "If he activates that generator he will be able to bring the rest of his alien fleed here!", "1" };
-                subtitleLine[6] = new string[2] { "There will be millions swarming us", "1" };
-                subtitleLine[7] = new string[2] { "My forces have no chance against numbers like that", "1" };
-                subtitleLine[8] = new string[2] { "So I need you to get in there..", "1" };
-                subtitleLine[9] = new string[2] { "..and take out that commander before he can activate his wormhole generator", "1" };
+                subtitleLine[1] = new string[2] { "You either do as you are told..", "2" };
+                subtitleLine[2] = new string[2] { "or i will have you arrested for stealing that ship!", "3" };
+                subtitleLine[3] = new string[2] { "Somewhere in that alien fleed, there should be an alien commander..", "4" };
+                subtitleLine[4] = new string[2] { "who is carrying a wormhole generator", "2,5" };
+                subtitleLine[5] = new string[2] { "If he activates that generator he will be able to bring the rest of his alien fleed here!", "6" };
+                subtitleLine[6] = new string[2] { "There will be millions swarming us", "2,2" };
+                subtitleLine[7] = new string[2] { "My forces have no chance against numbers like that", "3,5" };
+                subtitleLine[8] = new string[2] { "So I need you to get in there..", "2" };
+                subtitleLine[9] = new string[2] { "..and take out that commander before he can activate his wormhole generator", "5" };
                 break;
             case "Show1":
                 subtitleLine = new string[2][];
-                subtitleLine[0] = new string[2] { "Turn that ship around right now thief!", "1" }; //#redo
-                subtitleLine[1] = new string[2] { "That is my ship!", "1" };
+                subtitleLine[0] = new string[2] { "Turn that ship around right now thief!", "2,5" }; //#redo
+                subtitleLine[1] = new string[2] { "That is my ship!", "1,3" };
                 break;
             case "Show2":
                 subtitleLine = new string[3][];
                 subtitleLine[0] = new string[2] { "You haven't even signed the papers..", "2" };
                 subtitleLine[1] = new string[2] { "I could have you arrested!", "1,5" };
-                subtitleLine[2] = new string[2] { "Hell, i could sue you for millions just for what you did to my roof!", "4,5" }; //#redo
+                subtitleLine[2] = new string[2] { "Hell, i could sue you for millions just for what you did to my roof!", "4" }; //#redo
                 break;
             case "Show3":
                 subtitleLine = new string[3][];
@@ -422,22 +422,19 @@ public class Messager : MonoBehaviour
             case "PressSpacebar": //Ai 
                 subtitleLine = new string[2][];
                 subtitleLine[0] = new string[2] { "Enemies detected", "1,2" };
-                subtitleLine[1] = new string[2] { "press [SPACEBAR] to use your ship's cannon", "2" };
+                subtitleLine[1] = new string[2] { "press [SPACEBAR] to use your ship's cannon", "2,1" };
                 break;
             case "PressCtrlOrShift": //Ai
                 subtitleLine = new string[2][];
-                subtitleLine[0] = new string[2] { "Meteorite cluster detected, try not to fly into them!", "3" };
-                subtitleLine[1] = new string[2] { "You can press [CTRL] to slow down or [SHIFT] to use boost.", "3" };
+                subtitleLine[0] = new string[2] { "Meteorite cluster detected, try not to fly into them!", "3,3" };
+                subtitleLine[1] = new string[2] { "You can press [CTRL] to slow down or [SHIFT] to use boost.", "4,2" };
                 break;
             case "DodgeRocketLauncher": //Joe
                 subtitleLine = new string[2][];
                 subtitleLine[0] = new string[2] { "Hank, you should fly more to the left to", "2,7" };
                 subtitleLine[1] = new string[2] { "dodge the rocket launchers in front of you", "2" };
                 break;
-            case "GoToPlanet": //Joe #not needed
-                subtitleLine = new string[1][];
-                subtitleLine[0] = new string[2] { "Hank, i need you to fly to that planet in front of you", "3,5" };
-                break;
+
             case "GrabItem": //Joe
                 subtitleLine = new string[2][];
                 subtitleLine[0] = new string[2] { "Hank, that enemy is holding an item.", "3" };
