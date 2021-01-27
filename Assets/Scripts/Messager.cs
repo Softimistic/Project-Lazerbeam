@@ -25,10 +25,12 @@ public class Messager : MonoBehaviour
         _text = this.GetComponentsInChildren<Text>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        if ((_messageActive && !_audioSource.isPlaying) || _messageActive && (Input.GetKeyDown("x") && !DisablePausing))
+       
+        if ( _messageActive && (!_audioSource.isPlaying  || Input.GetKeyDown("x") || Input.GetKeyDown("escape")  ))
         {
+            _text[0].text = null;
             StopMessage();
         }
     }
@@ -38,10 +40,14 @@ public class Messager : MonoBehaviour
     /// </summary>
     public void StopMessage()
     {
+        //    StopCoroutine(SubtitleSequence());
+      //  _text[0].text = null;
+
         _messageActive = false;
         _frame.enabled = false;
         _portrait.enabled = false;
         _audioSource.Stop();
+       
     }
     public void PlayMessage(Sprite portrait, AudioClip audio)
     {
@@ -72,7 +78,8 @@ public class Messager : MonoBehaviour
                 _text[0].text = subtitleLine[i][0];
                 
                 yield return new WaitForSeconds(float.Parse(subtitleLine[i][1]));
-                _text[0].text = null;
+                
+                //_text[0].text = null;
             }
         }
         _text[0].color = Color.yellow;
@@ -295,7 +302,7 @@ public class Messager : MonoBehaviour
                 subtitleLine = new string[1][];
                 subtitleLine[0] = new string[2] { "3", "0,5" };
                 break;
-            case "Goobye":
+            case "Goodbye":
                 subtitleLine = new string[1][];
                 subtitleLine[0] = new string[2] { "Goodbye Hank", "2" };
                 break;
