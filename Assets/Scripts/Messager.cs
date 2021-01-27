@@ -12,7 +12,8 @@ public class Messager : MonoBehaviour
     private Image _frame;
     private Image _portrait;
     private bool _messageActive; //Wether or not a message is currently playing
-          
+    private int new_speech_id = 0;
+
     private Text[] _text;
 
     private string[][] subtitleLine = new string[1][];
@@ -30,6 +31,7 @@ public class Messager : MonoBehaviour
        
         if ( _messageActive && (!_audioSource.isPlaying  || Input.GetKeyDown("x") || Input.GetKeyDown("escape")  ))
         {
+            new_speech_id = new_speech_id + 1;
             _text[0].text = null;
             StopMessage();
         }
@@ -40,7 +42,7 @@ public class Messager : MonoBehaviour
     /// </summary>
     public void StopMessage()
     {
-        //    StopCoroutine(SubtitleSequence());
+           
       //  _text[0].text = null;
 
         _messageActive = false;
@@ -71,16 +73,20 @@ public class Messager : MonoBehaviour
     IEnumerator SubtitleSequence(string speech = "")
     {
         subtitleLine = getSpeechSubtitles(speech);
+        int speech_id = new_speech_id;
         for (int i = 0; i < subtitleLine.Length; i++)
         {
-            if (IsMessageActive()) 
+            if (_messageActive && speech_id == new_speech_id) //Must have something that stops it when next speech is being called
             {
+            
                 _text[0].text = subtitleLine[i][0];
                 
                 yield return new WaitForSeconds(float.Parse(subtitleLine[i][1]));
-                
+
                 //_text[0].text = null;
+             
             }
+        
         }
         _text[0].color = Color.yellow;
     }
@@ -158,7 +164,7 @@ public class Messager : MonoBehaviour
             case "Hank3":
                 subtitleLine = new string[2][];
                 subtitleLine[0] = new string[2] { "You just said it was mine, didn't you?", "2" };
-                subtitleLine[1] = new string[2] { "I won this shit fair and square!", "2" };
+                subtitleLine[1] = new string[2] { "I won this ship fair and square!", "2" };
                 break;
             case "Hank4":
                 subtitleLine = new string[3][];
