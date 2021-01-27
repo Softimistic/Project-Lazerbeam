@@ -19,15 +19,15 @@ public class MidBossBody : MonoBehaviour
     {
         startPosition = transform.position;
         bossHitTimes = 210;
-        healthBarBoss.value = bossHitTimes;
-        healthBarBoss.maxValue = 210;
+        //healthBarBoss.value = bossHitTimes;
+        //healthBarBoss.maxValue = 210;
         updateUI();
     }
 
     // Update is called once per frame
     void Update()
     {
-        updateUI();
+        //updateUI();
         RotateBody();
         MoveVertical();
         
