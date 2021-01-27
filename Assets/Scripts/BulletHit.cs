@@ -108,8 +108,11 @@ public class BulletHit : SceneTransitionEvent
                 
                 _currentHitTimes++;
                 //do sth here(eg: AUDIO)
-                _meshRenderer.material.color = hitColor;
-                StartCoroutine(RestoreColor(_originalColor));
+                if (_meshRenderer != null)
+                {
+                    _meshRenderer.material.color = hitColor;
+                    StartCoroutine(RestoreColor(_originalColor));
+                }
                 //Destory bullets
                 Destroy(collision.gameObject);
                 scoreBoard.ScoreHit(10);
