@@ -25,12 +25,12 @@ public abstract class PowerUp : MonoBehaviour
     public virtual void Update()
     {
         float distance = Vector3.Distance(transform.position, player.transform.position);
-        if (distance > 6 && distance < 150)
+        if (distance > 1 && distance < 150)
         {
             timer -= Time.deltaTime;
             if (timer <= 0)
                 Destroy(gameObject);
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, (distance*2) * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, distance * Time.deltaTime);
         }
         
     }
