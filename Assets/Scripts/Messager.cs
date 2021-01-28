@@ -88,13 +88,18 @@ public class Messager : MonoBehaviour
             }
         
         }
-        _text[0].color = Color.yellow;
+        if (_messageActive && speech_id == new_speech_id)
+        {
+        //    _text[0].color = Color.yellow;
+        }
+       
+
     }
 
 
     public string[][] getSpeechSubtitles(string speech)
     {
-      //  UnityEngine.Debug.Log(speech);
+        _text[0].color = Color.yellow;
         switch (speech)
         {
             case "Attention": //#
@@ -291,6 +296,12 @@ public class Messager : MonoBehaviour
                 subtitleLine[1] = new string[2] { "The public can never know about this attempted invasion Hank", "3" };
                 subtitleLine[2] = new string[2] { "..the consequences would be disastrous", "3" };
                 break;
+            case "ShootEye":
+                subtitleLine = new string[3][];
+                subtitleLine[0] = new string[2] { "I don't know", "1,2" };
+                subtitleLine[1] = new string[2] { "Shoot it in the eye or something...", "1,8" };
+               
+                break;
             //New floopy
             case "Contacted":
                 subtitleLine = new string[1][];
@@ -424,10 +435,12 @@ public class Messager : MonoBehaviour
                 subtitleLine[2] = new string[2] { "God would somebody please help us! ", "2" };
                 break;
             case "CyclopsNoise1":
+                _text[0].color = Color.magenta;
                 subtitleLine = new string[1][];
                 subtitleLine[0] = new string[2] { "[Cylops noises]", "1,5" };              
                 break;
             case "CyclopsNoise2":
+                _text[0].color = Color.magenta;
                 subtitleLine = new string[1][];
                 subtitleLine[0] = new string[2] { "[Angrier Cyclops noises]", "2" };
                 break;
