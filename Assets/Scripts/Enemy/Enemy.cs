@@ -33,7 +33,6 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected PowerUpBoost boostPowerUp;
     [SerializeField] protected PowerUpShield shieldPowerUp;
 
-    private bool repositioned;
     private Vector2 field = new Vector2(25, 15);
     private Collider enemyCollider;
     protected List<GameObject> guns = new List<GameObject>();
@@ -48,7 +47,6 @@ public abstract class Enemy : MonoBehaviour
         shootingTimer = shootingSpeed;
         despawnTimer = despawnTime;
         thisGameState = GameState.inactive;
-        repositioned = true;
 
         currentGun = 0;
         foreach (Transform child in transform) if (child.CompareTag("EnemyGun"))
@@ -67,10 +65,7 @@ public abstract class Enemy : MonoBehaviour
         }
         if (thisGameState == GameState.active || thisGameState == GameState.attached)
         {
-            if (repositioned)
-                Movement();
-            else
-                Reposition();
+            Movement();
             Shooting();
         }
         DespawnEnemy();
@@ -91,47 +86,12 @@ public abstract class Enemy : MonoBehaviour
         {
             transform.parent = GameObject.FindGameObjectWithTag("MainCamera").transform;
             thisGameState = GameState.attached;
-            repositioned = false;
         }
         // when the player gets in the spawningRange of the enemy the enemy will turn active
         else if (thisGameState != GameState.attached && thisGameState != GameState.active && Vector3.Distance(transform.position, player.transform.position) <= spawningRange)
         {
             thisGameState = GameState.active;
             enemyCollider.enabled = true;
-        }
-    }
-
-    private void Reposition()
-    {
-        Vector3 _player = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
-        if (_player.x - transform.position.x > field.x)
-        {
-            print(_player.x - transform.position.x);
-            transform.position = transform.position + transform.right * -speed * time;
-        }
-        else if (_player.x - transform.position.x < field.x * -1)
-        {
-            transform.position = transform.position + transform.right * speed * time;
-        }
-        else if (_player.y - transform.position.y > field.y)
-        {
-            transform.position = transform.position + transform.up * speed * time;
-        }
-        else if (_player.y - transform.position.y < field.y * -1)
-        {
-            transform.position = transform.position + transform.up * -speed * time;
-        }
-        else if ((_player.z - transform.position.z) * -1 > maxDistance + 2)
-        {
-            transform.position = transform.position + transform.forward * -speed * time;
-        }
-        else if ((_player.z - transform.position.z) * -1 < (maxDistance - 2) * -1)
-        {
-            transform.position = transform.position + transform.forward * speed * time;
-        }
-        else
-        {
-            repositioned = true;
         }
     }
 
