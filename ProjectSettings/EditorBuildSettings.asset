@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: eb6fdc47ea524ae4994de9c3a0b2f464
   - enabled: 1
+    path: Assets/Scenes/starwars_intro.unity
+    guid: 07eb791872adeb94eb2b30d986c8c306
+  - enabled: 1
     path: Assets/Scenes/BriefingLevel1Start.unity
     guid: 16f06171c4bf7d642a769aaeecd54409
   - enabled: 1

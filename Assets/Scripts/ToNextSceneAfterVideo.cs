@@ -10,6 +10,10 @@ public class ToNextSceneAfterVideo : MonoBehaviour
     public string SceneName;
     void Start()
     {
+        #region controll music
+        FindObjectOfType<AudioManager>().PauseAll();
+        FindObjectOfType<AudioManager>().Play(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
+        #endregion
         VideoPlayer.loopPointReached += LoadScene;
     }
     void LoadScene(VideoPlayer vp)

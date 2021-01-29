@@ -96,12 +96,15 @@ public class AudioManager : MonoBehaviour
 
      public String GetCurrentThemeName(string scenename)
      {
-         switch (scenename)
+        switch (scenename)
          {
              case "BriefingLevel1Start":
                  return "brief";
                  break;
-             case "SpaceLevelMustafa":
+            case "starwars_intro":
+                return "intro";
+                break;
+            case "SpaceLevelMustafa":
                  return "level1";
                  break;
              case "MidBoss":
