@@ -317,7 +317,7 @@ MonoBehaviour:
   levelLoadDelay: 1
   deathFX: {fileID: 2116035761154321962}
   hitFX: {fileID: 7535966219114918634}
-  impactFX: {fileID: 6309762191898046689}
+  impactFX: {fileID: 6148507482204379665}
   gettingHitByEnemySound: {fileID: 8300000, guid: d48a322c801e4ed429ef9776056fd83c,
     type: 3}
   gettingHitByMeteoriteSound: {fileID: 8300000, guid: d7fe71f7567057946a84e6661f3d7c76,
@@ -476,8 +476,8 @@ MonoBehaviour:
   sounds:
   - name: Boosting
     clip: {fileID: 8300000, guid: 3d0d230bde6b2404db7cdca30f8d0b60, type: 3}
-    volume: 0.5
-    pitch: 0
+    volume: 0.014
+    pitch: 0.1
     loop: 1
     source: {fileID: 0}
 --- !u!1 &3425174698617856531
@@ -6880,6 +6880,11 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 82086623247328700, guid: 237360a382f15bd4eb671f8b0a9dbd3e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d1d6effc537307d489ba7c4561c86496, type: 3}
     - target: {fileID: 198370627744817268, guid: 237360a382f15bd4eb671f8b0a9dbd3e,
         type: 3}
       propertyPath: playOnAwake
@@ -6967,15 +6972,15 @@ PrefabInstance:
       objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 237360a382f15bd4eb671f8b0a9dbd3e, type: 3}
---- !u!4 &6151603273788010225 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4192254170218084, guid: 237360a382f15bd4eb671f8b0a9dbd3e,
+--- !u!1 &6148507482204379665 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1095912818707076, guid: 237360a382f15bd4eb671f8b0a9dbd3e,
     type: 3}
   m_PrefabInstance: {fileID: 6147420365487083669}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &6309762191898046689 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198370627744817268, guid: 237360a382f15bd4eb671f8b0a9dbd3e,
+--- !u!4 &6151603273788010225 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4192254170218084, guid: 237360a382f15bd4eb671f8b0a9dbd3e,
     type: 3}
   m_PrefabInstance: {fileID: 6147420365487083669}
   m_PrefabAsset: {fileID: 0}

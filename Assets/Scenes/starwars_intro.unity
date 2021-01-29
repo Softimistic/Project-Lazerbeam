@@ -488,7 +488,7 @@ RectTransform:
   m_GameObject: {fileID: 1397375143}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 41.365158, y: 30.302513, z: 28.493193}
+  m_LocalScale: {x: 19.45362, y: 14.250969, z: 13.4000635}
   m_Children: []
   m_Father: {fileID: 1958540908}
   m_RootOrder: 0
@@ -545,8 +545,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacdaa23b2f4dbc41a0ec223051105f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VideoPlayer: {fileID: 0}
-  SceneName: 
 --- !u!1 &1958540904
 GameObject:
   m_ObjectHideFlags: 0

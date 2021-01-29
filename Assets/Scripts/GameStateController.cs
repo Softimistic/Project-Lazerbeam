@@ -16,9 +16,6 @@ public class GameStateController : MonoBehaviour
     [Header("Score Menu")] [SerializeField]
     public GameObject ScoreGameObject;
 
-    [Header("Camera UI")][SerializeField]
-    public GameObject CameraUi;
-
     [Header("Player")] [SerializeField] public GameObject player;
     
 
@@ -92,7 +89,7 @@ public class GameStateController : MonoBehaviour
     void Pause()
     {
         //Supposed to 0, but it will trigger Way point enter a infinite loop, in this case 0.01f is used
-        Time.timeScale = 0.001f;
+        Time.timeScale = 0.01f;
         DisablePlayerControl();
     }
 
@@ -110,11 +107,10 @@ public class GameStateController : MonoBehaviour
     /// </summary>
     public void ActivePauseMenu()
     {
-        CameraUi.SetActive(false);
-        Pause();
         pauseMenu.SetActive(true);
        // audioManager.PauseTheme("Theme");
         FindObjectOfType<AudioManager>().PauseTheme(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
+        Pause();
         _isPause = true;
     }
 
@@ -123,11 +119,9 @@ public class GameStateController : MonoBehaviour
     /// </summary>
     public void ClosePauseMenu()
     {
-        CameraUi.SetActive(true);
-        Resume();
         pauseMenu.SetActive(false);
         FindObjectOfType<AudioManager>().ResumeTheme(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
- 
+        Resume();
         _isPause = false;
     }
 
@@ -136,7 +130,6 @@ public class GameStateController : MonoBehaviour
     /// </summary>
     public void CloseGameOverMenu()
     {
-        CameraUi.SetActive(true);
         ActiveScoreMenu();
         gameOverMenu.SetActive(false);
         Resume();
@@ -147,7 +140,6 @@ public class GameStateController : MonoBehaviour
     /// </summary>
     public void ActiveGameOverMenu()
     {
-        CameraUi.SetActive(false);
         //Debug.Log(GameObject.FindWithTag("ScoreText").GetComponent<Text>().text.ToString() + " 6986");
         //FindObjectOfType<HighScoreTable>().AddNewScoreEntry(int.Parse(GameObject.FindWithTag("ScoreText").GetComponent<Text>().text.ToString()));
         //FindObjectOfType<ScoreHolder>().StoreScoreToDatabase();
@@ -160,9 +152,9 @@ public class GameStateController : MonoBehaviour
     public void BackToMainMenu()
     {
         Time.timeScale = 1f;
-        //FindObjectOfType<AudioManager>().ResumeTheme(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
-        //FindObjectOfType<ScoreHolder>().StoreScoreToDatabase();   
-        //FindObjectOfType<ScoreHolder>().ResetTempScore();
+        FindObjectOfType<AudioManager>().ResumeTheme(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
+        FindObjectOfType<ScoreHolder>().StoreScoreToDatabase();   
+        FindObjectOfType<ScoreHolder>().ResetTempScore();
         SceneManager.LoadScene(0);
     }
 

@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 8198374093226199004}
   m_Layer: 0
   m_Name: ShootingAsteroid Brown
-  m_TagString: ParryObject
+  m_TagString: EnemyShips
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 840963609262876634}
   m_Layer: 0
   m_Name: Missile Tower
-  m_TagString: ParryObject
+  m_TagString: EnemyShips
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
