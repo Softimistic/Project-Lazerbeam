@@ -14,7 +14,6 @@ public class HighScoreTable : MonoBehaviour
     private void Awake()
     {
         _entryContainer = transform.Find("HighScoreEntryContainer");
-        //PlayerPrefs.SetInt("TempScore", 6845);
         //ResetDatabase();
         //AddNewScoreEntry(100000);
         if (_entryContainer)

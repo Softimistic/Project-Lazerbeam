@@ -57,7 +57,6 @@ public class ScoreHolder : MonoBehaviour
     public void UpdateTempScore()
     {
         PlayerPrefs.SetInt("TempScore", GetCurrentScore());
-        Debug.Log("score is updating :" + GetCurrentScore());
         PlayerPrefs.Save();
     }
 

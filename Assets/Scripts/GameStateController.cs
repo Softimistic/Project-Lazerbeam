@@ -152,7 +152,7 @@ public class GameStateController : MonoBehaviour
         //FindObjectOfType<HighScoreTable>().AddNewScoreEntry(int.Parse(GameObject.FindWithTag("ScoreText").GetComponent<Text>().text.ToString()));
         //FindObjectOfType<ScoreHolder>().StoreScoreToDatabase();
         //FindObjectOfType<ScoreHolder>().ResetTempScore();
-        //CloseScoreMenu();
+        CloseScoreMenu();
         Pause();
         gameOverMenu.SetActive(true);
     }
