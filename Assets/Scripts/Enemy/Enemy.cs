@@ -33,7 +33,6 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected PowerUpBoost boostPowerUp;
     [SerializeField] protected PowerUpShield shieldPowerUp;
 
-    private Vector2 field = new Vector2(25, 15);
     private Collider enemyCollider;
     protected List<GameObject> guns = new List<GameObject>();
     protected int currentGun;
