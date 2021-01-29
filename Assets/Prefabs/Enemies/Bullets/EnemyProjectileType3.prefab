@@ -121,7 +121,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4938935894715590308}
+<<<<<<< HEAD
   m_LocalRotation: {x: -0.73828447, y: -0.0028875647, z: -0.0031607414, w: 0.6744759}
+=======
+  m_LocalRotation: {x: -0.7520737, y: 0.0012481262, z: 0.0014242402, w: 0.6590763}
+>>>>>>> parent of e414d72... Revert "Merge branch 'PL-238' into Develop"
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
