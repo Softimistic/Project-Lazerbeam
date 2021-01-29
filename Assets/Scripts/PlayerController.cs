@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour
             boostTrail.SetActive(false);
         }
 
-        if(audioPlaying && !_boosting)
+        if(audioPlaying && !_boosting || audioPlaying && boostIsLeeg)
         {
             audio.Stop("Boosting");
             audioPlaying = false;

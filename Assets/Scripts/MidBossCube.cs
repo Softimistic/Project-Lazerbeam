@@ -9,7 +9,7 @@ public class MidBossCube : MonoBehaviour
     void Update()
     {
         //rotate plain
-        transform.Rotate (Vector3.forward,-60f * Time.deltaTime);
+        transform.Rotate (Vector3.up,-60f * Time.deltaTime,Space.Self);
         //check if eye boss dead
         if (transform.root.childCount == 2)
         {

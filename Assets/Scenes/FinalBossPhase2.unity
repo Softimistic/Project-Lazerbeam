@@ -147,7 +147,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31653630}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebfb4f30b9e6a3b4998631c131059222, type: 3}
   m_Name: 
@@ -274,11 +274,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7042676601107247966, guid: edc0ce7dc21c70f43b4eead1094f49c3,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7042676602403053890, guid: edc0ce7dc21c70f43b4eead1094f49c3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -385,6 +380,12 @@ MonoBehaviour:
 --- !u!1 &212349789 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7042676601808820196, guid: edc0ce7dc21c70f43b4eead1094f49c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 212349785}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &212349790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7042676602403053893, guid: edc0ce7dc21c70f43b4eead1094f49c3,
     type: 3}
   m_PrefabInstance: {fileID: 212349785}
   m_PrefabAsset: {fileID: 0}
@@ -1078,6 +1079,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 919162099}
+    - target: {fileID: 1576141638654352074, guid: c498f5fec1aef764088af83362d28f7e,
+        type: 3}
+      propertyPath: CameraUi
+      value: 
+      objectReference: {fileID: 212349790}
     - target: {fileID: 1576141638654352077, guid: c498f5fec1aef764088af83362d28f7e,
         type: 3}
       propertyPath: m_Name
@@ -1525,22 +1531,22 @@ PrefabInstance:
     - target: {fileID: 108757178063643558, guid: a7ed2f93f7ec710488a831b91b45f019,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 6.878344e+11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108757178063643558, guid: a7ed2f93f7ec710488a831b91b45f019,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 7.3982314e+31
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108757178063643558, guid: a7ed2f93f7ec710488a831b91b45f019,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 1.4607148e-19
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108757178063643558, guid: a7ed2f93f7ec710488a831b91b45f019,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 7.556296e+31
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 108757178063643558, guid: a7ed2f93f7ec710488a831b91b45f019,
         type: 3}
@@ -2456,22 +2462,22 @@ PrefabInstance:
     - target: {fileID: 108757178063643558, guid: a7ed2f93f7ec710488a831b91b45f019,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 3.273274e-17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108757178063643558, guid: a7ed2f93f7ec710488a831b91b45f019,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 7.1e-43
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108757178063643558, guid: a7ed2f93f7ec710488a831b91b45f019,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 2.62e-43
+      value: 1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 108757178063643558, guid: a7ed2f93f7ec710488a831b91b45f019,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 7.1e-43
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108757178063643558, guid: a7ed2f93f7ec710488a831b91b45f019,
         type: 3}
@@ -2710,12 +2716,12 @@ PrefabInstance:
     - target: {fileID: 2458204885579610074, guid: 6cf63c39369c7584fae5ab8f368e3dbf,
         type: 3}
       propertyPath: bossHitTimes
-      value: 30
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2688725996497352934, guid: 6cf63c39369c7584fae5ab8f368e3dbf,
         type: 3}
       propertyPath: hitTimes
-      value: 30
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2688725996497352934, guid: 6cf63c39369c7584fae5ab8f368e3dbf,
         type: 3}

@@ -18,8 +18,10 @@ public class MidBossBody : MonoBehaviour
     void Start()
     {
         startPosition = transform.position;
+        bossHitTimes = 210;
         healthBarBoss.value = bossHitTimes;
-        healthBarBoss.maxValue = bossHitTimes;
+        healthBarBoss.maxValue = 210;
+        updateUI();
     }
 
     // Update is called once per frame

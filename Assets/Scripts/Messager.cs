@@ -12,7 +12,8 @@ public class Messager : MonoBehaviour
     private Image _frame;
     private Image _portrait;
     private bool _messageActive; //Wether or not a message is currently playing
-          
+    private int new_speech_id = 0;
+
     private Text[] _text;
 
     private string[][] subtitleLine = new string[1][];
@@ -25,10 +26,13 @@ public class Messager : MonoBehaviour
         _text = this.GetComponentsInChildren<Text>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        if ((_messageActive && !_audioSource.isPlaying) || _messageActive && (Input.GetKeyDown("x") && !DisablePausing))
+       
+        if ( _messageActive && (!_audioSource.isPlaying  || Input.GetKeyDown("x") || Input.GetKeyDown("escape")  ))
         {
+            new_speech_id = new_speech_id + 1;
+            _text[0].text = null;
             StopMessage();
         }
     }
@@ -38,10 +42,14 @@ public class Messager : MonoBehaviour
     /// </summary>
     public void StopMessage()
     {
+           
+      //  _text[0].text = null;
+
         _messageActive = false;
         _frame.enabled = false;
         _portrait.enabled = false;
         _audioSource.Stop();
+       
     }
     public void PlayMessage(Sprite portrait, AudioClip audio)
     {
@@ -65,23 +73,33 @@ public class Messager : MonoBehaviour
     IEnumerator SubtitleSequence(string speech = "")
     {
         subtitleLine = getSpeechSubtitles(speech);
+        int speech_id = new_speech_id;
         for (int i = 0; i < subtitleLine.Length; i++)
         {
-            if (IsMessageActive()) 
+            if (_messageActive && speech_id == new_speech_id) //Must have something that stops it when next speech is being called
             {
+            
                 _text[0].text = subtitleLine[i][0];
                 
                 yield return new WaitForSeconds(float.Parse(subtitleLine[i][1]));
-                _text[0].text = null;
+
+                //_text[0].text = null;
+             
             }
+        
         }
-        _text[0].color = Color.yellow;
+        if (_messageActive && speech_id == new_speech_id)
+        {
+        //    _text[0].color = Color.yellow;
+        }
+       
+
     }
 
 
     public string[][] getSpeechSubtitles(string speech)
     {
-      //  UnityEngine.Debug.Log(speech);
+        _text[0].color = Color.yellow;
         switch (speech)
         {
             case "Attention": //#
@@ -151,7 +169,7 @@ public class Messager : MonoBehaviour
             case "Hank3":
                 subtitleLine = new string[2][];
                 subtitleLine[0] = new string[2] { "You just said it was mine, didn't you?", "2" };
-                subtitleLine[1] = new string[2] { "I won this shit fair and square!", "2" };
+                subtitleLine[1] = new string[2] { "I won this ship fair and square!", "2" };
                 break;
             case "Hank4":
                 subtitleLine = new string[3][];
@@ -278,6 +296,12 @@ public class Messager : MonoBehaviour
                 subtitleLine[1] = new string[2] { "The public can never know about this attempted invasion Hank", "3" };
                 subtitleLine[2] = new string[2] { "..the consequences would be disastrous", "3" };
                 break;
+            case "ShootEye":
+                subtitleLine = new string[3][];
+                subtitleLine[0] = new string[2] { "I don't know", "1,2" };
+                subtitleLine[1] = new string[2] { "Shoot it in the eye or something...", "1,8" };
+               
+                break;
             //New floopy
             case "Contacted":
                 subtitleLine = new string[1][];
@@ -295,7 +319,7 @@ public class Messager : MonoBehaviour
                 subtitleLine = new string[1][];
                 subtitleLine[0] = new string[2] { "3", "0,5" };
                 break;
-            case "Goobye":
+            case "Goodbye":
                 subtitleLine = new string[1][];
                 subtitleLine[0] = new string[2] { "Goodbye Hank", "2" };
                 break;
@@ -411,10 +435,12 @@ public class Messager : MonoBehaviour
                 subtitleLine[2] = new string[2] { "God would somebody please help us! ", "2" };
                 break;
             case "CyclopsNoise1":
+                _text[0].color = Color.magenta;
                 subtitleLine = new string[1][];
                 subtitleLine[0] = new string[2] { "[Cylops noises]", "1,5" };              
                 break;
             case "CyclopsNoise2":
+                _text[0].color = Color.magenta;
                 subtitleLine = new string[1][];
                 subtitleLine[0] = new string[2] { "[Angrier Cyclops noises]", "2" };
                 break;

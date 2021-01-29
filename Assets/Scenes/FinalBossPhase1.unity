@@ -159,7 +159,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31653630}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebfb4f30b9e6a3b4998631c131059222, type: 3}
   m_Name: 
@@ -996,11 +996,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7042676601107247966, guid: edc0ce7dc21c70f43b4eead1094f49c3,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7042676602403053890, guid: edc0ce7dc21c70f43b4eead1094f49c3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1071,6 +1066,12 @@ PrefabInstance:
 --- !u!1 &882440024 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7042676601808820196, guid: edc0ce7dc21c70f43b4eead1094f49c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 882440023}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &882440025 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7042676602403053893, guid: edc0ce7dc21c70f43b4eead1094f49c3,
     type: 3}
   m_PrefabInstance: {fileID: 882440023}
   m_PrefabAsset: {fileID: 0}
@@ -1435,6 +1436,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 800983757}
+    - target: {fileID: 1576141638654352074, guid: c498f5fec1aef764088af83362d28f7e,
+        type: 3}
+      propertyPath: CameraUi
+      value: 
+      objectReference: {fileID: 882440025}
     - target: {fileID: 1576141638654352077, guid: c498f5fec1aef764088af83362d28f7e,
         type: 3}
       propertyPath: m_Name
