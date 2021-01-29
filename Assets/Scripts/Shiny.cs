@@ -33,7 +33,7 @@ public class Shiny : MonoBehaviour
     void Update()
     {
         
-        _meshRenderer.materials[2].color = Color.Lerp(_meshRenderer.materials[2].color, finalColors[colotIndex],
+        _meshRenderer.materials[0].color = Color.Lerp(_meshRenderer.materials[0].color, finalColors[colotIndex],
             lerpTime * Time.deltaTime);
         t = Mathf.Lerp(t, 1f, lerpTime * Time.deltaTime);
         if (t > .9f)
