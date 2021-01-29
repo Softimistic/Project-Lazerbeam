@@ -102,8 +102,6 @@ public class BulletHit : SceneTransitionEvent
                     transform.GetComponentInParent<MidBossBody>().DecreaseBossHitTimes();
                 }
                 else if(sceneName == "FinalBossPhase1" || sceneName == "FinalBossPhase2")
-=======
-                if(sceneName == "FinalBossPhase1" || sceneName == "FinalBossPhase2")
                 {
                     transform.GetComponentInParent<BossAI>().DecreaseBossHitTimes();
                 }
@@ -112,11 +110,6 @@ public class BulletHit : SceneTransitionEvent
                 //do sth here(eg: AUDIO)
                 _meshRenderer.material.color = hitColor;
                 StartCoroutine(RestoreColor(_originalColor));
-                if (_meshRenderer != null)
-                {
-                    _meshRenderer.material.color = hitColor;
-                    StartCoroutine(RestoreColor(_originalColor));
-                }
                 //Destory bullets
                 Destroy(collision.gameObject);
                 scoreBoard.ScoreHit(10);

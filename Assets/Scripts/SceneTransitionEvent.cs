@@ -11,18 +11,15 @@ public class SceneTransitionEvent : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("updating score!");
+            FindObjectOfType<AudioManager>().PauseAll();
             //Update TempScore
             FindObjectOfType<ScoreHolder>().UpdateTempScore();
-            Debug.Log("From here!");
-            Invoke("LoadNextScene",3);
-            //LoadNextScene();
+            LoadNextScene();
         }
     }
 
     protected void LoadNextScene()
     {
-        FindObjectOfType<AudioManager>().PauseAll();
         SceneManager.LoadScene(TargetScene);
     }
 }

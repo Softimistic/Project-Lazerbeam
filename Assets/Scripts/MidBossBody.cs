@@ -22,8 +22,6 @@ public class MidBossBody : MonoBehaviour
         healthBarBoss.value = bossHitTimes;
         healthBarBoss.maxValue = 210;
         updateUI();
-        healthBarBoss.value = bossHitTimes;
-        healthBarBoss.maxValue = bossHitTimes;
     }
 
     // Update is called once per frame
