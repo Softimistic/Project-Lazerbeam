@@ -18,15 +18,10 @@ public class MidBossBody : MonoBehaviour
     void Start()
     {
         startPosition = transform.position;
-<<<<<<< HEAD
         bossHitTimes = 210;
         healthBarBoss.value = bossHitTimes;
         healthBarBoss.maxValue = 210;
         updateUI();
-=======
-        healthBarBoss.value = bossHitTimes;
-        healthBarBoss.maxValue = bossHitTimes;
->>>>>>> parent of e414d72... Revert "Merge branch 'PL-238' into Develop"
     }
 
     // Update is called once per frame

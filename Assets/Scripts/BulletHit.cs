@@ -97,30 +97,19 @@ public class BulletHit : SceneTransitionEvent
             else
             {
                 AudioSource.PlayClipAtPoint(hitSoundFx, transform.position);
-<<<<<<< HEAD
                 if (sceneName == "Midboss")
                 {
                     transform.GetComponentInParent<MidBossBody>().DecreaseBossHitTimes();
                 }
                 else if(sceneName == "FinalBossPhase1" || sceneName == "FinalBossPhase2")
-=======
-                if (sceneName == "MidBoss")
-                {
-                    transform.GetComponentInParent<MidBossBody>().DecreaseBossHitTimes();
-                }
-                if(sceneName == "FinalBossPhase1" || sceneName == "FinalBossPhase2")
->>>>>>> parent of e414d72... Revert "Merge branch 'PL-238' into Develop"
                 {
                     transform.GetComponentInParent<BossAI>().DecreaseBossHitTimes();
                 }
                 
                 _currentHitTimes++;
                 //do sth here(eg: AUDIO)
-                if (_meshRenderer != null)
-                {
-                    _meshRenderer.material.color = hitColor;
-                    StartCoroutine(RestoreColor(_originalColor));
-                }
+                _meshRenderer.material.color = hitColor;
+                StartCoroutine(RestoreColor(_originalColor));
                 //Destory bullets
                 Destroy(collision.gameObject);
                 scoreBoard.ScoreHit(10);
