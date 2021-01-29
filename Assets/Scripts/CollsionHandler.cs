@@ -12,7 +12,7 @@ public class CollsionHandler : MonoBehaviour
     [Tooltip("In seconds")] [SerializeField] float levelLoadDelay = 1f;
     [Tooltip("FX Prefab")] [SerializeField] GameObject deathFX;
     [Tooltip("FX Prefab")] [SerializeField] GameObject hitFX;
-    [Tooltip("FX Prefab")] [SerializeField] GameObject impactFX;
+    [Tooltip("FX Prefab")] [SerializeField] ParticleSystem impactFX;
     public AudioClip gettingHitByEnemySound;
     public AudioClip gettingHitByMeteoriteSound;
 
@@ -98,8 +98,7 @@ public class CollsionHandler : MonoBehaviour
 
     private void HealthCheckNChange(int healthDecrease)
     {
-        impactFX.GetComponent<ParticleSystem>().Play();
-        impactFX.GetComponent<AudioSource>().Play();
+        impactFX.Play();
         isAlGehit = true;
         if (health.GetHealthInt() >= 0)
         {

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BossAI : MonoBehaviour
 {
@@ -47,23 +46,17 @@ public class BossAI : MonoBehaviour
     private float t;
     private int colotIndex;
     private BossStage _bossStage = BossStage.Stage1;
-    public Slider healthBarBoss;
-    public float bossHitTimes;
 
     // Start is called before the first frame update
     void Start()
     {
         _meshRenderer = gameObject.GetComponent<MeshRenderer>();
         len = finalColors.Length;
-        healthBarBoss.value = bossHitTimes;
-        healthBarBoss.maxValue = bossHitTimes;
-        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        updateUI();
         #region Combat
         if (_bossState == BossState.WAITING)
         {
@@ -183,15 +176,5 @@ public class BossAI : MonoBehaviour
         Vector3 direction = (player.position) - transform.position;
         Quaternion rotation = Quaternion.LookRotation(direction);
         transform.rotation = rotation;
-    }
-
-    public void updateUI()
-    {
-        healthBarBoss.value = bossHitTimes;
-    }
-
-    public void DecreaseBossHitTimes()
-    {
-        bossHitTimes--;
     }
 }

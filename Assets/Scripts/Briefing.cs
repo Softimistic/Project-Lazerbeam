@@ -16,10 +16,9 @@ public class Briefing : SceneTransitionEvent
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        //(Input.GetKeyDown("x") ||
-        if (( Input.GetKeyDown("escape")) && !_callEnded)
+        if ((Input.GetKeyDown("x") || Input.GetKeyDown("escape")) && !_callEnded)
         {
             _counter = _messageEvents.Length - 1;
             _messageEvents[_counter].Play();

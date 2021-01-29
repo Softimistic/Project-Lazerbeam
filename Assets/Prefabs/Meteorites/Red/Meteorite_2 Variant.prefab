@@ -10,18 +10,13 @@ PrefabInstance:
     - target: {fileID: 2399335709369107110, guid: b33926432cd89c14da828aedcebe15f1,
         type: 3}
       propertyPath: m_Name
-      value: Meteorite_2 Variant
+      value: Meteorite_2
       objectReference: {fileID: 0}
     - target: {fileID: 5037255275964833462, guid: b33926432cd89c14da828aedcebe15f1,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fc5cd0e4b1f88434d9e48ecd52c9bd4f, type: 2}
-    - target: {fileID: 5037255275964833462, guid: b33926432cd89c14da828aedcebe15f1,
-        type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5413684273058071861, guid: b33926432cd89c14da828aedcebe15f1,
         type: 3}
       propertyPath: m_LocalPosition.x
