@@ -173,7 +173,7 @@ public class Messager : MonoBehaviour
                 break;
             case "Hank4":
                 subtitleLine = new string[3][];
-                subtitleLine[0] = new string[2] { "Well come and get me then", "2" }; //#Redo
+                subtitleLine[0] = new string[2] { "Well come and get me then", "2" }; 
                 subtitleLine[1] = new string[2] { "YOU don’t even know where I am", "2,5" }; 
                 subtitleLine[2] = new string[2] { "I don’t even know where I am...", "2" };
                 break;
@@ -183,7 +183,7 @@ public class Messager : MonoBehaviour
                 break;
             case "Hank6":
                 subtitleLine = new string[2][];
-                subtitleLine[0] = new string[2] { "Sorry i can't help you", "1,5" }; //#redo
+                subtitleLine[0] = new string[2] { "Sorry i can't help you", "1,7" }; 
                 subtitleLine[1] = new string[2] { "I'm just an accountant..", "2" };
                 break;
             case "Hank7":
