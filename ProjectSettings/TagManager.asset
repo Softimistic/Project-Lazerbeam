@@ -21,7 +21,6 @@ TagManager:
   - InstaKill
   - Mine
   - Train
-  - Middboss
   layers:
   - Default
   - TransparentFX
