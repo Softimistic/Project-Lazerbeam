@@ -111,10 +111,10 @@ public class GameStateController : MonoBehaviour
     public void ActivePauseMenu()
     {
         CameraUi.SetActive(false);
-        Pause();
         pauseMenu.SetActive(true);
-        // audioManager.PauseTheme("Theme");       
-        //FindObjectOfType<AudioManager>().PauseTheme(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
+        // audioManager.PauseTheme("Theme");
+        FindObjectOfType<AudioManager>().PauseTheme(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
+        Pause();
         _isPause = true;
     }
 
@@ -125,7 +125,7 @@ public class GameStateController : MonoBehaviour
     {
         CameraUi.SetActive(true);
         pauseMenu.SetActive(false);
-        //FindObjectOfType<AudioManager>().ResumeTheme(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
+        FindObjectOfType<AudioManager>().ResumeTheme(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
         Resume();
         _isPause = false;
     }
@@ -135,8 +135,8 @@ public class GameStateController : MonoBehaviour
     /// </summary>
     public void CloseGameOverMenu()
     {
-        CameraUi.SetActive(true);
         ActiveScoreMenu();
+        CameraUi.SetActive(true);
         gameOverMenu.SetActive(false);
         Resume();
     }
@@ -146,18 +146,19 @@ public class GameStateController : MonoBehaviour
     /// </summary>
     public void ActiveGameOverMenu()
     {
-        CameraUi.SetActive(false);
-        //Debug.Log(GameObject.FindWithTag("ScoreText").GetComponent<Text>().text.ToString() + " 6986");
-        //FindObjectOfType<HighScoreTable>().AddNewScoreEntry(int.Parse(GameObject.FindWithTag("ScoreText").GetComponent<Text>().text.ToString()));
-        //FindObjectOfType<ScoreHolder>().StoreScoreToDatabase();
-        //FindObjectOfType<ScoreHolder>().ResetTempScore();
+        //Debug.Log(GameObject.FindWithTag("ScoreText").GetComponent<Text>().text + 6986);
+        /*      FindObjectOfType<HighScoreTable>().AddNewScoreEntry(int.Parse(GameObject.FindWithTag("ScoreText").GetComponent<Text>().text.ToString()));
+                FindObjectOfType<ScoreHolder>().StoreScoreToDatabase();
+                FindObjectOfType<ScoreHolder>().ResetTempScore();*/
         CloseScoreMenu();
+        CameraUi.SetActive(false);
         Pause();
         gameOverMenu.SetActive(true);
     }
 
     public void BackToMainMenu()
     {
+        Time.timeScale = 1f;
         FindObjectOfType<AudioManager>().ResumeTheme(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
         FindObjectOfType<ScoreHolder>().StoreScoreToDatabase();   
         FindObjectOfType<ScoreHolder>().ResetTempScore();
