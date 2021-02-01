@@ -39,12 +39,6 @@ public class ChildDeathChecker : SceneTransitionEvent
                         isTriggered = true;
                     }
                 }
-
-                // if (_counter > 100)
-                // { 
-                //     LoadNextScene();
-                // }
-                // _counter++;
             }
         }
     }

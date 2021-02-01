@@ -101,14 +101,32 @@ public class AudioManager : MonoBehaviour
              case "BriefingLevel1Start":
                  return "brief";
                  break;
+             case "BriefingMidboss":
+                 return "brief";
+                 break;
+             case "BriefingPlanetLevelStart":
+                 return "brief";
+                 break;
+             case "BriefingFinalBoss":
+                 return "brief";
+                 break;
+             case "BriefingFinalBossTransition":
+                 return "brief";
+                 break;
+             case "EndingBriefing":
+                 return "brief";
+                 break;
             case "starwars_intro":
                 return "intro";
                 break;
             case "SpaceLevelMustafa":
                  return "level1";
                  break;
+             case "PlanetLevel":
+                 return "level2";
+                 break;
              case "MidBoss":
-                 return "level3";
+                 return "Theme";
                  break;
              case "FinalBossPhase1":
                  return "level3";

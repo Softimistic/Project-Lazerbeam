@@ -9,17 +9,17 @@ public class SceneTransitionEvent : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            FindObjectOfType<AudioManager>().PauseAll();
             //Update TempScore
             FindObjectOfType<ScoreHolder>().UpdateTempScore();
-            LoadNextScene();
+            Invoke("LoadNextScene",10);
         }
     }
-
+    
     protected void LoadNextScene()
     {
+        FindObjectOfType<AudioManager>().PauseAll();
         SceneManager.LoadScene(TargetScene);
     }
 }

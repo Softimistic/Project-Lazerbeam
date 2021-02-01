@@ -70,6 +70,7 @@ public class MissleTower : MonoBehaviour
         if (collision.gameObject.CompareTag("bullet"))
         {
             currentHitCounter++;
+            FindObjectOfType<ScoreBoard>().ScoreHit(50);
             if (currentHitCounter >= hitCounter) {
                 Destroy(gameObject);
             }
