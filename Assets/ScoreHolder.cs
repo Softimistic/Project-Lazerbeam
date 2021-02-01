@@ -48,6 +48,7 @@ public class ScoreHolder : MonoBehaviour
         GameObject stb = GameObject.FindWithTag("ScoreText");
         if (stb != null)
         {
+            Debug.Log("实时分数： + " + int.Parse(stb.GetComponent<Text>().text));
             return int.Parse(stb.GetComponent<Text>().text);
         }
 
