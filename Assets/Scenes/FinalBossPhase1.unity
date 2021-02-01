@@ -768,6 +768,11 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1877640083}
+    - target: {fileID: 2074373428775968599, guid: d3cc795ba9015554a8548a146f95db90,
+        type: 3}
+      propertyPath: BossMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2111641385240508693, guid: d3cc795ba9015554a8548a146f95db90,
         type: 3}
       propertyPath: m_LocalPosition.x

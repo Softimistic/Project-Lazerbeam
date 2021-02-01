@@ -28,7 +28,7 @@ public class HankExplosionScene : SceneTransitionEvent
         deathFX.Play();
         myAudio.Play();
         Invoke("SpaceshipDestroyed", 0.5f);
-        Invoke("LoadNextScene", 1.5f);
+        Invoke("LoadNextScene", 3.0f);
     }
     public void SpaceshipDestroyed()
     {
