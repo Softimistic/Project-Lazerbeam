@@ -18,14 +18,18 @@ public class createBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //set speed to bullet
-        if (camera.GetComponent<BetterWaypointFollower>().routeSpeed != 0)
+        if (camera)
         {
-            bulletPrefab.GetComponent<bullet>().Speed = camera.GetComponent<BetterWaypointFollower>().routeSpeed * speedfactor;
-        }
-        else
-        {
-            bulletPrefab.GetComponent<bullet>().Speed = 300f;
+            //set speed to bullet
+            if (camera.GetComponent<BetterWaypointFollower>().routeSpeed != 0)
+            {
+                bulletPrefab.GetComponent<bullet>().Speed =
+                camera.GetComponent<BetterWaypointFollower>().routeSpeed * speedfactor;
+            }
+            else
+            {
+                bulletPrefab.GetComponent<bullet>().Speed = 300f;
+            }
         }
     }
 

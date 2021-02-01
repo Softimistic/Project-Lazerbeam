@@ -45,8 +45,13 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        BoostBar.maxValue = Boost1;
-        updateUI();
+        if (BoostBar)
+        {
+            BoostBar.maxValue = Boost1;
+            updateUI();
+        }
+
+        
     }
 
     void Update()
@@ -188,8 +193,11 @@ public class PlayerController : MonoBehaviour
 
     void updateUI()
     {
-        Boost1 = Mathf.Clamp(Boost1, 0, 100);
-        BoostBar.value = Boost1;
+        if (BoostBar)
+        {
+            Boost1 = Mathf.Clamp(Boost1, 0, 100);
+            BoostBar.value = Boost1;
+        }
     }
 
     public void addBoost(int boostIncrease)
