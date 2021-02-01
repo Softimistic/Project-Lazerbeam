@@ -92,7 +92,7 @@ public class GameStateController : MonoBehaviour
     void Pause()
     {
         //Supposed to 0, but it will trigger Way point enter a infinite loop, in this case 0.01f is used
-        Time.timeScale = 0.001f;
+        Time.timeScale = 0.01f;
         DisablePlayerControl();
     }
 
