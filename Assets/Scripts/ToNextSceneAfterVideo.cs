@@ -16,6 +16,13 @@ public class ToNextSceneAfterVideo : MonoBehaviour
         #endregion
         VideoPlayer.loopPointReached += LoadScene;
     }
+    void Update()
+    {
+        if (Input.GetKeyDown("x"))
+        {
+            SceneManager.LoadScene(SceneName);
+        }
+    }
     void LoadScene(VideoPlayer vp)
     {
         SceneManager.LoadScene(SceneName);

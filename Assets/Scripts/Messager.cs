@@ -199,7 +199,7 @@ public class Messager : MonoBehaviour
                 subtitleLine = new string[6][];
                 subtitleLine[0] = new string[2] { "That's right", "1,3" };
                 subtitleLine[1] = new string[2] { "The United States of America needs you Hank!", "3" };
-                subtitleLine[2] = new string[2] { "We have detected a fleed of extra-terrestrial beings..", "3,2" };
+                subtitleLine[2] = new string[2] { "We have detected a fleet of extra-terrestrial beings..", "3,2" };
                 subtitleLine[3] = new string[2] { "..that are on their way to invade earth!", "2" };
                 subtitleLine[4] = new string[2] { "Our forces cannot make it in time", "3" };
                 subtitleLine[5] = new string[2] { "You are the only one that is close enough to stop them Hank!", "4,2" };
@@ -209,9 +209,9 @@ public class Messager : MonoBehaviour
                 subtitleLine[0] = new string[2] { "Listen Fat!", "1" };
                 subtitleLine[1] = new string[2] { "You either do as you are told..", "2" };
                 subtitleLine[2] = new string[2] { "or i will have you arrested for stealing that ship!", "3" };
-                subtitleLine[3] = new string[2] { "Somewhere in that alien fleed, there should be an alien commander..", "4" };
+                subtitleLine[3] = new string[2] { "Somewhere in that alien fleet, there should be an alien commander..", "4" };
                 subtitleLine[4] = new string[2] { "who is carrying a wormhole generator", "2,5" };
-                subtitleLine[5] = new string[2] { "If he activates that generator he will be able to bring the rest of his alien fleed here!", "6" };
+                subtitleLine[5] = new string[2] { "If he activates that generator he will be able to bring the rest of his alien fleet here!", "6" };
                 subtitleLine[6] = new string[2] { "There will be millions swarming us", "2,2" };
                 subtitleLine[7] = new string[2] { "My forces have no chance against numbers like that", "3,5" };
                 subtitleLine[8] = new string[2] { "So I need you to get in there..", "2" };
