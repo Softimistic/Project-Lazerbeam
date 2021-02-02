@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     public void Fly()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        //SceneManager.LoadScene(8);
+        //SceneManager.LoadScene(5);
         //SceneManager.LoadScene(4);
     }
 

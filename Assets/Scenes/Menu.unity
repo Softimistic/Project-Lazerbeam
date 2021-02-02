@@ -811,6 +811,11 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 2576482067029841342, guid: 6a83ce2218690594eb54915e44e809be,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 2576482067029841343, guid: 6a83ce2218690594eb54915e44e809be,
         type: 3}
       propertyPath: m_Layer

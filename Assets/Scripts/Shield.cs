@@ -93,4 +93,15 @@ public class Shield : MonoBehaviour
         return shield.ToString();
     }
 
+    public void Pause()
+    {
+        shieldActive.Stop();
+    }
+
+    public void UnPause()
+    {
+        if (shield > 0)
+            shieldActive.Play();
+    }
+
 }

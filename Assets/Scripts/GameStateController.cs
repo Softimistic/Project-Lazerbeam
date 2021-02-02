@@ -110,10 +110,11 @@ public class GameStateController : MonoBehaviour
     /// </summary>
     public void ActivePauseMenu()
     {
-        CameraUi.SetActive(false);
+        //CameraUi.SetActive(false);
         pauseMenu.SetActive(true);
         // audioManager.PauseTheme("Theme");
         FindObjectOfType<AudioManager>().PauseTheme(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Shield>().Pause();
         Pause();
         _isPause = true;
     }
@@ -126,6 +127,7 @@ public class GameStateController : MonoBehaviour
         CameraUi.SetActive(true);
         pauseMenu.SetActive(false);
         FindObjectOfType<AudioManager>().ResumeTheme(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Shield>().UnPause();
         Resume();
         _isPause = false;
     }
@@ -150,8 +152,8 @@ public class GameStateController : MonoBehaviour
         /*      FindObjectOfType<HighScoreTable>().AddNewScoreEntry(int.Parse(GameObject.FindWithTag("ScoreText").GetComponent<Text>().text.ToString()));
                 FindObjectOfType<ScoreHolder>().StoreScoreToDatabase();
                 FindObjectOfType<ScoreHolder>().ResetTempScore();*/
-        CloseScoreMenu();
-        CameraUi.SetActive(false);
+        //CloseScoreMenu();
+        //CameraUi.SetActive(false);
         Pause();
         gameOverMenu.SetActive(true);
     }
@@ -159,9 +161,13 @@ public class GameStateController : MonoBehaviour
     public void BackToMainMenu()
     {
         Time.timeScale = 1f;
+        Debug.Log("第一步");
         FindObjectOfType<AudioManager>().ResumeTheme(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
+        Debug.Log("第二步");
         FindObjectOfType<ScoreHolder>().StoreScoreToDatabase();   
+        Debug.Log("第三步");
         FindObjectOfType<ScoreHolder>().ResetTempScore();
+        Debug.Log("第四步");
         SceneManager.LoadScene(0);
     }
 

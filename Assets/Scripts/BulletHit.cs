@@ -39,8 +39,11 @@ public class BulletHit : SceneTransitionEvent
     {
         scoreBoard = FindObjectOfType<ScoreBoard>();
         //init Renderer & originColor
-      _meshRenderer = GetComponent<MeshRenderer>();
-      _originalColor = _meshRenderer.material.color;
+        if (GetComponent<MeshRenderer>())
+        {
+            _meshRenderer = GetComponent<MeshRenderer>();
+            _originalColor = _meshRenderer.material.color;
+        }
         m_Scene = SceneManager.GetActiveScene();
         sceneName = m_Scene.name;
     }
@@ -97,7 +100,7 @@ public class BulletHit : SceneTransitionEvent
             else
             {
                 AudioSource.PlayClipAtPoint(hitSoundFx, transform.position);
-                if (sceneName == "Midboss")
+                if (sceneName == "MidBoss")
                 {
                     transform.GetComponentInParent<MidBossBody>().DecreaseBossHitTimes();
                 }
@@ -108,8 +111,11 @@ public class BulletHit : SceneTransitionEvent
                 
                 _currentHitTimes++;
                 //do sth here(eg: AUDIO)
-                _meshRenderer.material.color = hitColor;
-                StartCoroutine(RestoreColor(_originalColor));
+                if (_meshRenderer)
+                {
+                    _meshRenderer.material.color = hitColor;
+                    StartCoroutine(RestoreColor(_originalColor));
+                }
                 //Destory bullets
                 Destroy(collision.gameObject);
                 scoreBoard.ScoreHit(10);
