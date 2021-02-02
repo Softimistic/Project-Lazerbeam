@@ -621,7 +621,7 @@ PrefabInstance:
     - target: {fileID: 4869674973970453583, guid: 23687ef0d676e53439c9439427ba716c,
         type: 3}
       propertyPath: m_Text
-      value: "Enter that planet\u2019s atmosphere and hunt that son of a bitch down\n"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4869674973970453583, guid: 23687ef0d676e53439c9439427ba716c,
         type: 3}
