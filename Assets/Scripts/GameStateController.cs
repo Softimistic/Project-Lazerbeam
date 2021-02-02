@@ -114,6 +114,7 @@ public class GameStateController : MonoBehaviour
         pauseMenu.SetActive(true);
         // audioManager.PauseTheme("Theme");
         FindObjectOfType<AudioManager>().PauseTheme(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Shield>().Pause();
         Pause();
         _isPause = true;
     }
@@ -126,6 +127,7 @@ public class GameStateController : MonoBehaviour
         CameraUi.SetActive(true);
         pauseMenu.SetActive(false);
         FindObjectOfType<AudioManager>().ResumeTheme(FindObjectOfType<AudioManager>().GetCurrentThemeName(SceneManager.GetActiveScene().name));
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Shield>().UnPause();
         Resume();
         _isPause = false;
     }
