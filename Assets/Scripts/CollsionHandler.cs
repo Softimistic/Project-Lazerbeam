@@ -20,8 +20,8 @@ public class CollsionHandler : MonoBehaviour
     int healthDecreaseOnMineHit = 25;
     int healthDecreaseOnEnemyRocketHit = 30;
     int healthDecreasePerHit = 5;
-    int healthDecreasePerHitByMissle = 25;
-    int healthDecreasePerHitByTrain = 1;
+    int healthDecreasePerHitByMissle = 20;
+    int healthDecreasePerHitByTrain = 100;
 
     Health health;
     Shield shield;
