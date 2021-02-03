@@ -17,6 +17,7 @@ public class ForceFieldChecker : MonoBehaviour
         {
             //button destroyed
             gameObject.SetActive(false);
+            FindObjectOfType<PlayerController>().BossMode = true;
         }
     }
 }
