@@ -2711,7 +2711,7 @@ PrefabInstance:
     - target: {fileID: 2458204885579610074, guid: 6cf63c39369c7584fae5ab8f368e3dbf,
         type: 3}
       propertyPath: degPerSec
-      value: 15
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2458204885579610074, guid: 6cf63c39369c7584fae5ab8f368e3dbf,
         type: 3}
@@ -2731,7 +2731,7 @@ PrefabInstance:
     - target: {fileID: 2458204885579610074, guid: 6cf63c39369c7584fae5ab8f368e3dbf,
         type: 3}
       propertyPath: lazerBeamNum
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2688725996497352934, guid: 6cf63c39369c7584fae5ab8f368e3dbf,
         type: 3}
