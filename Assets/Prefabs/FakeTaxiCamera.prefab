@@ -2740,15 +2740,15 @@ RectTransform:
   m_GameObject: {fileID: 9204363956399839002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.49399, y: 0.49399, z: 0.49399}
+  m_LocalScale: {x: 0.13337415, y: 0.13337415, z: 0.13337415}
   m_Children: []
   m_Father: {fileID: 7042676601252541862}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -151.3, y: -112.38011}
-  m_SizeDelta: {x: 668.9156, y: 53.55346}
+  m_AnchoredPosition: {x: -147.26, y: -121.6}
+  m_SizeDelta: {x: 2645.0654, y: 277.2401}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4952806165231705789
 CanvasRenderer:
@@ -2780,7 +2780,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 625946189b0d15540afc2a9213e24b7d, type: 3}
-    m_FontSize: 13
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2791,4 +2791,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Kill him before he can bring his fleet through that wormhole
